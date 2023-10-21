@@ -3,7 +3,13 @@ import brain from "../assets/brain2.png";
 import fitU from "../assets/fitU-2.jpeg";
 import antra from "../assets/antra.jpg";
 import gallify from "../assets/gallify.jpg";
-import { LoginPage, ProfilePage, ReelPage, LikedPage, ArtPlayerPage } from "../components/gallifyScreenshots";
+import {
+  LoginPage,
+  ProfilePage,
+  ReelPage,
+  LikedPage,
+  ArtPlayerPage,
+} from "../components/gallifyScreenshots";
 
 import {
   cibMongodb,
@@ -132,23 +138,24 @@ export const projectData = [
     Role: "Serverless Software Engineer",
     githubLink: "https://github.com/alexgoldsmith/badgermentalhealth",
     // demoUrl: { type: "video", key: "" },
-    demoUrl: {},
+    demoUrl: <iframe title="gallify"></iframe>,
     insights: "",
     otherMedia: [
       {
         title: "Gallify Pitch Presentation created by CEO",
         data: [
           <iframe
-            title="canva presentation"
-            src="https://youtu.be/W2RvpHjGHhU"
-            width="800"
-            height="450"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>,
         ],
       },
       {
-        title: "figma UI design for app",
+        title: "Screenshots of Screens designed in Figma",
         data: [
           <LoginPage />,
           <ArtPlayerPage />,
