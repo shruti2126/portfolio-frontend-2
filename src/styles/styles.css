@@ -1,0 +1,50 @@
+/**
+ * Add this CSS to your stylesheet or component's CSS module
+ *
+ * @format
+ */
+
+.image-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Adjust z-index as needed */
+}
+
+.card-container {
+  /* display: flex; */
+  transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
+}
+
+.slide-left {
+  transform: translateX(-100%);
+}
+
+.slide-right {
+  transform: translateX(100%);
+}
+
+.description {
+  overflow: hidden; /* Hide any content that overflows the container */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+  white-space: wrap; /* Prevent text from wrapping to the next line */
+  max-height: 30em;
+}
+
+.heading {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.img {
+  max-width: 100%;
+  border-radius: 50%;
+}

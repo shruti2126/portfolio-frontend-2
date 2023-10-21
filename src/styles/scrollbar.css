@@ -1,0 +1,28 @@
+/**
+ * Define the styles for the scrollbar track (the container)
+ *
+ * @format
+ */
+
+.custom-scrollbar {
+  overflow-y: auto; /* Enable vertical scrollbar */
+  scrollbar-width: auto; /* For Firefox */
+  scrollbar-color: #888 #f3f3f3; /* Scrollbar track and thumb color */
+  /* Set the width and color of the scrollbar track */
+}
+
+/* Define the styles for the scrollbar thumb (the draggable part) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 15px; /* Set the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6e288f; /* Set the color of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #2c0fae; /* Set the color of the scrollbar thumb on hover */
+}
+
+
