@@ -9,18 +9,20 @@ import {
   HStack,
   Divider,
   Text,
-  IconButton,
+  Flex,
+  Container,
+  // IconButton,
 } from "@chakra-ui/react";
 import CIcon from "@coreui/icons-react";
-import { FaArrowLeft } from "react-icons/fa";
+// import { FaArrowLeft } from "react-icons/fa";
 import { projectData } from "../projects/projectData";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../styles/styles.css";
 import "../styles/projects.css";
 
 const ProjectPage = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { projectId } = useParams();
   const project = projectData[projectId - 1];
   // const [mediaUrl, setMediaUrl] = useState(""); // State to store media URL
@@ -41,17 +43,16 @@ const ProjectPage = () => {
       <Heading as="h2" size="xl" mb="4" textAlign={"center"} pt={4}>
         {project.title}
       </Heading>
-      <IconButton
+      {/* <IconButton
         icon={<FaArrowLeft />}
         colorScheme="teal"
         aria-label="Go Back"
         to="projects"
         position="fixed"
-        top="12"
+        top="5"
         left="4"
-        zIndex="2"
         onClick={() => navigate("../projects")}
-      />
+      /> */}
 
       <Center mb={4}>{project.demoUrl}</Center>
 
@@ -82,7 +83,18 @@ const ProjectPage = () => {
             />
           ))}
         </HStack>
-
+        <HStack pt={4}>
+          <Text fontSize="md" fontWeight="bold">
+            Role:
+          </Text>
+          <Text fontSize="md">{project.Role}</Text>
+        </HStack>
+        <HStack>
+          <Text fontSize="md" fontWeight="bold">
+            Team Size:{" "}
+          </Text>
+          <Text fontSize="md">{project.teamSize}</Text>
+        </HStack>
         <Divider />
         <Heading as="h3" size="lg">
           Description
@@ -94,14 +106,33 @@ const ProjectPage = () => {
         <Heading as="h3" size="lg">
           Project Building Insights
         </Heading>
-        <HStack>
-          <Text fontWeight="bold">Role:</Text>
-          <Text>{project.Role}</Text>
-        </HStack>
-        <HStack>
-          <Text fontWeight="bold">Team Size: </Text>
-          <Text>{project.teamSize}</Text>
-        </HStack>
+        {project.insights.map((entry, index) => (
+          <Center>
+            {" "}
+            <Box width="80vw" key={index} display="flex" flexWrap="wrap">
+              <Text
+                fontWeight="semibold"
+                fontSize={["lg", "lg", "2xl"]}
+                flexBasis="20%"
+              >
+                {entry.category}
+              </Text>
+
+              <Box flexBasis="70%">
+                {Array.isArray(entry.data) ? (
+                  <ul>
+                    {entry.data.map((str, strIndex) => (
+                      <li key={strIndex}>{str}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{entry.data}</p>
+                )}
+              </Box>
+            </Box>
+          </Center>
+        ))}
+
         <VStack>
           <Heading as="h3" size="lg">
             Other Media
@@ -116,9 +147,17 @@ const ProjectPage = () => {
                   {media.title}
                 </Text>
               </VStack>
-              <Box key={index + 1} className="screenshots">
-                {media.data}
-              </Box>
+              <Container maxW='85vw'>
+                <Box
+                  key={index}
+                  display="flex"
+                  flexDir="row"
+                  justifyContent="space-evenly"
+                  overflowY="scroll"
+                >
+                  {media.data}
+                </Box>
+              </Container>
             </>
           ))}
         </VStack>

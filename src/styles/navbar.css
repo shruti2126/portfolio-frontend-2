@@ -1,0 +1,20 @@
+/** @format */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Adjust z-index as needed */
+  background-color: black;
+}
+
+.navbar .bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: rgb(31, 140, 218);
+}

@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/logo-no-background.png";
 import { NavLink, Link } from "react-router-dom";
-import {Text} from "@chakra-ui/react"
+
 import "../styles/styles.css";
 
 const NavigationBar = () => {
@@ -18,34 +18,33 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar className="navbar" bg="dark" data-bs-theme="dark" expand="lg">
-      <Container
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
+    <Navbar
+      style={{ display: "flex", flexDirection: "row" }}
+      bg="dark"
+      data-bs-theme="dark"
+      expand="lg"
+    >
+      <Container>
         <Navbar.Brand>
           <Nav.Link
             as={NavLink}
             to="home"
             onClick={() => scrollToSection("home")}
           >
-            {" "}
             <img
               src={logo}
               alt="personal logo"
-              width="50"
-              height="30"
+              style={{ width: "3em", height: "auto" }}
               className="d-inline-block align-left"
             />
-            <Text fontSize={["sm", "md", "lg"]} overflowWrap="break-word">Software Engineer | Computer Science B.S</Text>
+            <span style={{ fontSize: "1em" }}>
+              Software Engineer | Computer Science B.S
+            </span>
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="mr-auto" style={{ alignSelf: "end" }}>
             <Nav.Link
               as={NavLink}
               to="about"
