@@ -18,21 +18,51 @@ import "../styles/projects.css";
 // const reelPage = getMedia("image", "gallifyFigmaScreenshots.reel-page.png");
 
 export const ArtPlayerPage = () => {
-  return <img src={artPlayer} alt="art player" className="screenshots" />;
+  return (
+    <img
+      src={artPlayer}
+      alt="art player"
+      style={{ marginLeft: "10px", border: "solid 1px black" }}
+    />
+  );
 };
 
 export const LikedPage = () => {
-  return <img src={liked} alt="liked page" className="screenshots" />;
+  return (
+    <img
+      src={liked}
+      alt="liked page"
+      style={{ marginLeft: "10px", border: "solid 1px black" }}
+    />
+  );
 };
 
 export const LoginPage = () => {
-  return <img src={login} alt="Login page" className="screenshots" />;
+  return (
+    <img
+      src={login}
+      alt="Login page"
+      style={{ marginLeft: "10px", border: "solid 1px black" }}
+    />
+  );
 };
 
 export const ProfilePage = () => {
-  return <img src={profilePage} alt="profike page" className="screenshots" />;
+  return (
+    <img
+      src={profilePage}
+      alt="profike page"
+      style={{ marginLeft: "10px", border: "solid 1px black" }}
+    />
+  );
 };
 
 export const ReelPage = () => {
-  return <img src={reelPage} alt="Reel page" className="screenshots" />;
+  return (
+    <img
+      src={reelPage}
+      alt="Reel page"
+      style={{ marginLeft: "10px", border: "solid 1px black" }}
+    />
+  );
 };

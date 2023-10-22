@@ -17,6 +17,7 @@
   left: 0;
   right: 0;
   z-index: 1000; /* Adjust z-index as needed */
+  background-color: darkblue;
 }
 
 .card-container {

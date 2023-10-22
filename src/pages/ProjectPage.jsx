@@ -17,6 +17,7 @@ import { projectData } from "../projects/projectData";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../styles/styles.css";
+import "../styles/projects.css";
 
 const ProjectPage = () => {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ const ProjectPage = () => {
         colorScheme="teal"
         aria-label="Go Back"
         to="projects"
-        position="absolute"
+        position="fixed"
         top="12"
         left="4"
         zIndex="2"
@@ -106,24 +107,19 @@ const ProjectPage = () => {
             Other Media
           </Heading>
           {project.otherMedia.map((media, index) => (
-            <VStack key={index}>
-              <Text
-                fontSize={["md", "lg", "lg"]}
-                style={{ textAlign: "center", fontWeight: "bold" }}
-              >
-                {media.title}
-              </Text>
-              {/* <div key={index}>{media.data}</div> */}
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                overflowX="auto"
-                key={index}
-                mx={5}
-              >
+            <>
+              <VStack key={index}>
+                <Text
+                  fontSize={["md", "lg", "lg"]}
+                  style={{ textAlign: "center", fontWeight: "bold" }}
+                >
+                  {media.title}
+                </Text>
+              </VStack>
+              <Box key={index + 1} className="screenshots">
                 {media.data}
               </Box>
-            </VStack>
+            </>
           ))}
         </VStack>
         <VStack>

@@ -29,7 +29,7 @@ const About = () => {
       bgGradient={["linear(to-b, blue.100, pink.100, purple.200)"]}
       id="about"
       minH="100vh" // Use minH to ensure the background covers the entire screen
-      w="100vw"
+      minW="100vw"
       shadow="md"
       borderWidth="1px"
       p={["2", "4", "6"]} // Adjust padding for different screen sizes

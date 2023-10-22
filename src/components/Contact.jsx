@@ -119,7 +119,7 @@ const Contact = () => {
       </Center>
 
       <VStack id="contact" spacing={4}>
-        <Box backgroundColor="white" borderRadius="md" p={15}>
+        <Box backgroundColor="white" borderRadius="md" p={15} width={["sm", "md", "lg"]}>
           <FormControl display="flex" flexDirection="column" p={4} gap={2}>
             <FormControl isRequired isInvalid={error.firstnameError}>
               {" "}

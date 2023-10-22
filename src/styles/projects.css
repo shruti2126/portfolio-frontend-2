@@ -1,5 +1,9 @@
+/** @format */
+
 .screenshots {
-	width: "50%";
-	height: auto;
-	padding-left: "5px";
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  justify-content: center;
 }

@@ -7,10 +7,11 @@ import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Blog from "../components/Blog";
 import Education from "../components/Education";
+import {Box} from "@chakra-ui/react"
 
 const Home = () => {
   return (
-    <div id="home">
+    <Box id="home" minWidth='100vw' minHeight='100vh'>
       <Header />
       <About />
       <Experience />
@@ -18,7 +19,7 @@ const Home = () => {
       <Education />
       <Blog />
       <Contact />
-    </div>
+    </Box>
   );
 };
 export default Home;
