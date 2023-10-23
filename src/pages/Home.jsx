@@ -10,8 +10,9 @@ import Education from "../components/Education";
 import {Box} from "@chakra-ui/react"
 
 const Home = () => {
+
   return (
-    <Box id="home" minWidth='100vw' minHeight='100vh'>
+    <Box id="home" minWidth='100vw' minHeight='100vh' >
       <Header />
       <About />
       <Experience />

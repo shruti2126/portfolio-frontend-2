@@ -51,7 +51,7 @@ const Projects = () => {
       minH="100vh"
       w="100vw"
       borderWidth="1px"
-      bgGradient={["linear(to-b, blue.200, purple.100, pink.100)"]}
+      bgGradient={["linear(to-b, blue.100, purple.200, blue.200)"]}
       id="projects"
       position="relative"
     >

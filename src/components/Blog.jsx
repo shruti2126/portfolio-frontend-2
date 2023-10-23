@@ -12,12 +12,20 @@ import {
 
 import SignupForm from "./SignupForm";
 import "../styles/styles.css";
+import bg from "../assets/background/bg1.jpg";
 
 const Blog = () => {
   const [showSignup, setShowSignup] = useState(false);
-
+  const bgStyle = {
+    height: '100vh',
+    backgroundImage: `url(${bg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    placeItems: "center",
+  };
   return (
     <Box
+      style={bgStyle}
       id="blog"
       borderWidth="1px"
       bgGradient={["linear(to-b, pink.100, blue.100, purple.100)"]}

@@ -3,14 +3,12 @@
  *
  * @format
  */
-
 .image-container {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .card-container {
   /* display: flex; */
@@ -33,6 +31,7 @@
 }
 
 .heading {
+  
   padding-top: 2em;
   padding-bottom: 1em;
 }
@@ -41,3 +40,19 @@
   max-width: 100%;
   border-radius: 50%;
 }
+
+/* .background {
+  height: 100vh;
+  display: grid;
+  position: relative;
+  place-items: center;
+}
+
+#about::before {
+  background-image: url("../assets/background/bg1.png");
+  background-size: "cover";
+  content: '';
+  background-repeat: "no-repeat";
+  position: absolute;
+  inset: 0;
+} */

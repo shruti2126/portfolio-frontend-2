@@ -17,20 +17,25 @@ import "../styles/styles.css";
 import Fade from "react-awesome-reveal";
 import { useEffect } from "react";
 import scrollToSection from "../functions/scrollToSection";
-
+import bgImg from "../assets/background/bg9.jpg";
 const About = () => {
   useEffect(() => {
     if (window.location.pathname.includes("about")) {
       scrollToSection("about");
     }
   }, []);
+  const bgStyle = {
+    backgroundImage: `url(${bgImg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
   return (
     <Box
-      bgGradient={["linear(to-b, blue.100, pink.100, purple.200)"]}
+      style={bgStyle}
+      // bgGradient={["linear(to-b, blue.100, pink.100, purple.200)"]}
       id="about"
       minH="100vh" // Use minH to ensure the background covers the entire screen
       minW="100vw"
-      shadow="md"
       borderWidth="1px"
       p={["2", "4", "6"]} // Adjust padding for different screen sizes
     >
@@ -39,7 +44,7 @@ const About = () => {
           About
         </Heading>
       </Center>
-      <VStack spacing={["4", "8"]} align="center">
+      <VStack isolation="isolate" spacing={["4", "8"]} align="center">
         {" "}
         {/* Adjust spacing between elements */}
         <Box>
@@ -54,7 +59,7 @@ const About = () => {
         </Box>
         <VStack>
           <Text
-            color="blackAlpha.800"
+            color="blackAlpha.900"
             fontSize={["md", "lg", "xl"]} // Adjust font size for different screen sizes
             textAlign="center"
             fontFamily="sans-serif"
@@ -63,14 +68,15 @@ const About = () => {
           >
             Hey! My name is Shruti. I am pursuing a career in tech as a Software
             Engineer with a Bachelor of Science degree in Computer Science from
-            UW-Madison. This portfolio hopefully gives you better insight into my technical skills and abilities!{" "}
-            I am also working on a blog called {" "}
+            UW-Madison. This portfolio hopefully gives you better insight into
+            my technical skills and abilities! I am also working on a blog
+            called{" "}
             <Link href="/" color="blue.500">
               Connecting the Dots
             </Link>{" "}
-            , where I will talk extensively about I am finally able to
-            answer some of the burning questions about myself and my place in the world,
-            and how I am grapling with this new found "wisdom".
+            , where I will talk extensively about I am finally able to answer
+            some of the burning questions about myself and my place in the
+            world, and how I am grapling with this new found "wisdom".
           </Text>
           <HStack spacing={["4", "8"]}>
             {" "}

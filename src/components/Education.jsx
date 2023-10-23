@@ -24,7 +24,7 @@ const Education = () => {
       w="100vw"
       overflowY="auto"
       id="education"
-      bgGradient={["linear(to-t, purple.100, blue.100, pink.200)"]}
+      bgGradient={["linear(to-t, pink.100, purple.200, blue.200)"]}
     >
       <Heading className="heading" textAlign="center" as="h3" size="lg">
         Education History

@@ -12,7 +12,7 @@ import {
 } from "../components/gallifyScreenshots";
 
 import "../styles/projects.css";
-
+import bmhImpl from "../assets/badger-break/implementation-flow.png";
 import {
   cibMongodb,
   cibFirebase,
@@ -27,6 +27,7 @@ import {
   cibAmazonAws,
   cibXcode,
 } from "@coreui/icons";
+import { Image, Box } from "@chakra-ui/react";
 
 export const projectData = [
   {
@@ -98,7 +99,7 @@ export const projectData = [
         ],
       },
       {
-        category: "Problems",
+        category: "Challenges",
         data: [
           "Faced challenges in synchronizing community board 'Like' functionality and the need for database reload.",
           "Addressed issues related to component updates not being synchronous with the database.",
@@ -109,8 +110,11 @@ export const projectData = [
         ],
       },
     ],
-
-    otherMedia: [{}],
+    otherMedia: [
+      <Box boxSize={["md", "md", "lg"]} m={2}>
+        <Image src={bmhImpl} alt="badger break implementation flow" />
+      </Box>,
+    ],
     CurrentIssues: [
       "Community Board 'Like' functionality not correct. Single user can likea post multiple times.",
       "Updates to components not synchronous with database. Needs reload to appear on screen.",
@@ -182,7 +186,7 @@ export const projectData = [
         ],
       },
       {
-        category: "Problems",
+        category: "Challenges",
         data: [
           "Faced challenges integrating real-time data from Apple Health Kit with the Expo React Native app.",
           "Explored statistical models as an alternative to machine learning for weight correlation due to the steep learning curve.",
@@ -264,7 +268,7 @@ export const projectData = [
         data: "Played a crucial role in designing and optimizing key sections of the Antra-LMS system.",
       },
       {
-        category: "Problems",
+        category: "Challenges",
         data: [
           "The challenge of working with microservices architecture, including ensuring proper communication, data consistency, and scalability.",
           "Adapting to Spring technologies for efficient development, particularly the Spring MVC and Spring Boot frameworks.",
@@ -330,10 +334,10 @@ export const projectData = [
         data: "Led the development and design of Gallify's system architecture.",
       },
       {
-        category: "Problems",
+        category: "Challenges",
         data: [
-          "Challenges in team collaboration and communication as I was new to software development." +
-          " Had to learn how to effectively work in a team, including understanding agile methodologies and project management tools.",
+          "Faced difficulties in team collaboration and communication as I was new to software development." +
+            " Had to learn how to effectively work in a team, including understanding agile methodologies and project management tools.",
           "Struggled understanding and implementing asynchronous programming, especially as the app's complexity grew. I encountered issues with data synchronization and handling asynchronous tasks within the Firebase environment.",
         ],
       },
