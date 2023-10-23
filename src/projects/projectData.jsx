@@ -36,7 +36,8 @@ export const projectData = [
     techStackIcons: [cibMongodb, cibReact, cibNodeJs, cibExpo],
     iconsColor: ["#118D4D", "#01D2F6", "#74AC5F", "#0B0F13"],
     description:
-      "Mental Health App that allows users to locally store coping cards, chat with community members using an anonymous username and even take assessments to determine their emotional symptoms.",
+      "A simple self-help to allow students who are apprehensive towards the idea of help to get a head start in understanding their mental and emotional health." +
+      "The app allows users to locally store coping cards, chat with community members using an anonymous username and take short quizzes to determine their emotional state and understand their thought patterns.",
     thumbnail: brain,
     teamSize: 3,
     purpose: "Software Engineering Course Project @ UW-Madison",
@@ -56,12 +57,12 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: "Shruti Sharma (Full Stack/Project Owner), Ryan Gillespie (Full Stack/Scrum Master), Alex Goldsmith (QA Engineer)",
+        data: "Shruti Sharma (Software Developer/Project Owner), Ryan Gillespie (Full Stack Developer/Scrum Master), Alex Goldsmith (QA Engineer)",
       },
       {
         category: "Learning",
         data: [
-          "Gained proficiency in MongoDB, ReactJS, ExpressJS, and NodeJs.",
+          "Gained substantial experience in MongoDB, ReactJS, ExpressJS, and NodeJs.",
           "Enhanced skills in full-stack development and project ownership.",
         ],
       },
@@ -69,7 +70,7 @@ export const projectData = [
         category: "Planning",
         data: [
           "Followed an Agile development process for iterative development.",
-          "Collaborated with team members for effective task management and progress tracking.",
+          "Planned to keep our app HIPAA compliant by not saving user health/sensitive data in the cloud.",
         ],
       },
       {
@@ -77,20 +78,23 @@ export const projectData = [
         data: [
           "Actively contributed to both frontend and backend aspects of the project.",
           "Built CRUD functions and ExpressJS API for data management.",
+          "Implemented React Native Async-storage for data persistence on user devices.",
         ],
       },
       {
         category: "Testing",
         data: [
-          "Worked closely with end users to ensure the app met their needs and expectations.",
-          "Implemented React Native Async-storage for data persistence on user devices.",
+          "Worked closely with the Psychologist to ensure app data was medically accurate.",
+          "QA engineer provided unit and integration tests regularly to aid development iterations",
+          "Tests were written with JEST framework.",
         ],
       },
       {
         category: "Leadership",
         data: [
-          "Led the team as the project owner, coordinating and managing the development process.",
-          "Made key decisions regarding the app's features and design.",
+          "Led the team as the project owner.",
+          "Collaborated with team members for effective task management and progress tracking.",
+          "Facilitated discussions with the TA or with Professor to resolve conflicts",
         ],
       },
       {
@@ -98,12 +102,19 @@ export const projectData = [
         data: [
           "Faced challenges in synchronizing community board 'Like' functionality and the need for database reload.",
           "Addressed issues related to component updates not being synchronous with the database.",
+          "Lost team members midway through the semester and had to adapt as a team to meet deadlines.",
+          "Dealt with conflicts with team members regarding peer reviews and scores and the group had to collectively find" +
+            " strategies to maintain productivity.",
+          "Not enough Assessments available yet.",
         ],
       },
     ],
 
     otherMedia: [{}],
-    CurrentIssues: [],
+    CurrentIssues: [
+      "Community Board 'Like' functionality not correct. Single user can likea post multiple times.",
+      "Updates to components not synchronous with database. Needs reload to appear on screen.",
+    ],
   },
   {
     id: 2,
@@ -112,19 +123,18 @@ export const projectData = [
     techStackIcons: [cibFirebase, cibTypescript, cibReact, cibExpo],
     iconsColor: ["#FFCA28", "#2F74C0", "#01D2F6s", "#0B0F13"],
     description:
-      "Weight Loss App that uses Statistics for most effective activity tracking",
+      "A weight-loss app that uses Statistical analysis to provide users insight into what activity, for e.g walking, sleeping, eating etc., they engage in daily/weekly, is affecting their the weight-loss the most.",
     thumbnail: fitU,
     teamSize: 5,
     purpose: "Capstone Project @ UW-Madison",
     Role: "Full Stack Developer",
-    githubLink: "https://github.com/shruti2126/fitU",
+    githubLink: "https://github.com/shruti2126/fitu-version-2",
     demoUrl: (
       <iframe
         width="560"
         height="315"
         src="https://www.youtube.com/embed/wYPLqR3bxF8?si=TcLuHX1zoQMcAjl8"
         title="YouTube video player"
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
@@ -132,12 +142,13 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: "Akshay Bodla, Shruti Sharma, Oliver You, Kavya Sebastian, Mengze Li",
+        data: "Akshay Bodla (Lead Developer), Shruti Sharma (Software Developer/Scrum Master), Oliver You(Software Developer), Kavya Sebastian(Software Developer), Mengze Li(Frontend Developer)",
       },
       {
         category: "Learning",
         data: [
-          "Gained expertise in Firebase Authentication, Cloud Firestore, and React Native.",
+          "Solidified basic understanding of Functional programming and NoSQL databases by" +
+            "working with Firebase Authentication, Cloud Firestore, and React Native.",
           "Managed a full-stack role for a weight loss app.",
         ],
       },
@@ -178,9 +189,14 @@ export const projectData = [
         ],
       },
     ],
-
     otherMedia: [{}],
-    CurrentIssues: [],
+    CurrentIssues: [
+      "No testing accept user-acceptance and manual integration testing.",
+      "No real health data since Apple Health Kit i.e react-native-health library, not integrated," +
+        "hence statistical model / correlation screen" +
+        "presents hard coded data for demo purposes. Dashboard 'sleep' and 'steps' data also hard coded.",
+      "No middleware created, might require one for API integrations.",
+    ],
   },
   {
     id: 3,
@@ -208,7 +224,7 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: "Shruti Sharma, Dawei Zhuang",
+        data: "Shruti Sharma, Dawei Zhuang (Supervisor/Senior Java Developer)",
       },
       {
         category: "Learning",
@@ -267,7 +283,8 @@ export const projectData = [
     techStackIcons: [cibSwift, cibFirebase, cibXcode],
     iconsColor: ["#E84E36", "#FFCA28", "#17A6E7"],
     description:
-      "An app for artists with AR imaging in 3D, can view art in your room",
+      "Gallify is a SaaS company that allows users to turn their real art into virtual art, and sell it in a social marketplace." +
+      "Using the Gallify app, users can discover these art works and purchase different versions of it including 3D models, Animations and Smart Art.",
     thumbnail: gallify,
     teamSize: 9,
     purpose: "Software Engineer Course Project @ UW-Madison",
@@ -310,13 +327,14 @@ export const projectData = [
       },
       {
         category: "Leadership",
-        data: "Led the development and design of Gallify's system architecture. You can view the System Design in Figma [here](https://www.figma.com/file/3x3LpTRo1HNUjGDeLfeORH/Gallify---System-Design?type=design&mode=design&t=n5oylaCGiIEFsUsV-1).",
+        data: "Led the development and design of Gallify's system architecture.",
       },
       {
         category: "Problems",
         data: [
-          "Challenges in team collaboration and communication as I was new to software development. Had to learn how to effectively work in a team, including understanding agile methodologies and project management tools.",
-          "Struggles with understanding and implementing asynchronous programming, especially as the app's complexity grew. I encountered issues with data synchronization and handling asynchronous tasks within the Firebase environment.",
+          "Challenges in team collaboration and communication as I was new to software development." +
+          " Had to learn how to effectively work in a team, including understanding agile methodologies and project management tools.",
+          "Struggled understanding and implementing asynchronous programming, especially as the app's complexity grew. I encountered issues with data synchronization and handling asynchronous tasks within the Firebase environment.",
         ],
       },
     ],
@@ -342,7 +360,6 @@ export const projectData = [
           <ProfilePage />,
           <ArtPlayerPage />,
           <LikedPage />,
-          
         ],
       },
     ],

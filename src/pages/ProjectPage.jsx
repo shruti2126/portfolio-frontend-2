@@ -39,7 +39,14 @@ const ProjectPage = () => {
   // }, [project.demoUrl.key]);
 
   return (
-    <Box p="4" bg="white" borderRadius="md" boxShadow="md" overflow="hidden">
+    <Box
+      width="100vw"
+      p="4"
+      bg="white"
+      borderRadius="md"
+      boxShadow="md"
+      overflow="hidden"
+    >
       <Heading as="h2" size="xl" mb="4" textAlign={"center"} pt={4}>
         {project.title}
       </Heading>
@@ -55,124 +62,141 @@ const ProjectPage = () => {
       /> */}
 
       <Center mb={4}>{project.demoUrl}</Center>
-
-      <VStack spacing="4">
-        <Link href={project.githubLink} target="_blank" color="teal">
-          <span
-            style={{
-              ...(project.githubLink !== "N/A"
-                ? { textDecorationLine: "underline", color: "Highlight" }
-                : { color: "black" }),
-            }}
-          >
-            <b>GitHub Repository</b>
-          </span>
-        </Link>
-        <Text fontSize="lg" fontWeight="bold">
-          {project.techStack}
-        </Text>
-        <HStack spacing={["2", "4"]}>
-          {" "}
-          {project.techStackIcons.map((icon, index) => (
-            <CIcon
-              key={index}
-              icon={icon}
-              size="sm"
-              width={40}
-              style={{ color: project.iconsColor[index] }}
-            />
-          ))}
-        </HStack>
-        <HStack pt={4}>
-          <Text fontSize="md" fontWeight="bold">
-            Role:
+      <Container>
+        {" "}
+        <VStack spacing="4">
+          <a href={project.githubLink} color="teal">
+            <span
+              style={{
+                ...(project.githubLink !== "N/A"
+                  ? { textDecorationLine: "underline", color: "Highlight" }
+                  : { color: "black" }),
+              }}
+            >
+              <b>GitHub Repository</b>
+            </span>
+          </a>
+          <Text fontSize="lg" fontWeight="bold">
+            {project.techStack}
           </Text>
-          <Text fontSize="md">{project.Role}</Text>
-        </HStack>
-        <HStack>
-          <Text fontSize="md" fontWeight="bold">
-            Team Size:{" "}
-          </Text>
-          <Text fontSize="md">{project.teamSize}</Text>
-        </HStack>
-        <Divider />
-        <Heading as="h3" size="lg">
-          Description
-        </Heading>
-        <Text fontSize="md" color="gray.600" textAlign={"center"}>
-          {project.description}
-        </Text>
-        <Divider />
-        <Heading as="h3" size="lg">
-          Project Building Insights
-        </Heading>
-        {project.insights.map((entry, index) => (
-          <Center>
+          <HStack spacing={["2", "4"]}>
             {" "}
-            <Box width="80vw" key={index} display="flex" flexWrap="wrap">
-              <Text
-                fontWeight="semibold"
-                fontSize={["lg", "lg", "2xl"]}
-                flexBasis="20%"
-              >
-                {entry.category}
-              </Text>
-
-              <Box flexBasis="70%">
-                {Array.isArray(entry.data) ? (
-                  <ul>
-                    {entry.data.map((str, strIndex) => (
-                      <li key={strIndex}>{str}</li>
+            {project.techStackIcons.map((icon, index) => (
+              <CIcon
+                key={index}
+                icon={icon}
+                size="sm"
+                width={40}
+                style={{ color: project.iconsColor[index] }}
+              />
+            ))}
+          </HStack>
+          <HStack pt={4}>
+            <Text fontSize="md" fontWeight="bold">
+              Role:
+            </Text>
+            <Text fontSize="md">{project.Role}</Text>
+          </HStack>
+          <HStack>
+            <Text fontSize="md" fontWeight="bold">
+              Team Size:{" "}
+            </Text>
+            <Text fontSize="md">{project.teamSize}</Text>
+          </HStack>
+          <Divider />
+          <Heading as="h3" size="lg">
+            Description
+          </Heading>
+          <Text fontSize="md" color="gray.600" textAlign={"center"}>
+            {project.description}
+          </Text>
+          <Divider />
+          <Heading as="h3" size="lg">
+            Project Building Insights
+          </Heading>
+          {project.insights.map((insight, index) => (
+            <Box
+              width="80vw"
+              display="flex"
+              flexDirection="column"
+              flexWrap='wrap'
+            >
+              <Box key={index}>
+                <Text
+                  fontWeight="semibold"
+                  fontSize={["md", "lg", "lg"]}
+                  mt={4}
+                >
+                  {insight.category}
+                </Text>
+              </Box>
+              <Box mt={3}>
+                {Array.isArray(insight.data) ? (
+                  <ul style={{ listStyle: "none" }}>
+                    {insight.data.map((str, strIndex) => (
+                      <li key={strIndex}>
+                        <Box px={4}>
+                          <Text fontSize={["sm", "sm", "md"]}>{str}</Text>
+                        </Box>
+                      </li>
                     ))}
                   </ul>
                 ) : (
-                  <p>{entry.data}</p>
+                  <ul style={{ listStyle: "none" }}>
+                    <li>
+                      <Text px={4} fontSize={["sm", "sm", "md"]}>
+                        {insight.data}
+                      </Text>
+                    </li>
+                  </ul>
                 )}
               </Box>
             </Box>
-          </Center>
-        ))}
-
-        <VStack>
-          <Heading as="h3" size="lg">
-            Other Media
-          </Heading>
-          {project.otherMedia.map((media, index) => (
-            <>
-              <VStack key={index}>
-                <Text
-                  fontSize={["md", "lg", "lg"]}
-                  style={{ textAlign: "center", fontWeight: "bold" }}
-                >
-                  {media.title}
-                </Text>
-              </VStack>
-              <Container maxW='85vw'>
-                <Box
-                  key={index}
-                  display="flex"
-                  flexDir="row"
-                  justifyContent="space-evenly"
-                  overflowY="scroll"
-                >
-                  {media.data}
-                </Box>
-              </Container>
-            </>
           ))}
-        </VStack>
-        <VStack>
-          <Heading as="h3" size="lg">
-            Bugs
-          </Heading>
-          <Box>
-            {project.CurrentIssues.map((issue, index) => (
-              <div key={index}>{issue}</div>
+          <VStack>
+            <Heading as="h3" size="lg">
+              Other Media
+            </Heading>
+            {project.otherMedia.map((media, index) => (
+              <>
+                <VStack key={index}>
+                  <Text
+                    fontSize={["md", "lg", "lg"]}
+                    style={{ textAlign: "center", fontWeight: "bold" }}
+                  >
+                    {media.title}
+                  </Text>
+                </VStack>
+                <Container maxW="85vw">
+                  <Box
+                    key={index}
+                    display="flex"
+                    flexDir="row"
+                    justifyContent="space-evenly"
+                    overflowY="scroll"
+                  >
+                    {media.data}
+                  </Box>
+                </Container>
+              </>
             ))}
-          </Box>
+          </VStack>
+          <VStack width="80vw">
+            <Heading as="h3" size="lg">
+              Bugs and Improvements Required
+            </Heading>
+
+            <ul>
+              {project.CurrentIssues.map((issue, index) => (
+                <Center mt={4}>
+                  <li key={index}>{issue}</li>
+                </Center>
+              ))}
+            </ul>
+          </VStack>
+          {/* Add more insights as needed */}
         </VStack>
-        {/* Add more insights as needed */}
-      </VStack>
+      </Container>
     </Box>
   );
 };
