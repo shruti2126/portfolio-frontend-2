@@ -9,7 +9,7 @@ import {
   HStack,
   Divider,
   Text,
-  Flex,
+
   Container,
   // IconButton,
 } from "@chakra-ui/react";
@@ -17,7 +17,6 @@ import CIcon from "@coreui/icons-react";
 // import { FaArrowLeft } from "react-icons/fa";
 import { projectData } from "../projects/projectData";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import "../styles/styles.css";
 import "../styles/projects.css";
 
