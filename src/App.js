@@ -3,14 +3,15 @@
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import ProjectPage from "./pages/ProjectPage";
-import Projects from "./components/Projects";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Blog from "./components/Blog";
-import Contact from "./components/Contact";
-import Education from "./components/Education";
+import Projects from "./components/sections/Projects";
+import About from "./components/sections/About";
+import Experience from "./components/sections/Experience";
+import Blog from "./components/sections/Blog";
+import Contact from "./components/sections/Contact";
+import Education from "./components/sections/Education";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Skills from "./components/sections/Skills";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="education" element={<Education />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="skills" element={<Skills />} />
       </Route>
       <Route path="projects/:projectId" element={<ProjectPage />} />
     </Routes>

@@ -7,6 +7,7 @@ import logo from "../assets/logo-no-background.png";
 import { NavLink, Link } from "react-router-dom";
 
 import "../styles/styles.css";
+import { Text } from "@chakra-ui/react";
 
 const NavigationBar = () => {
   const scrollToSection = (sectionId) => {
@@ -22,6 +23,9 @@ const NavigationBar = () => {
       bg="dark"
       data-bs-theme="dark"
       expand="lg"
+      width="100vw"
+      collapseOnSelect="true"
+      sticky="true"
     >
       <Container>
         <Navbar.Brand>
@@ -30,26 +34,40 @@ const NavigationBar = () => {
             to="home"
             onClick={() => scrollToSection("home")}
           >
-            <img
+            {/* <img
               src={logo}
               alt="personal logo"
               style={{ width: "3em", height: "auto" }}
               className="d-inline-block align-left"
-            />
-            <span style={{ fontSize: "1em" }}>
+            /> */}
+            <Text
+              as="h3"
+              size='md'
+              className="name"
+            >
+              Shruti Sharma
+            </Text>
+            {/* <Text as="span" fontSize={["sm", "md", "md"]}>
               Software Engineer | Computer Science B.S
-            </span>
+            </Text> */}
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto" style={{ alignSelf: "end" }}>
+        <Navbar.Collapse id="basic-navbar-nav" >
+          <Nav id="nav-links" className="mr-auto nav-elements" style={{ justifySelf: "end" }}>
             <Nav.Link
               as={NavLink}
               to="about"
               onClick={() => scrollToSection("about")}
             >
               About
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="skills"
+              onClick={() => scrollToSection("skills")}
+            >
+              Skills
             </Nav.Link>
             <Nav.Link
               as={NavLink}

@@ -10,19 +10,6 @@
   justify-content: center;
 }
 
-.card-container {
-  /* display: flex; */
-  transition: transform 0.5s ease-in-out; /* Add a smooth transition effect */
-}
-
-.slide-left {
-  transform: translateX(-100%);
-}
-
-.slide-right {
-  transform: translateX(100%);
-}
-
 .description {
   overflow: hidden; /* Hide any content that overflows the container */
   text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
@@ -31,9 +18,10 @@
 }
 
 .heading {
-  
-  padding-top: 2em;
+  padding-top: 1em;
   padding-bottom: 1em;
+  text-align: center;
+  font-size: large;
 }
 
 .img {
@@ -41,18 +29,40 @@
   border-radius: 50%;
 }
 
-/* .background {
-  height: 100vh;
-  display: grid;
-  position: relative;
-  place-items: center;
+.component-container {
+  border: "solid 1px white";
+  overflow-y: auto;
 }
 
-#about::before {
-  background-image: url("../assets/background/bg1.png");
-  background-size: "cover";
-  content: '';
-  background-repeat: "no-repeat";
-  position: absolute;
-  inset: 0;
-} */
+.skill-bar {
+  border: "1px solid black";
+  height: 3px;
+  width: 80%;
+  border-radius: 10%;
+}
+
+.name {
+  font-weight: 600;
+  color: azure;
+  margin: 0px 5px 2px 0px;
+}
+
+.name:hover {
+  /* background-color:rgb(49, 155, 179); */
+  transform: scale(1.1);
+  text-decoration-line: underline;
+  text-decoration-color:  rgb(165, 19, 106);
+  
+}
+
+#nav-links > a {
+  font-size: larger;
+  margin: 0px 3px 0px 2px;
+}
+#nav-links > a:hover {
+  transform: translateY(-5%);
+  transition: all 0.2s ease-in;
+  text-decoration-line: underline;
+  text-decoration-color: rgb(165, 19, 106);
+  text-decoration-style: wavy;
+}

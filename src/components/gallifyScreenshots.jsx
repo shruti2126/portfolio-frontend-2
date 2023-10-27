@@ -7,44 +7,44 @@ import profilePage from "../assets/gallifyFigmaScreenshots/profile-page.png";
 import reelPage from "../assets/gallifyFigmaScreenshots/reel-page.png";
 // import getMedia from "../aws-s3/getMedia";
 import "../styles/projects.css";
-import { Image, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 export const ArtPlayerPage = () => {
   return (
-    <Box boxSize={["md", "md", "lg"]} m={2}>
-      <Image p={2} src={artPlayer} alt="art player" />
-    </Box>
+    // <Box boxSize='sm' m={2}>
+    <img src={artPlayer} alt="art player" />
+    // </Box>
   );
 };
 
 export const LikedPage = () => {
   return (
-    <Box boxSize={["md", "md", "lg"]} m={2}>
-      <Image p={2} src={liked} alt="liked page" />;
-    </Box>
+    /*<Box boxSize="sm" m={2}>*/
+    <img src={liked} alt="liked page" />
+    /*</Box>*/
   );
 };
 
 export const LoginPage = () => {
   return (
-    <Box boxSize={["md", "md", "lg"]} m={2}>
-      <Image p={2} src={login} alt="Login page" />;
-    </Box>
+    /*<Box boxSize="sm" m={2}>*/
+    <img src={login} alt="Login page" />
+    /*</Box>*/
   );
 };
 
 export const ProfilePage = () => {
   return (
-    <Box boxSize={["md", "md", "lg"]} m={2}>
-      <Image p={2} src={profilePage} alt="profike page" />
-    </Box>
+    /*<Box boxSize="sm" m={2}>*/
+    <img src={profilePage} alt="profile page" />
+    /*</Box>*/
   );
 };
 
 export const ReelPage = () => {
   return (
-    <Box boxSize={["md", "md", "lg"]} m={2}>
-      <Image p={2} src={reelPage} alt="Reel page" />;
-    </Box>
+    /*<Box boxSize="sm" m={2}>*/
+    <img src={reelPage} alt="Reel page" />
+    /*</Box>*/
   );
 };

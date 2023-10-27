@@ -9,13 +9,12 @@ import {
   HStack,
   Divider,
   Text,
-
   Container,
   // IconButton,
 } from "@chakra-ui/react";
 import CIcon from "@coreui/icons-react";
 // import { FaArrowLeft } from "react-icons/fa";
-import { projectData } from "../projects/projectData";
+import { projectData } from "../data/projectData";
 import { useParams } from "react-router-dom";
 import "../styles/styles.css";
 import "../styles/projects.css";
@@ -38,14 +37,7 @@ const ProjectPage = () => {
   // }, [project.demoUrl.key]);
 
   return (
-    <Box
-      width="100vw"
-      p="4"
-      bg="white"
-      borderRadius="md"
-      boxShadow="md"
-      overflow="hidden"
-    >
+    <Box minH="100vh" minW="100vw" bg="white">
       <Heading as="h2" size="xl" mb="4" textAlign={"center"} pt={4}>
         {project.title}
       </Heading>
@@ -61,7 +53,7 @@ const ProjectPage = () => {
       /> */}
 
       <Center mb={4}>{project.demoUrl}</Center>
-      <Container>
+      <Box minW={["sm", "md"]}>
         {" "}
         <VStack spacing="4">
           <a href={project.githubLink} color="teal">
@@ -118,7 +110,7 @@ const ProjectPage = () => {
               width="80vw"
               display="flex"
               flexDirection="column"
-              flexWrap='wrap'
+              flexWrap="wrap"
             >
               <Box key={index}>
                 <Text
@@ -152,50 +144,39 @@ const ProjectPage = () => {
               </Box>
             </Box>
           ))}
-          <VStack>
-            <Heading as="h3" size="lg">
-              Other Media
-            </Heading>
-            {project.otherMedia.map((media, index) => (
-              <>
-                <VStack key={index}>
-                  <Text
-                    fontSize={["md", "lg", "lg"]}
-                    style={{ textAlign: "center", fontWeight: "bold" }}
-                  >
-                    {media.title}
-                  </Text>
-                </VStack>
-                <Container maxW="85vw">
-                  <Box
-                    key={index}
-                    display="flex"
-                    flexDir="row"
-                    justifyContent="space-evenly"
-                    overflowY="scroll"
-                  >
-                    {media.data}
-                  </Box>
-                </Container>
-              </>
-            ))}
-          </VStack>
-          <VStack width="80vw">
-            <Heading as="h3" size="lg">
-              Bugs and Improvements Required
-            </Heading>
 
-            <ul>
-              {project.CurrentIssues.map((issue, index) => (
-                <Center mt={4}>
-                  <li key={index}>{issue}</li>
-                </Center>
-              ))}
-            </ul>
-          </VStack>
-          {/* Add more insights as needed */}
+          <Heading as="h3" size="lg">
+            Other Media
+          </Heading>
+         
+          {project.otherMedia.map((media, index) => (
+            <>
+              <VStack key={index}>
+                <Text
+                  fontSize={["md", "lg", "lg"]}
+                  style={{ textAlign: "center", fontWeight: "bold" }}
+                >
+                  {media.title}
+                </Text>
+              </VStack>
+              <HStack spacing={3} key={index} overflowX="auto">
+                {media.data}
+              </HStack>
+            </>
+          ))}
+
+          <Heading as="h3" size="lg">
+            Bugs and Improvements Required
+          </Heading>
+          <ul>
+            {project.CurrentIssues.map((issue, index) => (
+              <Center mt={4}>
+                <li key={index}>{issue}</li>
+              </Center>
+            ))}
+          </ul>
         </VStack>
-      </Container>
+      </Box>
     </Box>
   );
 };
