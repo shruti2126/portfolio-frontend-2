@@ -9,7 +9,6 @@ import {
   HStack,
   VStack,
   Heading,
-  Center,
 } from "@chakra-ui/react";
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
 import pic from "../../assets/pic2.jpg";
@@ -28,11 +27,11 @@ const About = () => {
       bgGradient={["linear(to-b, pink.100, blue.100, purple.200)"]}
       id="about"
       minH="100vh"
-      minW='100vw'
+      minW="100vw"
       borderWidth="1px"
     >
       <Heading className="heading">About</Heading>
-      <VStack mb='3em' px={[3, 4, 5]} spacing={["4", "6"]} align="center">
+      <VStack mb="3em" px={[3, 4, 5]} spacing={["4", "6"]} align="center">
         {" "}
         {/* Adjust spacing between elements */}
         <Box>

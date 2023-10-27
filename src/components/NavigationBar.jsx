@@ -23,8 +23,6 @@ const NavigationBar = () => {
       data-bs-theme="dark"
       expand="lg"
       width="100vw"
-      collapseOnSelect="true"
-      sticky="true"
     >
       <Container>
         <Navbar.Brand>
@@ -53,7 +51,7 @@ const NavigationBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" >
-          <Nav id="nav-links" className="mr-auto nav-elements" style={{ justifySelf: "end" }}>
+          <Nav id="nav-links" className="mr-auto nav-elements">
             <Nav.Link
               as={NavLink}
               to="about"

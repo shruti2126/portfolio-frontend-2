@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-
+import { FaChevronCircleUp } from "react-icons/fa";
 const BackToTopButton = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -26,7 +26,8 @@ const BackToTopButton = () => {
       onClick={scrollToTop}
       className={`back-to-top-button ${showBackToTop ? "visible" : ""}`}
     >
-      Back to Top
+      <FaChevronCircleUp />
+      {/* Back to Top */}
     </button>
   );
 };

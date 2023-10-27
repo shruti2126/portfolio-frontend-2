@@ -40,7 +40,7 @@ const Experience = () => {
       id="experience"
     >
       <Heading className="heading">Software Development Experience</Heading>
-      {/* <Box maxWidth={["md", "lg", "xl"]} p={[2, 4, 6]}> */}
+
       <VerticalTimeline>
         {experiences.map((experience, index) => (
           <VerticalTimelineElement
@@ -80,7 +80,7 @@ const Experience = () => {
               </VStack>
               <Text
                 color="darkblue"
-                fontSize={["md", "lg", "xl"]}
+                fontSize={["sm", "md", "lg", "xl"]}
                 as="h3"
                 style={{ backgroundColor: "yellow" }}
               >
