@@ -9,10 +9,11 @@ import Blog from "../components/sections/Blog";
 import Education from "../components/sections/Education";
 import { Box } from "@chakra-ui/react";
 import Skills from "../components/sections/Skills";
+import BackToTopButton from "../components/BackToTopButton";
 
 const Home = () => {
   return (
-    <Box id="home" minW='100vw' minH="100vh">
+    <Box id="home" minW="100vw" minH="100vh">
       <Header />
       <About />
       <Skills />
@@ -21,6 +22,7 @@ const Home = () => {
       <Education />
       <Blog />
       <Contact />
+      <BackToTopButton />
     </Box>
   );
 };

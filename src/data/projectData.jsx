@@ -3,13 +3,6 @@ import brain from "../assets/brain2.png";
 import fitU from "../assets/fitU-2.jpeg";
 import antra from "../assets/antra.jpg";
 import gallify from "../assets/gallify.png";
-import {
-  LoginPage,
-  ProfilePage,
-  ReelPage,
-  LikedPage,
-  ArtPlayerPage,
-} from "../components/gallifyScreenshots";
 import artPlayer from "../assets/gallifyFigmaScreenshots/art-player.png";
 import liked from "../assets/gallifyFigmaScreenshots/liked.png";
 import login from "../assets/gallifyFigmaScreenshots/login.png";

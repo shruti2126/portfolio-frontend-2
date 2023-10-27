@@ -9,11 +9,9 @@ import {
   HStack,
   Divider,
   Text,
-  Container,
-  // IconButton,
 } from "@chakra-ui/react";
 import CIcon from "@coreui/icons-react";
-// import { FaArrowLeft } from "react-icons/fa";
+
 import { projectData } from "../data/projectData";
 import { useParams } from "react-router-dom";
 import "../styles/styles.css";
@@ -148,7 +146,7 @@ const ProjectPage = () => {
           <Heading as="h3" size="lg">
             Other Media
           </Heading>
-         
+
           {project.otherMedia.map((media, index) => (
             <>
               <VStack key={index}>

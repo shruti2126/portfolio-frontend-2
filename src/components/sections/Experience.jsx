@@ -10,11 +10,8 @@ import {
   AccordionPanel,
   AccordionIcon,
   Text,
-  Center,
-  Card,
   HStack,
   VStack,
-  LinkBox,
 } from "@chakra-ui/react";
 import {
   VerticalTimeline,
@@ -62,7 +59,7 @@ const Experience = () => {
             icon={experience.icon}
             style={{ maxWidth: "90vw" }}
           >
-            <HStack justifyContent='space-between'>
+            <HStack justifyContent="space-between">
               <VStack align="left">
                 {" "}
                 <Text
@@ -82,14 +79,13 @@ const Experience = () => {
                 {/* add link to related project */}
               </VStack>
               <Text
-                color='darkblue'
+                color="darkblue"
                 fontSize={["md", "lg", "xl"]}
                 as="h3"
-                style={{backgroundColor: 'yellow'}}
+                style={{ backgroundColor: "yellow" }}
               >
                 {experience.type}
               </Text>
-             
             </HStack>
 
             <Accordion

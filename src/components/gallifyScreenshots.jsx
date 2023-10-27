@@ -7,7 +7,7 @@ import profilePage from "../assets/gallifyFigmaScreenshots/profile-page.png";
 import reelPage from "../assets/gallifyFigmaScreenshots/reel-page.png";
 // import getMedia from "../aws-s3/getMedia";
 import "../styles/projects.css";
-import { Box } from "@chakra-ui/react";
+
 
 export const ArtPlayerPage = () => {
   return (
