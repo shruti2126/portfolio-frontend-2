@@ -61,9 +61,10 @@ const About = () => {
             <Link href="/" color="blue.500">
               Connecting the Dots
             </Link>{" "}
-            , where I will talk extensively about I am finally able to answer
-            some of the burning questions about myself and my place in the
-            world, and how I am grapling with this new found "wisdom".
+            , where I plan to talk extensively about how I am finally able to
+            answer some of the burning questions I often asked myself trying to
+            figure out my place in the world, and how I am grapling with this
+            new found "wisdom".
           </Text>
           <HStack spacing={["4", "8"]}>
             {" "}

@@ -9,9 +9,9 @@ import Experience from "./components/sections/Experience";
 import Blog from "./components/sections/Blog";
 import Contact from "./components/sections/Contact";
 import Education from "./components/sections/Education";
+import Skills from "./components/sections/Skills";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Skills from "./components/sections/Skills";
 
 function App() {
   return (

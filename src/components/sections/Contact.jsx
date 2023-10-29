@@ -141,6 +141,23 @@ const Contact = () => {
     >
       <Heading className="heading">Connect with me!</Heading>
       <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
+        <Box maxH="25vh" mb={5} className="contact-details">
+          <VStack p={5} overflowWrap="wrap">
+            {" "}
+            <Text as="h3">Contact Details</Text>
+            <Text as="h4" fontSize={["sm", "md", "lg"]}>
+              <span style={{ fontWeight: "bold" }}>Name</span>: Shruti Sharma
+            </Text>
+            <Text as="h4" fontSize={["sm", "md", "lg"]}>
+              <span style={{ fontWeight: "bold" }}>Email</span>:
+              ss.sharma1826@gmail.com
+            </Text>
+            <Text as="h4" fontSize={["sm", "md", "lg"]}>
+              <span style={{ fontWeight: "bold" }}>Mobile</span>: +1 (206) 889
+              7848
+            </Text>
+          </VStack>
+        </Box>
         <Box backgroundColor="white" borderRadius="md" p={15}>
           <FormControl display="flex" flexDirection="column" p={4} gap={2}>
             <FormControl isRequired isInvalid={error.firstnameError}>
@@ -243,23 +260,6 @@ const Contact = () => {
               </Text>
             )}
           </FormControl>
-        </Box>
-        <Box maxH="30vh" mb={5} className="contact-details">
-          <VStack p={5} overflowWrap="wrap">
-            {" "}
-            <Text as="h3">Contact Details</Text>
-            <Text as="h4" fontSize={["sm", "md", "lg", "xl"]}>
-              <span style={{ fontWeight: "bold" }}>Name</span>: Shruti Sharma
-            </Text>
-            <Text as="h4" fontSize={["sm", "md", "lg", "xl"]}>
-              <span style={{ fontWeight: "bold" }}>Email</span>:
-              ss.sharma1826@gmail.com
-            </Text>
-            <Text as="h4" fontSize={["sm", "md", "lg", "xl"]}>
-              <span style={{ fontWeight: "bold" }}>Mobile</span>: +1 (206) 889
-              7848
-            </Text>
-          </VStack>
         </Box>
       </SimpleGrid>
     </Box>

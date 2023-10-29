@@ -20,9 +20,9 @@ const Education = () => {
   }, []);
   return (
     <Box
-      height='100vh'
+      height="100vh"
       width="100vw"
-      border='1px solid white'
+      border="1px solid white"
       overflowY="scroll"
       id="education"
       bgGradient={["linear(to-t, pink.100, purple.200, blue.200)"]}
@@ -101,15 +101,17 @@ const Education = () => {
           reason={
             <p>
               The period during which I had applied for transfer, not too many
-              universities were open to accepting 3rd year CS students. Rutgers were
-              one of the few and was accepting admission on rolling basis and so I applied
-              hoping I could make use of upcoming Fall semester. And I thought, in case I decide to
-              transfer (which I thought was insane at the time by the way!), I could try to apply elsewhere
-              for Spring.<br />
-              As outrageous as it seemed to me, I was encouraged to apply again to try my luck
-              at a more "Prestigious" institution. And no, my family members or friends weren't 
-              the sources of this advice! This one is a long story and might need me to write an entire
-              blog ;).
+              universities were open to accepting 3rd year CS students. Rutgers
+              was one of the few and was accepting admission on rolling basis
+              and so I applied hoping I could make use of upcoming Fall
+              semester. And I thought, in case I decide to transfer (which I
+              thought was insane at the time by the way!), I could try to apply
+              elsewhere for Spring.
+              <br />
+              As outrageous as it seemed to me, I was encouraged to apply again
+              to try my luck at a more "Prestigious" institution. And no, my
+              family members or friends weren't the sources of this advice! This
+              one is a long story and might need me to write an entire blog ;).
             </p>
           }
         />

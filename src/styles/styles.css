@@ -18,7 +18,7 @@
 }
 
 .heading {
-  padding-top: 1em;
+  padding-top: 2em;
   padding-bottom: 1em;
   text-align: center;
   font-size: large;
@@ -41,16 +41,23 @@
   border-radius: 10%;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Adjust z-index as needed */
+}
+
 .name {
   font-weight: 600;
-  color: rgb(177, 84, 143);
-  margin: 0px 5px 2px 0px;
+  color: rgb(176, 109, 205);
+  /* margin: 0px 5px 2px 0px; */
 }
 
 .name:hover {
   /* background-color:rgb(49, 155, 179); */
   transform: scale(1.1);
-  text-shadow: #45bcda;
 }
 
 #nav-links > a {

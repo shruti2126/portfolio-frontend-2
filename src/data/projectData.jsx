@@ -24,7 +24,7 @@ import {
   cibAmazonAws,
   cibXcode,
 } from "@coreui/icons";
-import { Image, Box } from "@chakra-ui/react";
+
 
 export const projectData = [
   {
@@ -106,9 +106,11 @@ export const projectData = [
       },
     ],
     otherMedia: [
-      <Box boxSize={["md", "md", "lg"]} m={2}>
-        <Image src={bmhImpl} alt="badger break implementation flow" />
-      </Box>,
+      {
+        title: "badger break implementation flow",
+        type: 'image',
+        data: [<img src={bmhImpl} alt="badger break implementation flow" />],
+      },
     ],
     CurrentIssues: [
       "Community Board 'Like' functionality not correct. Single user can likea post multiple times.",
@@ -208,7 +210,6 @@ export const projectData = [
     purpose: "Java Developer",
     Role: "Java Backend Developer",
     githubLink: "N/A",
-    // demoUrl: { type: "video", key: "antraDemo.mp4" },
     demoUrl: (
       <iframe
         className="responsive-iframe"
@@ -338,29 +339,26 @@ export const projectData = [
     otherMedia: [
       {
         title: "Gallify Pitch Presentation created by CEO",
+        type: 'video',
         data: [
-          (<iframe
+          <iframe
             className="responsive-iframe"
             src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          ></iframe>),
+          ></iframe>,
         ],
       },
       {
         title: "Screenshots of Screens designed in Figma",
+        type: 'image',
         data: [
           <img src={login} alt="login page" />,
           <img src={profilePage} alt="profile page" />,
           <img src={artPlayer} alt="art player" />,
           <img src={liked} alt="liked page" />,
           <img src={reelPage} alt="Reel page" />,
-          // <LoginPage />,
-          // <ReelPage />,
-          // <ProfilePage />,
-          // <ArtPlayerPage />,
-          // <LikedPage />,
         ],
       },
     ],

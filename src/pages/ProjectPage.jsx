@@ -17,6 +17,7 @@ import { projectData } from "../data/projectData";
 import { useParams } from "react-router-dom";
 import "../styles/styles.css";
 import "../styles/projects.css";
+import { RenderImages, RenderVideos } from "../components/RenderMedia";
 
 const ProjectPage = () => {
   // const navigate = useNavigate();
@@ -148,7 +149,11 @@ const ProjectPage = () => {
               >
                 {media.title}
               </Text>
-              <Box className="iframe-container">{media.data}</Box>
+              {media.type === "video" ? (
+                <RenderVideos videos={media.data} />
+              ) : (
+                <RenderImages images={media.data} />
+              )}
             </VStack>
           ))}
           <Heading as="h3" size="lg">

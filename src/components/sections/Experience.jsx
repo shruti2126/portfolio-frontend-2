@@ -82,7 +82,6 @@ const Experience = () => {
                 color="darkblue"
                 fontSize={["sm", "md", "lg", "xl"]}
                 as="h3"
-                style={{ backgroundColor: "yellow" }}
               >
                 {experience.type}
               </Text>
