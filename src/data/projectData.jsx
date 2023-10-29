@@ -10,6 +10,11 @@ import profilePage from "../assets/gallifyFigmaScreenshots/profile-page.png";
 import reelPage from "../assets/gallifyFigmaScreenshots/reel-page.png";
 import "../styles/projects.css";
 import bmhImpl from "../assets/badger-break/implementation-flow.png";
+import hippa from "../assets/badger-break/HIPPAA.png";
+import leanCanvas from "../assets/fitu/lean-canvas.png";
+import sb1 from "../assets/fitu/storyboard-1.png";
+import sb2 from "../assets/fitu/storyboard-2.png";
+
 import {
   cibMongodb,
   cibFirebase,
@@ -24,7 +29,6 @@ import {
   cibAmazonAws,
   cibXcode,
 } from "@coreui/icons";
-
 
 export const projectData = [
   {
@@ -107,9 +111,14 @@ export const projectData = [
     ],
     otherMedia: [
       {
-        title: "badger break implementation flow",
-        type: 'image',
+        title: "Badger Break App Implementation Flow",
+        type: "image",
         data: [<img src={bmhImpl} alt="badger break implementation flow" />],
+      },
+      {
+        title: "HIPPA Compliance Presentation Slide",
+        type: "image",
+        data: [<img src={hippa} alt="HIPPA Compliance Presentation Slide" />],
       },
     ],
     CurrentIssues: [
@@ -189,7 +198,21 @@ export const projectData = [
         ],
       },
     ],
-    otherMedia: [{}],
+    otherMedia: [
+      {
+        title: "Lean Canvas use during Ideation",
+        type: "image",
+        data: [<img src={leanCanvas} alt="Lean Canvas" />],
+      },
+      {
+        title: "Storyboards",
+        type: "image",
+        data: [
+          <img src={sb1} alt="Storyboard for fitU" />,
+          <img src={sb2} alt="Storyboard for fitU" />,
+        ],
+      },
+    ],
     CurrentIssues: [
       "No testing accept user-acceptance and manual integration testing.",
       "No real health data since Apple Health Kit i.e react-native-health library, not integrated," +
@@ -339,7 +362,7 @@ export const projectData = [
     otherMedia: [
       {
         title: "Gallify Pitch Presentation created by CEO",
-        type: 'video',
+        type: "video",
         data: [
           <iframe
             className="responsive-iframe"
@@ -352,7 +375,7 @@ export const projectData = [
       },
       {
         title: "Screenshots of Screens designed in Figma",
-        type: 'image',
+        type: "image",
         data: [
           <img src={login} alt="login page" />,
           <img src={profilePage} alt="profile page" />,

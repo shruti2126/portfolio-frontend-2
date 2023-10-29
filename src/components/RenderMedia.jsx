@@ -1,6 +1,5 @@
 /** @format */
 
-// import getMedia from "../aws-s3/getMedia";
 import "../styles/projects.css";
 import {Box} from "@chakra-ui/react";
 

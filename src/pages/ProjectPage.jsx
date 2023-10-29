@@ -19,21 +19,9 @@ import "../styles/projects.css";
 import { RenderImages, RenderVideos } from "../components/RenderMedia";
 
 const ProjectPage = () => {
-  // const navigate = useNavigate();
   const { projectId } = useParams();
   const project = projectData[projectId - 1];
-  // const [mediaUrl, setMediaUrl] = useState(""); // State to store media URL
-
-  // useEffect(() => {
-  //   async function fetchMedia() {
-  //     if (project.demoUrl.key !== "") {
-  //       const url = await getMedia(project.demoUrl.type, project.demoUrl.key);
-  //       setMediaUrl(url); // Set the media URL once it's fetched
-  //     }
-  //   }
-
-  //   fetchMedia();
-  // }, [project.demoUrl.key]);
+  // USE MEMOIZATION FOR DEMO VIDS and other media
 
   return (
     <Box minH="100vh" minW="100vw" bg="white">

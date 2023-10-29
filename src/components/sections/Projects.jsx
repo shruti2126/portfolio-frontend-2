@@ -107,7 +107,7 @@ const Projects = () => {
               </CardBody>
               <Button
                 colorScheme="teal"
-                variant='outline'
+                variant="outline"
                 m={4}
                 p={4}
                 onClick={() => {
