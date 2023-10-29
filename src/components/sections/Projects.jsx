@@ -56,7 +56,7 @@ const Projects = () => {
       minW="100vw"
     >
       <Heading className="heading">Projects & Demos</Heading>
-      <Center mx={10} mb={10} transition="all 1s ease-out">
+      <Center mx={10} mb={10}>
         {projectData
           .slice(activeIndex * chunkSize, activeIndex * chunkSize + chunkSize)
           .map((project, index) => (
