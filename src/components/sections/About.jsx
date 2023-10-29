@@ -9,7 +9,9 @@ import {
   HStack,
   VStack,
   Heading,
+  Button,
 } from "@chakra-ui/react";
+
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
 import pic from "../../assets/pic2.jpg";
 import "../../styles/styles.css";
@@ -110,6 +112,34 @@ const About = () => {
               </Link>
             </Fade>
           </HStack>
+          <Fade>
+            <Link
+              href="https://github.com/shruti2126/portfolio-frontend-2/tree/master"
+              isExternal
+            >
+              <Button
+                mt={[4, 5, 6]}
+                p={[4, 4, 5]}
+                maxW="sm"
+                borderRadius={3}
+                bgColor="whatsapp.100"
+              >
+                <Icon
+                  as={FaGithub}
+                  boxSize={["4", "6", "8"]}
+                  color="gray.600"
+                />{" "}
+                <Text
+                  ml={2}
+                  as="span"
+                  fontSize={["sm", "md", "lg"]}
+                  color="Highlight"
+                >
+                  Portfolio Source
+                </Text>
+              </Button>
+            </Link>
+          </Fade>
         </VStack>
       </VStack>
     </Box>

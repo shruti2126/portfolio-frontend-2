@@ -1,9 +1,10 @@
 /** @format */
 
-import { Box, Card, Container } from "@chakra-ui/react";
+import { Box, Button, Card, Container, HStack } from "@chakra-ui/react";
 import Title from "../Title";
 import SkillLevel from "../SkillLevel";
 import { SkillsMap } from "../../data/SkillsMap";
+import { LinkIcon } from "@chakra-ui/icons";
 
 const Skills = () => {
   return (
@@ -28,6 +29,18 @@ const Skills = () => {
             />
           ))}
         </Card>
+        <HStack>
+          <LinkIcon />
+          <Button
+            mt={[4, 5, 6]}
+            p={[4, 4, 5]}
+            maxW="sm"
+            borderRadius={3}
+            bgColor="linkedin.200"
+          >
+            Resume
+          </Button>
+        </HStack>
       </Container>
     </Box>
   );
