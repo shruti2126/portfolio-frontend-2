@@ -24,7 +24,7 @@ const About = () => {
   }, []);
   return (
     <Box
-      bgGradient={["linear(to-b, pink.100, blue.100, purple.200)"]}
+      bgGradient={["linear(to-b, blue.200, purple.200)"]}
       id="about"
       minH="100vh"
       minW="100vw"

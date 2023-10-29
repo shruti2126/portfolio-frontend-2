@@ -4,14 +4,14 @@ import {
   FormLabel,
   FormErrorMessage,
   Input,
-  VStack,
   Heading,
   Select,
   Text,
   Textarea,
   Box,
   Button,
-  Center,
+  SimpleGrid,
+  VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import "../../styles/styles.css";
@@ -134,24 +134,14 @@ const Contact = () => {
 
   return (
     <Box
-      height="100vh"
-      width="100vw"
+      id="contact"
+      minH="100vh"
+      minW="100vw"
       bgGradient={["linear(to-b, purple.100, blue.100)"]}
     >
-      <Center>
-        {" "}
-        <Heading className="heading" as="h3" size="lg">
-          Connect with me!
-        </Heading>
-      </Center>
-
-      <VStack id="contact" spacing={4}>
-        <Box
-          backgroundColor="white"
-          borderRadius="md"
-          p={15}
-          width={["sm", "md", "lg"]}
-        >
+      <Heading className="heading">Connect with me!</Heading>
+      <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
+        <Box backgroundColor="white" borderRadius="md" p={15}>
           <FormControl display="flex" flexDirection="column" p={4} gap={2}>
             <FormControl isRequired isInvalid={error.firstnameError}>
               {" "}
@@ -254,7 +244,24 @@ const Contact = () => {
             )}
           </FormControl>
         </Box>
-      </VStack>
+        <Box maxH="30vh" mb={5} className="contact-details">
+          <VStack p={5} overflowWrap="wrap">
+            {" "}
+            <Text as="h3">Contact Details</Text>
+            <Text as="h4" fontSize={["sm", "md", "lg", "xl"]}>
+              <span style={{ fontWeight: "bold" }}>Name</span>: Shruti Sharma
+            </Text>
+            <Text as="h4" fontSize={["sm", "md", "lg", "xl"]}>
+              <span style={{ fontWeight: "bold" }}>Email</span>:
+              ss.sharma1826@gmail.com
+            </Text>
+            <Text as="h4" fontSize={["sm", "md", "lg", "xl"]}>
+              <span style={{ fontWeight: "bold" }}>Mobile</span>: +1 (206) 889
+              7848
+            </Text>
+          </VStack>
+        </Box>
+      </SimpleGrid>
     </Box>
   );
 };

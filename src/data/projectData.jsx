@@ -43,11 +43,9 @@ export const projectData = [
     githubLink: "https://github.com/alexgoldsmith/badgermentalhealth",
     demoUrl: (
       <iframe
-        width="560"
-        height="315"
+        className="responsive-iframe"
         src="https://www.youtube.com/embed/nDAv6zhtark?si=jv0gz3MHdc8Zphbc"
         title="YouTube video player"
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
@@ -132,8 +130,7 @@ export const projectData = [
     githubLink: "https://github.com/shruti2126/fitu-version-2",
     demoUrl: (
       <iframe
-        width="560"
-        height="315"
+        className="responsive-iframe"
         src="https://www.youtube.com/embed/wYPLqR3bxF8?si=TcLuHX1zoQMcAjl8"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -214,8 +211,7 @@ export const projectData = [
     // demoUrl: { type: "video", key: "antraDemo.mp4" },
     demoUrl: (
       <iframe
-        width="560"
-        height="315"
+        className="responsive-iframe"
         src="https://www.youtube.com/embed/FTmMN4_Jl04?si=NTdZl-kn1EZT8vnK"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -343,14 +339,13 @@ export const projectData = [
       {
         title: "Gallify Pitch Presentation created by CEO",
         data: [
-          <iframe
-            width="560"
-            height="315"
+          (<iframe
+            className="responsive-iframe"
             src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          ></iframe>,
+          ></iframe>),
         ],
       },
       {

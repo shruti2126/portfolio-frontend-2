@@ -37,11 +37,7 @@ const NavigationBar = () => {
               style={{ width: "3em", height: "auto" }}
               className="d-inline-block align-left"
             /> */}
-            <Text
-              as="h3"
-              size='md'
-              className="name"
-            >
+            <Text as="h3" size={["sm", "md", "md"]} className="name">
               Shruti Sharma
             </Text>
             {/* <Text as="span" fontSize={["sm", "md", "md"]}>
@@ -50,8 +46,8 @@ const NavigationBar = () => {
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" >
-          <Nav id="nav-links" className="mr-auto nav-elements">
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav id="nav-links" className="nav-elements ">
             <Nav.Link
               as={NavLink}
               to="about"

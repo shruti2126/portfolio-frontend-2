@@ -9,6 +9,7 @@ import {
   HStack,
   Divider,
   Text,
+  Container,
 } from "@chakra-ui/react";
 import CIcon from "@coreui/icons-react";
 
@@ -36,24 +37,16 @@ const ProjectPage = () => {
 
   return (
     <Box minH="100vh" minW="100vw" bg="white">
-      <Heading as="h2" size="xl" mb="4" textAlign={"center"} pt={4}>
+      <Heading as="h2" size="xl" mb="4" textAlign="center" pt={5}>
         {project.title}
       </Heading>
-      {/* <IconButton
-        icon={<FaArrowLeft />}
-        colorScheme="teal"
-        aria-label="Go Back"
-        to="projects"
-        position="fixed"
-        top="5"
-        left="4"
-        onClick={() => navigate("../projects")}
-      /> */}
 
-      <Center mb={4}>{project.demoUrl}</Center>
-      <Box minW={["sm", "md"]}>
+      <Container maxW="80%">
         {" "}
         <VStack spacing="4">
+          <Box mb={4} className="iframe-container">
+            {project.demoUrl}
+          </Box>
           <a href={project.githubLink} color="teal">
             <span
               style={{
@@ -96,9 +89,11 @@ const ProjectPage = () => {
           <Heading as="h3" size="lg">
             Description
           </Heading>
-          <Text fontSize="md" color="gray.600" textAlign={"center"}>
-            {project.description}
-          </Text>
+          <Box width="80%">
+            <Text fontSize={["sm", "md"]} color="gray.600" textAlign={"center"}>
+              {project.description}
+            </Text>
+          </Box>
           <Divider />
           <Heading as="h3" size="lg">
             Project Building Insights
@@ -142,39 +137,30 @@ const ProjectPage = () => {
               </Box>
             </Box>
           ))}
-
           <Heading as="h3" size="lg">
             Other Media
           </Heading>
-
           {project.otherMedia.map((media, index) => (
-            <>
-              <VStack key={index}>
-                <Text
-                  fontSize={["md", "lg", "lg"]}
-                  style={{ textAlign: "center", fontWeight: "bold" }}
-                >
-                  {media.title}
-                </Text>
-              </VStack>
-              <HStack spacing={3} key={index} overflowX="auto">
-                {media.data}
-              </HStack>
-            </>
+            <VStack key={index} mx={10}>
+              <Text
+                fontSize={["md", "lg", "lg"]}
+                style={{ textAlign: "center", fontWeight: "bold" }}
+              >
+                {media.title}
+              </Text>
+              <Box className="iframe-container">{media.data}</Box>
+            </VStack>
           ))}
-
           <Heading as="h3" size="lg">
             Bugs and Improvements Required
-          </Heading>
+          </Heading>{" "}
           <ul>
             {project.CurrentIssues.map((issue, index) => (
-              <Center mt={4}>
-                <li key={index}>{issue}</li>
-              </Center>
+              <li key={index}>{issue}</li>
             ))}
           </ul>
         </VStack>
-      </Box>
+      </Container>
     </Box>
   );
 };

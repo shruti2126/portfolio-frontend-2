@@ -1,5 +1,6 @@
 /** @format */
 
+import { Button } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { FaChevronCircleUp } from "react-icons/fa";
 const BackToTopButton = () => {
@@ -22,13 +23,13 @@ const BackToTopButton = () => {
   }, []);
 
   return (
-    <button
+    <Button
       onClick={scrollToTop}
       className={`back-to-top-button ${showBackToTop ? "visible" : ""}`}
     >
       <FaChevronCircleUp />
       {/* Back to Top */}
-    </button>
+    </Button>
   );
 };
 
