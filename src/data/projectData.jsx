@@ -294,7 +294,7 @@ export const projectData = [
         ],
       },
     ],
-    otherMedia: [{}],
+    otherMedia: [],
     CurrentIssues: [],
   },
   {
