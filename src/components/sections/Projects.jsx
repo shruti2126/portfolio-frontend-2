@@ -16,7 +16,7 @@ import {
 import { projectData } from "../../data/projectData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../../styles/styles.css";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import getMedia from "../aws-s3/getMedia";
 
 const Projects = () => {

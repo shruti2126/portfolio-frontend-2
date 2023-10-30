@@ -10,7 +10,7 @@ import { Box } from "@chakra-ui/react";
 import Skills from "../components/sections/Skills";
 
 import NavigationBar from "../components/NavigationBar";
-import { Outlet } from "react-router";
+
 
 const Home = () => {
   return (
