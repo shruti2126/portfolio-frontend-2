@@ -6,16 +6,21 @@ import {
   Card,
   Center,
   Container,
-  HStack,
-  Link,
   Text,
 } from "@chakra-ui/react";
 import Title from "../Title";
 import SkillLevel from "../SkillLevel";
 import { SkillsMap } from "../../data/SkillsMap";
-import { LinkIcon } from "@chakra-ui/icons";
+
+import { useState } from "react";
+import "../../styles/styles.css";
 
 const Skills = () => {
+  const [showPdf, setShowPdf] = useState(false);
+
+  function toggle() {
+    setShowPdf((prevBool) => !prevBool);
+  }
   return (
     <Box
       id="skills"
@@ -24,7 +29,7 @@ const Skills = () => {
       overflowY="scroll"
       bgGradient={["linear(to-b, purple.200, blue.200, pink.200)"]}
     >
-      <Container pb={5}>
+      <Container pb={3}>
         {" "}
         <Title heading="Skills" />
         <Card size="md" p={5} border="2px">
@@ -39,32 +44,33 @@ const Skills = () => {
           ))}
         </Card>
       </Container>
-      <Center>
-        <HStack mb={10}>
-          <Link
-            href="https://drive.google.com/file/d/1FoDE7rQfdKSXaZV4Sla5HI2J3rwUlPjY/view?usp=sharing"
-            isExternal
+      <Center m={[4, 5, 6]} p={[3, 4, 5]} flexWrap="wrap">
+        {showPdf && (
+          <Box className="iframe-container" mb={[4, 5, 6]}>
+            <iframe
+              title="My Resume"
+              className="responsive-iframe"
+              src="https://drive.google.com/file/d/1FoDE7rQfdKSXaZV4Sla5HI2J3rwUlPjY/preview"
+              width="640"
+              height="480"
+              allow="autoplay"
+            ></iframe>
+          </Box>
+        )}
+        <Button
+          maxW="lg"
+          borderRadius={3}
+          bgColor={showPdf ? "linkedin.300" : "whatsapp.100"}
+          onClick={() => toggle()}
+        >
+          <Text
+            as="span"
+            fontSize={["md", "lg", "xl"]}
+            color="chakra-body-text._light"
           >
-            {" "}
-            <Button
-              mt={[4, 5, 6]}
-              p={[4, 4, 5]}
-              maxW="lg"
-              borderRadius={3}
-              bgColor="whatsapp.100"
-            >
-              <LinkIcon />
-              <Text
-                as="span"
-                ml={2}
-                fontSize={["md", "lg", "xl"]}
-                color="chakra-body-text._light"
-              >
-                My Resume
-              </Text>
-            </Button>
-          </Link>
-        </HStack>
+            {showPdf ? "Close" : "Show Resume"}
+          </Text>
+        </Button>
       </Center>
     </Box>
   );
