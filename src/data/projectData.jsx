@@ -310,7 +310,7 @@ export const projectData = [
     teamSize: 9,
     purpose: "Startup / Volunteer Experience",
     Role: "Serverless Software Engineer",
-    githubLink: "https://github.com/alexgoldsmith/badgermentalhealth",
+    githubLink: "https://github.com/Gallify/gallify.app",
     demoUrl: <iframe title="gallify"></iframe>,
     insights: [
       {

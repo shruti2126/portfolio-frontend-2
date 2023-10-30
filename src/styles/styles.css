@@ -51,7 +51,7 @@
 
 .name {
   font-weight: 600;
-  color: rgb(213, 182, 227);
+  color: rgb(240, 213, 242);
   /* margin: 0px 5px 2px 0px; */
 }
 
@@ -71,13 +71,6 @@
   text-decoration-style: solid;
 }
 
-back-to-top-button {
-  color: burlywood;
-  z-index: 3;
-  position: relative;
-  left: 90vw;
-  top: 90vh;
-}
 
 .iframe-container {
   position: relative;

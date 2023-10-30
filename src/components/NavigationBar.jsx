@@ -8,21 +8,18 @@ import "../styles/styles.css";
 import { Text } from "@chakra-ui/react";
 
 const NavigationBar = () => {
-  
-
   return (
     <Navbar
       id="nav"
       bg="dark"
       data-bs-theme="dark"
       expand="lg"
-      width="100vw"
       fixed="top"
       collapseOnSelect
     >
       <Container>
         <Navbar.Brand>
-          <Nav.Link href="#home">
+          <Nav.Link href="/">
             <img
               src={logo}
               alt="personal logo"
@@ -39,11 +36,11 @@ const NavigationBar = () => {
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse
-          id="responsive-navbar-nav"
-          className="justify-content-end"
-        >
-          <Nav id="nav-links" className="me-auto">
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav
+            id="nav-links"
+            className="me-auto justify-content-end flex-grow-1 pe-3"
+          >
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>
             <Nav.Link href="#experience">Experience</Nav.Link>

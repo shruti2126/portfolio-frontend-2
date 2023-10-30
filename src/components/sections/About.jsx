@@ -10,6 +10,13 @@ import {
   VStack,
   Heading,
   Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverBody,
 } from "@chakra-ui/react";
 
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
@@ -88,14 +95,25 @@ const About = () => {
                 {/* Adjust icon size */}
               </Link>
               {/* WhatsApp */}
-              <Link to="/whatsapp">
-                <Icon
-                  as={FaWhatsapp}
-                  boxSize={["6", "8", "10"]}
-                  color="green.600"
-                />{" "}
-                {/* Adjust icon size */}
-              </Link>
+              <Popover placement="top-start">
+                <PopoverTrigger>
+                  <Link>
+                    <Icon
+                      as={FaWhatsapp}
+                      boxSize={["6", "8", "10"]}
+                      color="green.600"
+                    />{" "}
+                    {/* Adjust icon size */}
+                  </Link>
+                </PopoverTrigger>
+                <PopoverContent bg="whatsapp.500" color="white">
+                  <PopoverHeader fontWeight="semibold">Phone</PopoverHeader>
+                  <PopoverArrow bg="pink.500" />
+                  <PopoverCloseButton bg="purple.500" />
+                  <PopoverBody>+12068897848</PopoverBody>
+                </PopoverContent>
+              </Popover>
+
               <Link href="https://github.com/shruti2126" isExternal>
                 <Icon
                   as={FaGithub}
