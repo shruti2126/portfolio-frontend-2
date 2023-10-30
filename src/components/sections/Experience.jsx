@@ -36,7 +36,7 @@ const Experience = () => {
       minW="100vw"
       shadow="md"
       borderWidth="1px"
-      bgGradient={["linear(to-b, purple.200, pink.100, blue.100)"]}
+      bgGradient={["linear(to-b, pink.200, purple.100, blue.100)"]}
       id="experience"
     >
       <Heading className="heading">Software Development Experience</Heading>

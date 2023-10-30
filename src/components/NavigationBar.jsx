@@ -3,18 +3,12 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo-no-background.png";
 import "../styles/styles.css";
 import { Text } from "@chakra-ui/react";
 
 const NavigationBar = () => {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
 
   return (
     <Navbar
@@ -28,11 +22,7 @@ const NavigationBar = () => {
     >
       <Container>
         <Navbar.Brand>
-          <Nav.Link
-            as={NavLink}
-            to="home"
-            onClick={() => scrollToSection("home")}
-          >
+          <Nav.Link href="#home">
             <img
               src={logo}
               alt="personal logo"
@@ -46,9 +36,6 @@ const NavigationBar = () => {
             >
               Software Engineer | B.S CS
             </Text>
-            {/* <Text as="span" fontSize={["sm", "md", "md"]}>
-              Software Engineer | Computer Science B.S
-            </Text> */}
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -57,62 +44,13 @@ const NavigationBar = () => {
           className="justify-content-end"
         >
           <Nav id="nav-links" className="me-auto">
-            <Nav.Link
-              as={NavLink}
-              to="about"
-              onClick={() => scrollToSection("about")}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="skills"
-              onClick={() => scrollToSection("skills")}
-            >
-              Skills
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="experience"
-              onClick={() => scrollToSection("experience")}
-            >
-              Experience
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="projects"
-              onClick={() => scrollToSection("projects")}
-            >
-              Projects & Demos
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="education"
-              onClick={() => scrollToSection("education")}
-            >
-              Education History
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="blog"
-              onClick={() => scrollToSection("blog")}
-            >
-              Blog
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="contact"
-              onClick={() => scrollToSection("contact")}
-            >
-              Contact
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="https://github.com/shruti2126/portfolio-frontend-2/tree/master"
-              
-            >
-              Source Code for this Website
-            </Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#skills">Skills</Nav.Link>
+            <Nav.Link href="#experience">Experience</Nav.Link>
+            <Nav.Link href="#projects">Projects & Demos</Nav.Link>
+            <Nav.Link href="#education">Education History</Nav.Link>
+            <Nav.Link href="#blog">Blog</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

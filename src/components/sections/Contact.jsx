@@ -17,7 +17,6 @@ import { useState } from "react";
 import "../../styles/styles.css";
 import axios from "axios";
 import { useEffect, useReducer } from "react";
-import scrollToSection from "../../functions/scrollToSection";
 
 const initialState = {
   firstname: "",
@@ -47,11 +46,6 @@ const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    if (window.location.pathname.includes("contact")) {
-      scrollToSection("contact");
-    }
-  });
   useEffect(() => {
     if (formSubmitted) {
       let hasErrors = false;

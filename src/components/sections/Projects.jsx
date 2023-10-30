@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -16,8 +16,7 @@ import {
 import { projectData } from "../../data/projectData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../../styles/styles.css";
-import { useNavigate } from "react-router-dom";
-import scrollToSection from "../../functions/scrollToSection";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 // import getMedia from "../aws-s3/getMedia";
 
 const Projects = () => {
@@ -39,12 +38,6 @@ const Projects = () => {
       prevIndex === totalChunks - 1 ? 0 : prevIndex + 1
     );
   };
-
-  useEffect(() => {
-    if (window.location.pathname.includes("projects")) {
-      scrollToSection("projects");
-    }
-  }, []);
 
   return (
     <Box
@@ -105,6 +98,7 @@ const Projects = () => {
                   alt={project.title}
                 />
               </CardBody>
+
               <Button
                 colorScheme="teal"
                 variant="outline"

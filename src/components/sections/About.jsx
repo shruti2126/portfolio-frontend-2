@@ -16,14 +16,8 @@ import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
 import pic from "../../assets/pic2.jpg";
 import "../../styles/styles.css";
 import Fade from "react-awesome-reveal";
-import { useEffect } from "react";
-import scrollToSection from "../../functions/scrollToSection";
+
 const About = () => {
-  useEffect(() => {
-    if (window.location.pathname.includes("about")) {
-      scrollToSection("about");
-    }
-  }, []);
   return (
     <Box
       bgGradient={["linear(to-b, blue.200, purple.200)"]}
@@ -133,7 +127,7 @@ const About = () => {
                   ml={2}
                   as="span"
                   fontSize={["sm", "md", "lg"]}
-                  color="Highlight"
+                  color="chakra-subtle-text._light"
                 >
                   Portfolio Source
                 </Text>

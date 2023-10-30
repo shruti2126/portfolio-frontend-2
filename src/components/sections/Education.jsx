@@ -1,5 +1,4 @@
 /** @format */
-import { useEffect } from "react";
 import { Box, Heading } from "@chakra-ui/react";
 import {
   VerticalTimeline,
@@ -10,14 +9,9 @@ import "../../styles/styles.css";
 import { ReactComponent as Rutgers } from "../../assets/Rutgers.svg";
 import { ReactComponent as Washington } from "../../assets/Washington.svg";
 import { ReactComponent as Wisconsin } from "../../assets/Wisconsin.svg";
-import scrollToSection from "../../functions/scrollToSection";
 import TransferReason from "../TransferReason";
 const Education = () => {
-  useEffect(() => {
-    if (window.location.pathname.includes("education")) {
-      scrollToSection("education");
-    }
-  }, []);
+
   return (
     <Box
       height="100vh"

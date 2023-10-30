@@ -21,10 +21,11 @@ import { RenderImages, RenderVideos } from "../components/RenderMedia";
 const ProjectPage = () => {
   const { projectId } = useParams();
   const project = projectData[projectId - 1];
+
   // USE MEMOIZATION FOR DEMO VIDS and other media
 
   return (
-    <Box minH="100vh" minW="100vw" bg="white">
+    <Box minH="100vh" minW="100vw" bg="white" id="project-page">
       <Heading as="h2" size="xl" mb="4" textAlign="center" pt={5}>
         {project.title}
       </Heading>
@@ -39,7 +40,7 @@ const ProjectPage = () => {
             <span
               style={{
                 ...(project.githubLink !== "N/A"
-                  ? { textDecorationLine: "underline", color: "Highlight" }
+                  ? { textDecorationLine: "underline", color: "darkturquoise" }
                   : { color: "black" }),
               }}
             >
