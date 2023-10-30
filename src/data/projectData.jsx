@@ -214,11 +214,13 @@ export const projectData = [
       },
     ],
     CurrentIssues: [
-      "No testing accept user-acceptance and manual integration testing.",
-      "No real health data since Apple Health Kit i.e react-native-health library, not integrated," +
+      "Need to implement useReducer() instead of useState() for complicate state functionality in Goals Screen",
+      "No Unit and Integration tests written",
+      "No real-time health data since Apple Health Kit i.e react-native-health library, not integrated," +
         "hence statistical model / correlation screen" +
         "presents hard coded data for demo purposes. Dashboard 'sleep' and 'steps' data also hard coded.",
       "No middleware created, might require one for API integrations.",
+      
     ],
   },
   {

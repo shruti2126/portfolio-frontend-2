@@ -5,6 +5,7 @@ import {
   Button,
   Card,
   Center,
+  CloseButton,
   Container,
   Text,
 } from "@chakra-ui/react";
@@ -45,6 +46,24 @@ const Skills = () => {
         </Card>
       </Container>
       <Center m={[4, 5, 6]} p={[3, 4, 5]} flexWrap="wrap">
+        {showPdf ? (
+          <CloseButton onClick={() => toggle()} />
+        ) : (
+          <Button
+            maxW="lg"
+            borderRadius={3}
+            bgColor="whatsapp.100"
+            onClick={() => toggle()}
+          >
+            <Text
+              as="span"
+              fontSize={["md", "lg", "xl"]}
+              color="chakra-body-text._light"
+            >
+              Show Resume
+            </Text>
+          </Button>
+        )}
         {showPdf && (
           <Box className="iframe-container" mb={[4, 5, 6]}>
             <iframe
@@ -57,20 +76,6 @@ const Skills = () => {
             ></iframe>
           </Box>
         )}
-        <Button
-          maxW="lg"
-          borderRadius={3}
-          bgColor={showPdf ? "linkedin.300" : "whatsapp.100"}
-          onClick={() => toggle()}
-        >
-          <Text
-            as="span"
-            fontSize={["md", "lg", "xl"]}
-            color="chakra-body-text._light"
-          >
-            {showPdf ? "Close" : "Show Resume"}
-          </Text>
-        </Button>
       </Center>
     </Box>
   );

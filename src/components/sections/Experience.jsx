@@ -1,6 +1,5 @@
 /** @format */
 
-import React, { useEffect } from "react";
 import {
   Box,
   Heading,
@@ -18,18 +17,11 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { experiences } from "../../data/experiences";
 import "../../styles/scrollbar.css";
-import "../../styles/descriptionScrollbar.css";
 import "../../styles/styles.css";
-import scrollToSection from "../../functions/scrollToSection";
+import { experienceData } from "../../data/experienceData.jsx";
 
 const Experience = () => {
-  useEffect(() => {
-    if (window.location.pathname.includes("experience")) {
-      scrollToSection("experience");
-    }
-  });
   return (
     <Box
       minH="100vh"
@@ -42,7 +34,7 @@ const Experience = () => {
       <Heading className="heading">Software Development Experience</Heading>
 
       <VerticalTimeline>
-        {experiences.map((experience, index) => (
+        {experienceData.map((experience, index) => (
           <VerticalTimelineElement
             key={index}
             contentStyle={{

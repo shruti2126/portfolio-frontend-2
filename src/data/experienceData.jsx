@@ -3,7 +3,7 @@ import { ReactComponent as Gallify } from "../assets/gallify.svg";
 import { ReactComponent as Antra } from "../assets/antra.svg";
 import { ReactComponent as Lengineer } from "../assets/Lengineer.svg";
 import { ReactComponent as Wisconsin } from "../assets/Wisconsin.svg";
-export const experiences = [
+export const experienceData = [
   {
     title: "Java Developer",
     type: "Professional",
@@ -45,8 +45,7 @@ export const experiences = [
     type: "Co-op",
     organization: "LeNgineer",
     date: "Feb 2022 - May 2022",
-    description: 
-    [
+    description: [
       "Built backend hooks and a REST API using Express JS for Yellow Eye (A school management app).",
       "Used MongoDB Compass for Database.",
       "Created UI and frontend logic using React in Node JS and other libraries like Redux and Material UI.",

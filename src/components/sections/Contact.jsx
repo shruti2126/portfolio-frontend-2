@@ -11,7 +11,7 @@ import {
   Box,
   Button,
   SimpleGrid,
-  VStack,
+  Container,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import "../../styles/styles.css";
@@ -134,9 +134,11 @@ const Contact = () => {
       bgGradient={["linear(to-b, purple.100, blue.100)"]}
     >
       <Heading className="heading">Connect with me!</Heading>
+
       <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
-        <Box maxH="25vh" mb={5} className="contact-details">
-          <VStack p={5} overflowWrap="wrap">
+        {/** Contact Details */}
+        <Container borderRadius="2%" bgColor="orange.100" height='fit-content' >
+          <Box p={5} overflowWrap="wrap" textAlign='center'>
             {" "}
             <Text as="h3">Contact Details</Text>
             <Text as="h4" fontSize={["sm", "md", "lg"]}>
@@ -150,9 +152,11 @@ const Contact = () => {
               <span style={{ fontWeight: "bold" }}>Mobile</span>: +1 (206) 889
               7848
             </Text>
-          </VStack>
-        </Box>
-        <Box backgroundColor="white" borderRadius="md" p={15}>
+          </Box>
+        </Container>
+
+        {/** Contact Form */}
+        <Box backgroundColor="white" borderRadius="md" p={15} mb={5}>
           <FormControl display="flex" flexDirection="column" p={4} gap={2}>
             <FormControl isRequired isInvalid={error.firstnameError}>
               {" "}

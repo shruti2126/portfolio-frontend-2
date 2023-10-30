@@ -71,7 +71,6 @@
   text-decoration-style: solid;
 }
 
-
 .iframe-container {
   position: relative;
   overflow: hidden;
@@ -89,8 +88,3 @@
   height: 100%;
 }
 
-.contact-details {
-  color: black;
-  border-radius: 2%;
-  background-color: #fff;
-}
