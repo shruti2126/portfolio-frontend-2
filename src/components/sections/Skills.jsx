@@ -41,8 +41,10 @@ const Skills = () => {
       </Container>
       <Center>
         <HStack mb={10}>
-          <Link href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:38c2774f-af7f-4a6e-8f4d-0eef9ff64e69"
-          isExternal>
+          <Link
+            href="https://drive.google.com/file/d/1FoDE7rQfdKSXaZV4Sla5HI2J3rwUlPjY/view?usp=sharing"
+            isExternal
+          >
             {" "}
             <Button
               mt={[4, 5, 6]}
