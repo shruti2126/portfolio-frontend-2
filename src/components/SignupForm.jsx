@@ -10,14 +10,15 @@ import {
   VStack,
   FormErrorMessage,
   FormHelperText,
-  Text,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
-  const [successMsg, setSuccessMsg] = useState("");
+  // const [successMsg, setSuccessMsg] = useState("");
 
+  const toast = useToast();
   const isValid = (email) => {
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
       return false;
@@ -26,41 +27,40 @@ const SignupForm = () => {
   };
 
   const emailReqErr = email === "";
-  const emailInvalidErr = email === "" ? false : !isValid(email); // Check if the email address is valid
+  const emailInvalidErr = !isValid(email); // Check if the email address is valid
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
   };
 
   // Handle form submission
-  async function handleSubmit() {
-    const errText = document.getElementById("invalidEmail");
-    const sucessText = document.getElementById("signupSucess");
-    if (!emailInvalidErr) {
-      errText.style.display = "none";
-      try {
-        await axios
-          .post("https://shrutis-io-backend.onrender.com/addUser", { email })
-          .then((response) => {
-            console.log(response);
-            setSuccessMsg("Sign up successful!");
-            sucessText.style.display = "block";
-          })
-          .catch((error) => {
-            console.log(error);
-            errText.innerHTML = (
-              <p style={{ color: "red" }}>
-                There was en error! :(. Please try again!{" "}
-              </p>
-            );
-          });
-      } catch (error) {
-        console.log("Couldn't create new user: ", error.message);
-      }
-    } else {
-      errText.style.display = "block";
-    }
-  }
+  // function handleSubmit() {
+  //   const errText = document.getElementById("invalidEmail");
+  //   const sucessText = document.getElementById("signupSucess");
+  //   if (!emailInvalidErr) {
+  //     errText.style.display = "none";
+  //     try {
+  //       axios
+  //         .post("https://shrutis-io-backend.onrender.com/addUser", { email })
+  //         .then((response) => {
+  //           setSuccessMsg("Sign up successful!");
+  //           sucessText.style.display = "block";
+  //         })
+  //         .catch((error) => {
+  //           console.log(error);
+  //           errText.innerHTML = (
+  //             <p style={{ color: "red" }}>
+  //               There was en error! :(. Please try again!{" "}
+  //             </p>
+  //           );
+  //         });
+  //     } catch (error) {
+  //       console.log("Couldn't create new user: ", error.message);
+  //     }
+  //   } else {
+  //     errText.style.display = "block";
+  //   }
+  // }
 
   return (
     <VStack>
@@ -68,7 +68,11 @@ const SignupForm = () => {
         Sign Up
       </Heading>
 
-      <FormControl id="email" isRequired isInvalid={emailReqErr}>
+      <FormControl
+        id="email"
+        isRequired
+        isInvalid={emailInvalidErr || emailReqErr}
+      >
         <FormLabel>Email</FormLabel>
         <Input
           type="email"
@@ -76,15 +80,18 @@ const SignupForm = () => {
           onChange={handleInputChange}
           style={{ border: "1px solid black" }}
         />
-        {!emailReqErr ? (
-          <FormHelperText>
-            Enter the email you'd like to receive the notification on.
-          </FormHelperText>
-        ) : (
-          <FormErrorMessage>Email is required.</FormErrorMessage>
+        <FormHelperText>
+          Enter the email you'd like to receive the notification on.
+        </FormHelperText>
+        {emailInvalidErr && (
+          <FormErrorMessage>
+            Email is Invalid! Please provide valid email address like
+            username@something.com.
+          </FormErrorMessage>
         )}
+        {emailReqErr && <FormErrorMessage>Email is required.</FormErrorMessage>}
       </FormControl>
-      <Text id="invalidEmail" style={{ display: "none", color: "red" }}>
+      {/* <Text id="invalidEmail" style={{ display: "none", color: "red" }}>
         Please provide valid email address like username@something.com.
       </Text>
       <Text
@@ -92,12 +99,34 @@ const SignupForm = () => {
         style={{ display: "none", color: "green", fontSize: "20px" }}
       >
         {successMsg}
-      </Text>
+      </Text> */}
       <Button
         type="submit"
         colorScheme="teal"
         mt={4}
-        onClick={() => handleSubmit()}
+        onClick={() => {
+          // setLoading(true);
+          // handleSubmit();
+          if (!emailInvalidErr && !emailReqErr) {
+            const signupPromise = axios.post(
+              "https://shrutis-io-backend.onrender.com/addUser",
+              { email }
+            );
+
+            toast.promise(signupPromise, {
+              success: {
+                title: "Sign Up Successful!",
+                description: "Thank you!",
+              },
+              error: {
+                title: "Sign Up unsuccessful",
+                description: signupPromise.catch((err) => err),
+              },
+              loading: { title: "Processing", description: "Please wait" },
+            });
+            setEmail("");
+          }
+        }}
       >
         Submit
       </Button>
