@@ -15,7 +15,6 @@ import CIcon from "@coreui/icons-react";
 import { projectData } from "../data/projectData";
 import { useParams } from "react-router-dom";
 import "../styles/styles.css";
-import "../styles/projects.css";
 import { RenderImages, RenderVideos } from "../components/RenderMedia";
 
 const ProjectPage = () => {

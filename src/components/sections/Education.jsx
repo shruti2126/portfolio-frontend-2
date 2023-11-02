@@ -41,7 +41,7 @@ const Education = () => {
             Seattle, Washington
           </p>
           <ul>
-            <li>3.3/4.0 GPA</li>
+            <li>3.4/4.0 GPA</li>
             <li>Dean’s list – Fall 2018</li>
             <li>
               First year course research project showcase published in Journal{" "}

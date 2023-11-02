@@ -16,7 +16,7 @@ import axios from "axios";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
-  // const [successMsg, setSuccessMsg] = useState("");
+ 
 
   const toast = useToast();
   const isValid = (email) => {
@@ -32,36 +32,7 @@ const SignupForm = () => {
   const handleInputChange = (e) => {
     setEmail(e.target.value);
   };
-
-  // Handle form submission
-  // function handleSubmit() {
-  //   const errText = document.getElementById("invalidEmail");
-  //   const sucessText = document.getElementById("signupSucess");
-  //   if (!emailInvalidErr) {
-  //     errText.style.display = "none";
-  //     try {
-  //       axios
-  //         .post("https://shrutis-io-backend.onrender.com/addUser", { email })
-  //         .then((response) => {
-  //           setSuccessMsg("Sign up successful!");
-  //           sucessText.style.display = "block";
-  //         })
-  //         .catch((error) => {
-  //           console.log(error);
-  //           errText.innerHTML = (
-  //             <p style={{ color: "red" }}>
-  //               There was en error! :(. Please try again!{" "}
-  //             </p>
-  //           );
-  //         });
-  //     } catch (error) {
-  //       console.log("Couldn't create new user: ", error.message);
-  //     }
-  //   } else {
-  //     errText.style.display = "block";
-  //   }
-  // }
-
+  
   return (
     <VStack>
       <Heading as="h2" size="lg" mb={4}>
@@ -91,22 +62,13 @@ const SignupForm = () => {
         )}
         {emailReqErr && <FormErrorMessage>Email is required.</FormErrorMessage>}
       </FormControl>
-      {/* <Text id="invalidEmail" style={{ display: "none", color: "red" }}>
-        Please provide valid email address like username@something.com.
-      </Text>
-      <Text
-        id="signupSucess"
-        style={{ display: "none", color: "green", fontSize: "20px" }}
-      >
-        {successMsg}
-      </Text> */}
+
       <Button
         type="submit"
         colorScheme="teal"
         mt={4}
         onClick={() => {
-          // setLoading(true);
-          // handleSubmit();
+        
           if (!emailInvalidErr && !emailReqErr) {
             const signupPromise = axios.post(
               "https://shrutis-io-backend.onrender.com/addUser",

@@ -69,9 +69,7 @@ const Skills = () => {
             <iframe
               title="My Resume"
               className="responsive-iframe"
-              src="https://drive.google.com/file/d/1FoDE7rQfdKSXaZV4Sla5HI2J3rwUlPjY/preview"
-              width="640"
-              height="480"
+              src="https://drive.google.com/file/d/1Eykdgk1aRGbqtJ9vm9F6tIwonyJQUJRu/preview"
               allow="autoplay"
             ></iframe>
           </Box>

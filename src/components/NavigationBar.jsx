@@ -31,7 +31,7 @@ const NavigationBar = () => {
               fontSize={["sm", "md", "lg", "xl"]}
               className="name"
             >
-              Software Engineer | B.S CS
+              Shruti | Software Engineer 
             </Text>
           </Nav.Link>
         </Navbar.Brand>

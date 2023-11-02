@@ -20,21 +20,21 @@ import {
 } from "@chakra-ui/react";
 
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import pic from "../../assets/pic2.jpg";
+import pic from "../../assets/pic2-edited.jpg";
 import "../../styles/styles.css";
 import Fade from "react-awesome-reveal";
 
 const About = () => {
   return (
     <Box
-      bgGradient={["linear(to-b, blue.200, purple.200)"]}
+      bgGradient={["linear(to-b, pink.200, blue.100, purple.200)"]}
       id="about"
       minH="100vh"
       minW="100vw"
       borderWidth="1px"
     >
       <Heading className="heading">About</Heading>
-      <VStack mb="3em" px={[3, 4, 5]} spacing={["4", "6"]} align="center">
+      <VStack mb="2em" px={[3, 4, 5]} spacing={["4", "6"]} align="center">
         {" "}
         {/* Adjust spacing between elements */}
         <Box>
@@ -42,7 +42,7 @@ const About = () => {
             borderRadius="full"
             src={pic}
             alt="Shruti"
-            boxSize={["250px", "300px", "400px"]} // Adjust image size
+            boxSize={["xs", "sm", "md"]} // Adjust image size
             objectFit="cover"
             shadow="md"
           />
@@ -57,17 +57,19 @@ const About = () => {
             width={["90%", "90%"]} // Adjust width for different screen sizes
           >
             Hey! My name is Shruti. I am pursuing a career in tech as a Software
-            Engineer with a Bachelor of Science degree in Computer Science from
-            UW-Madison. This portfolio hopefully gives you better insight into
-            my technical skills and abilities! I am also working on a blog
-            called{" "}
+            Engineer . I graduated with a Bachelor of Science in Computer
+            Science from UW-Madison last year. This portfolio hopefully gives
+            you an insight into my skills and abilities and my unique journey to
+            obtaining this milestone!
+            {/* I am also working on a blog
+            {/* called{" "}
             <Link href="/" color="blue.500">
               Connecting the Dots
             </Link>{" "}
-            , where I plan to talk extensively about how I am finally able to
+            ,
+            where I plan to talk extensively about how I am finally able to
             answer some of the burning questions I often asked myself trying to
-            figure out my place in the world, and how I am grapling with this
-            new found "wisdom".
+            figure out my place in the world. */}
           </Text>
           <HStack spacing={["4", "8"]}>
             {" "}

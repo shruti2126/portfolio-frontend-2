@@ -8,7 +8,6 @@ import liked from "../assets/gallifyFigmaScreenshots/liked.png";
 import login from "../assets/gallifyFigmaScreenshots/login.png";
 import profilePage from "../assets/gallifyFigmaScreenshots/profile-page.png";
 import reelPage from "../assets/gallifyFigmaScreenshots/reel-page.png";
-import "../styles/projects.css";
 import bmhImpl from "../assets/badger-break/implementation-flow.png";
 import hippa from "../assets/badger-break/HIPPAA.png";
 import leanCanvas from "../assets/fitu/lean-canvas.png";
@@ -38,7 +37,7 @@ export const projectData = [
     techStackIcons: [cibMongodb, cibReact, cibNodeJs, cibExpo],
     iconsColor: ["#118D4D", "#01D2F6", "#74AC5F", "#0B0F13"],
     description:
-      "A simple self-help to allow students who are apprehensive towards the idea of help to get a head start in understanding their mental and emotional health." +
+      "A simple self-help tool to allow students who are apprehensive towards the idea of help to get a head start in understanding their mental and emotional health." +
       "The app allows users to locally store coping cards, chat with community members using an anonymous username and take short quizzes to determine their emotional state and understand their thought patterns.",
     thumbnail: brain,
     teamSize: 3,

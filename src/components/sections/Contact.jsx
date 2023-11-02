@@ -12,13 +12,14 @@ import {
   Button,
   SimpleGrid,
   Container,
+  CircularProgress,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import "../../styles/styles.css";
 import axios from "axios";
 import { useEffect, useReducer } from "react";
 
-const initialState = {
+const initialFieldState = {
   firstname: "",
   lastname: "",
   email: "",
@@ -26,31 +27,95 @@ const initialState = {
   message: "",
 };
 
-const reducer = (state, action) => {
+const formReducer = (formFieldState, action) => {
   switch (action.type) {
     case "SET_FIELD":
-      return { ...state, [action.field]: action.value };
+      return { ...formFieldState, [action.field]: action.value };
+    case "RESET_FIELDS":
+      return initialFieldState;
     default:
-      return state;
+      return formFieldState;
   }
 };
+
+const initialProgressState = {
+  submitting: false,
+  showProgress: false,
+  submissionStatus: -1,
+};
+const progressReducer = (progressState, action) => {
+  switch (action.type) {
+    case "SUBMIT":
+      return { ...initialProgressState, submitting: true };
+    case "ERRORS":
+      return { ...initialProgressState };
+    case "SHOW_PROGRESS":
+      return { ...initialProgressState, submitting: true, showProgress: true };
+    case "PROMISE_RESOLVED":
+      return { ...initialProgressState, submissionStatus: 1 };
+    case "PROMISE_REJECTED":
+      return { ...initialProgressState, submissionStatus: 0 };
+    default:
+      return progressState;
+  }
+};
+
 const Contact = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [formFieldState, dispatch] = useReducer(formReducer, initialFieldState);
   const [error, setError] = useState({
     emailInvalidError: false,
     emailNeededError: false,
     firstnameError: false,
     reasonError: false,
   });
-  const [submissionStatus, setStatus] = useState(-1); //1 = success, 0 = failure
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [progressState, dispatchProgressAction] = useReducer(
+    progressReducer,
+    initialProgressState
+  );
+
+  // const validateForm = useCallback(() => {
+  //   let hasErrors = false;
+  //   const newError = { ...error };
+
+  //   if (!formFieldState.email) {
+  //     newError.emailNeededError = true;
+  //     hasErrors = true;
+  //   } else {
+  //     newError.emailNeededError = false;
+  //   }
+
+  //   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  //   if (formFieldState.email && !emailRegex.test(formFieldState.email)) {
+  //     newError.emailInvalidError = true;
+  //     hasErrors = true;
+  //   } else {
+  //     newError.emailInvalidError = false;
+  //   }
+
+  //   if (!formFieldState.firstname) {
+  //     newError.firstnameError = true;
+  //     hasErrors = true;
+  //   } else {
+  //     newError.firstnameError = false;
+  //   }
+
+  //   if (!formFieldState.reason) {
+  //     newError.reasonError = true;
+  //     hasErrors = true;
+  //   } else {
+  //     newError.reasonError = false;
+  //   }
+
+  //   setError(newError);
+
+  //   return hasErrors;
+  // }, [formFieldState, error]);
 
   useEffect(() => {
-    if (formSubmitted) {
+    if (progressState.submitting) {
       let hasErrors = false;
 
-      if (!state.email) {
+      if (!formFieldState.email) {
         setError((prevError) => ({ ...prevError, emailNeededError: true }));
         hasErrors = true;
       } else {
@@ -58,7 +123,10 @@ const Contact = () => {
       }
 
       const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (state.email !== "" && !emailRegex.test(state.email)) {
+      if (
+        formFieldState.email !== "" &&
+        !emailRegex.test(formFieldState.email)
+      ) {
         setError((prevError) => ({ ...prevError, emailInvalidError: true }));
         hasErrors = true;
       } else {
@@ -68,40 +136,41 @@ const Contact = () => {
         }));
       }
 
-      if (!state.firstname) {
+      if (!formFieldState.firstname) {
         setError((prevError) => ({ ...prevError, firstnameError: true }));
         hasErrors = true;
       } else {
         setError((prevError) => ({ ...prevError, firstnameError: false }));
       }
 
-      if (!state.reason) {
+      if (!formFieldState.reason) {
         setError((prevError) => ({ ...prevError, reasonError: true }));
         hasErrors = true;
       } else {
         setError((prevError) => ({ ...prevError, reasonError: false }));
       }
+   
       if (!hasErrors) {
-        setSubmitting(true);
+        dispatchProgressAction({ type: "SHOW_PROGRESS" });
         axios
           .post("https://shrutis-io-backend.onrender.com/send-email", {
-            ...state,
+            ...formFieldState,
           })
           .then((response) => {
+            //Reset form
+            dispatch({ type: "RESET_FIELDS" });
+            dispatchProgressAction({ type: "PROMISE_RESOLVED" });
             console.log(response);
-            setStatus(1);
           })
           .catch((error) => {
             console.error("Error sending email: ", error);
-            setStatus(0);
-            setSubmitting(false);
+            dispatchProgressAction({ type: "PROMISE_REJECTED" });
           });
+      } else {
+        dispatchProgressAction({type: "ERRORS"})
       }
-      //Reset Form
-      setFormSubmitted(false);
-      setSubmitting(false);
     }
-  }, [formSubmitted, state]);
+  }, [progressState.submitting, formFieldState]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -123,7 +192,7 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    setFormSubmitted(true);
+    dispatchProgressAction({ type: "SUBMIT" });
   };
 
   return (
@@ -137,8 +206,8 @@ const Contact = () => {
 
       <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
         {/** Contact Details */}
-        <Container borderRadius="2%" bgColor="orange.100" height='fit-content' >
-          <Box p={5} overflowWrap="wrap" textAlign='center'>
+        <Container borderRadius="2%" bgColor="orange.100" height="fit-content">
+          <Box p={5} overflowWrap="wrap" textAlign="center">
             {" "}
             <Text as="h3">Contact Details</Text>
             <Text as="h4" fontSize={["sm", "md", "lg"]}>
@@ -146,7 +215,7 @@ const Contact = () => {
             </Text>
             <Text as="h4" fontSize={["sm", "md", "lg"]}>
               <span style={{ fontWeight: "bold" }}>Email</span>:
-              ss.sharma1826@gmail.com
+              ss.sharma1826@gmail.com, sharma224@wisc.edu
             </Text>
             <Text as="h4" fontSize={["sm", "md", "lg"]}>
               <span style={{ fontWeight: "bold" }}>Mobile</span>: +1 (206) 889
@@ -164,7 +233,7 @@ const Contact = () => {
               <Input
                 placeholder="First Name"
                 name="firstname"
-                value={state.firstname}
+                value={formFieldState.firstname}
                 onChange={handleInputChange}
               />
               {error.firstnameError && (
@@ -177,7 +246,7 @@ const Contact = () => {
               <Input
                 placeholder="Last Name"
                 name="lastname"
-                value={state.lastname}
+                value={formFieldState.lastname}
                 onChange={handleInputChange}
               />
             </FormControl>
@@ -190,7 +259,7 @@ const Contact = () => {
                 name="email"
                 placeholder="Email"
                 type="email"
-                value={state.email}
+                value={formFieldState.email}
                 onChange={handleInputChange}
               />
               {error.emailNeededError && (
@@ -206,7 +275,7 @@ const Contact = () => {
               <FormLabel mt={2}>Reason for Contact</FormLabel>
               <Select
                 name="reason"
-                value={state.reason}
+                value={formFieldState.reason}
                 placeholder="Select Reason"
                 onChange={handleInputChange}
               >
@@ -225,7 +294,7 @@ const Contact = () => {
               </Text>
               <Textarea
                 name="message"
-                value={state.message}
+                value={formFieldState.message}
                 onChange={handleInputChange}
                 placeholder="Enter Reason"
                 size="md"
@@ -236,16 +305,15 @@ const Contact = () => {
               colorScheme="teal"
               variant="outline"
               onClick={handleSubmit}
-              isDisabled={isSubmitting}
             >
               Submit
             </Button>
-            {submissionStatus === 1 && (
+            {progressState.submissionStatus === 1 && (
               <Text textAlign="center" color="green" fontSize={"xl"}>
                 Email sent successfully! I will be in touch with you soon.
               </Text>
             )}
-            {submissionStatus === 0 && (
+            {progressState.submissionStatus === 0 && (
               <Text textAlign="center" color="red" fontSize="xl">
                 Oops! There was an error sending the email. Please try again or
                 send me a direct message on{" "}
@@ -256,6 +324,13 @@ const Contact = () => {
                 </a>
                 .
               </Text>
+            )}
+            {progressState.showProgress && (
+              <CircularProgress
+                alignSelf="center"
+                isIndeterminate
+                color="green.300"
+              />
             )}
           </FormControl>
         </Box>

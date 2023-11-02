@@ -1,6 +1,4 @@
 /** @format */
-
-import "../styles/projects.css";
 import {Box} from "@chakra-ui/react";
 
 export const RenderImages = ({ images }) => {
