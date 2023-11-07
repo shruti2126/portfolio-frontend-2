@@ -67,9 +67,11 @@ const Skills = () => {
         {showPdf && (
           <Box className="iframe-container" mb={[4, 5, 6]}>
             <iframe
-              title="My Resume"
+              title="my resume"
               className="responsive-iframe"
-              src="https://drive.google.com/file/d/1Eykdgk1aRGbqtJ9vm9F6tIwonyJQUJRu/preview"
+              src="https://drive.google.com/file/d/1jZAJUFYgAV9vem_D4vfcWEe5wWkDw4Ii/preview"
+              width="640"
+              height="480"
               allow="autoplay"
             ></iframe>
           </Box>
