@@ -19,9 +19,12 @@ const SignupForm = () => {
   const [isValidEmail, setIsValidEmail] = useState(true);
   const toast = useToast();
 
-  const validateEmail = (email) => {
-    return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
-  };
+ const validateEmail = (email) => {
+   const regex =
+     /^[A-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
+   return regex.test(email);
+ };
+
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
@@ -56,13 +59,13 @@ const SignupForm = () => {
       setEmail("");
     } catch (error) {
       let errorMessage =
-        "There was an error signing up. Please try again later.";
+        error.response.data.error;
       if (error.response && error.response.data.error) {
         // Check if the error is due to a duplicate email
         if (error.response.data.error.includes("Email already exists")) {
           errorMessage =
             "This email is already registered. Please use a different email.";
-        }
+        } 
       }
 
       toast({
