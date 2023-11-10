@@ -8,7 +8,6 @@ import {
   FormControl,
   FormLabel,
   VStack,
-  FormErrorMessage,
   FormHelperText,
   useToast,
 } from "@chakra-ui/react";
@@ -16,34 +15,67 @@ import axios from "axios";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
- 
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isValidEmail, setIsValidEmail] = useState(true);
   const toast = useToast();
-  const isValid = (email) => {
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-      return false;
-    }
-    return true;
-  };
 
-  const emailReqErr = email === "";
-  const emailInvalidErr = !isValid(email); // Check if the email address is valid
+  const validateEmail = (email) => {
+    return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+  };
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
+    if (e.target.value) {
+      setIsValidEmail(validateEmail(e.target.value));
+    }
   };
-  
+
+  const handleSubmit = async () => {
+    if (!email || !isValidEmail) {
+      // Show a toast notification for invalid or empty email
+      toast({
+        title: "Invalid or Missing Email",
+        description: "Please enter a valid email address to sign up.",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await axios.post("https://shrutis-io-backend.onrender.com/addUser", {
+        email,
+      });
+      toast({
+        title: "Sign Up Successful!",
+        description: "Thank you!",
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Sign Up Failed",
+        description: "There was an error signing up. Please try again later.",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <VStack>
       <Heading as="h2" size="lg" mb={4}>
         Sign Up
       </Heading>
-
-      <FormControl
-        id="email"
-        isRequired
-        isInvalid={emailInvalidErr || emailReqErr}
-      >
+      <FormControl id="email" isRequired>
         <FormLabel>Email</FormLabel>
         <Input
           type="email"
@@ -54,41 +86,14 @@ const SignupForm = () => {
         <FormHelperText>
           Enter the email you'd like to receive the notification on.
         </FormHelperText>
-        {emailInvalidErr && (
-          <FormErrorMessage>
-            Email is Invalid! Please provide valid email address like
-            username@something.com.
-          </FormErrorMessage>
-        )}
-        {emailReqErr && <FormErrorMessage>Email is required.</FormErrorMessage>}
       </FormControl>
-
       <Button
         type="submit"
         colorScheme="teal"
         mt={4}
-        onClick={() => {
-        
-          if (!emailInvalidErr && !emailReqErr) {
-            const signupPromise = axios.post(
-              "https://shrutis-io-backend.onrender.com/addUser",
-              { email }
-            );
-
-            toast.promise(signupPromise, {
-              success: {
-                title: "Sign Up Successful!",
-                description: "Thank you!",
-              },
-              error: {
-                title: "Sign Up unsuccessful",
-                description: signupPromise.catch((err) => err),
-              },
-              loading: { title: "Processing", description: "Please wait" },
-            });
-            setEmail("");
-          }
-        }}
+        onClick={handleSubmit}
+        isLoading={isSubmitting}
+        loadingText="Submitting..."
       >
         Submit
       </Button>
