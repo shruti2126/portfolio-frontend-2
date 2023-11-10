@@ -32,7 +32,6 @@ const SignupForm = () => {
 
   const handleSubmit = async () => {
     if (!email || !isValidEmail) {
-      // Show a toast notification for invalid or empty email
       toast({
         title: "Invalid or Missing Email",
         description: "Please enter a valid email address to sign up.",
@@ -46,9 +45,7 @@ const SignupForm = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post("https://shrutis-io-backend.onrender.com/addUser", {
-        email,
-      });
+      await axios.post("http://localhost:8080/addUser", { email });
       toast({
         title: "Sign Up Successful!",
         description: "Thank you!",
@@ -58,9 +55,19 @@ const SignupForm = () => {
       });
       setEmail("");
     } catch (error) {
+      let errorMessage =
+        "There was an error signing up. Please try again later.";
+      if (error.response && error.response.data.error) {
+        // Check if the error is due to a duplicate email
+        if (error.response.data.error.includes("Email already exists")) {
+          errorMessage =
+            "This email is already registered. Please use a different email.";
+        }
+      }
+
       toast({
         title: "Sign Up Failed",
-        description: "There was an error signing up. Please try again later.",
+        description: errorMessage,
         status: "error",
         duration: 4000,
         isClosable: true,
@@ -69,6 +76,7 @@ const SignupForm = () => {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <VStack>
