@@ -1,0 +1,68 @@
+/** @format */
+
+import {
+  Box,
+  CloseButton,
+  Button,
+  Text,
+  AbsoluteCenter,
+  Center,
+  Heading,
+} from "@chakra-ui/react";
+import { useState } from "react";
+import "../../styles/styles.css";
+const Resume = () => {
+  const [showPdf, setShowPdf] = useState(false);
+  function toggle() {
+    setShowPdf((prevBool) => !prevBool);
+  }
+  return (
+    <Box
+      id="resume"
+      minH="100vh"
+      minW="100vw"
+      bgGradient={["linear(to-b, purple.200, blue.100, pink.200)"]}
+      borderWidth="1px"
+      position="relative"
+    >
+      <Heading className="heading">Resume</Heading>
+      {showPdf ? (
+        <Center>
+          <CloseButton maxInlineSize="10" onClick={() => toggle()} />
+        </Center>
+      ) : (
+        <AbsoluteCenter axis="both">
+          <Button
+            maxW="2xl"
+            borderRadius={3}
+            bgColor="whatsapp.100"
+            onClick={() => toggle()}
+          >
+            <Text
+              as="span"
+              fontSize={["md", "lg", "xl"]}
+              color="chakra-body-text._light"
+            >
+              Show Resume
+            </Text>
+          </Button>
+        </AbsoluteCenter>
+      )}
+
+      {showPdf && (
+        <Box className="iframe-container">
+          <iframe
+            title="my resume"
+            className="responsive-iframe"
+            src="https://drive.google.com/file/d/1a0Zg7v9i4DEqkOZfM1QvthkX4VwucuC6/preview"
+            width="640"
+            height="480"
+            allow="autoplay"
+          ></iframe>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
+export default Resume;

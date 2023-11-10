@@ -10,7 +10,7 @@ import { Box } from "@chakra-ui/react";
 import Skills from "../components/sections/Skills";
 
 import NavigationBar from "../components/NavigationBar";
-
+import Resume from "../components/sections/Resume";
 
 const Home = () => {
   return (
@@ -18,6 +18,7 @@ const Home = () => {
       <NavigationBar />
       <About />
       <Skills />
+      <Resume />
       <Experience />
       <Projects />
       <Education />

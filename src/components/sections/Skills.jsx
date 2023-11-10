@@ -1,34 +1,19 @@
 /** @format */
 
-import {
-  Box,
-  Button,
-  Card,
-  Center,
-  CloseButton,
-  Container,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Card, Container } from "@chakra-ui/react";
 import Title from "../Title";
 import SkillLevel from "../SkillLevel";
 import { SkillsMap } from "../../data/SkillsMap";
-
-import { useState } from "react";
 import "../../styles/styles.css";
 
 const Skills = () => {
-  const [showPdf, setShowPdf] = useState(false);
-
-  function toggle() {
-    setShowPdf((prevBool) => !prevBool);
-  }
   return (
     <Box
       id="skills"
       minH="100vh"
       minW="100vw"
-      overflowY="scroll"
-      bgGradient={["linear(to-b, purple.200, blue.200, pink.200)"]}
+      bgGradient={["linear(to-b, purple.200, blue.200, purple.200)"]}
+      borderWidth="1px"
     >
       <Container pb={3}>
         {" "}
@@ -45,7 +30,7 @@ const Skills = () => {
           ))}
         </Card>
       </Container>
-      <Center m={[4, 5, 6]} p={[3, 4, 5]} flexWrap="wrap">
+      {/* <Center id="resume" m={[4, 5, 6]} p={[3, 4, 5]} flexWrap="wrap">
         {showPdf ? (
           <CloseButton onClick={() => toggle()} />
         ) : (
@@ -69,14 +54,14 @@ const Skills = () => {
             <iframe
               title="my resume"
               className="responsive-iframe"
-              src="https://drive.google.com/file/d/1jZAJUFYgAV9vem_D4vfcWEe5wWkDw4Ii/preview"
+              src="https://drive.google.com/file/d/1a0Zg7v9i4DEqkOZfM1QvthkX4VwucuC6/preview"
               width="640"
               height="480"
               allow="autoplay"
             ></iframe>
           </Box>
         )}
-      </Center>
+      </Center> */}
     </Box>
   );
 };
