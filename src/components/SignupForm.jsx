@@ -48,7 +48,9 @@ const SignupForm = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post("http://localhost:8080/addUser", { email });
+      await axios.post("https://shrutis-io-backend.onrender.com/addUser", {
+        email,
+      });
       toast({
         title: "Sign Up Successful!",
         description: "Thank you!",
