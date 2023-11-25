@@ -54,7 +54,7 @@ const Resume = () => {
           <iframe
             title="my resume"
             className="responsive-iframe"
-            src="https://drive.google.com/file/d/1a0Zg7v9i4DEqkOZfM1QvthkX4VwucuC6/preview"
+            src="https://drive.google.com/file/d/1ANx3pLRuWxtDpvFpgjM-ppjaJ02Wh3TH/preview"
             width="640"
             height="480"
             allow="autoplay"
