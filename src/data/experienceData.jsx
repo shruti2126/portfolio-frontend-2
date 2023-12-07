@@ -1,8 +1,8 @@
 /** @format */
-import { ReactComponent as Gallify } from "../assets/gallify.svg";
-import { ReactComponent as Antra } from "../assets/antra.svg";
-import { ReactComponent as Lengineer } from "../assets/Lengineer.svg";
-import { ReactComponent as Wisconsin } from "../assets/Wisconsin.svg";
+import { ReactComponent as Gallify } from "../assets/gallify/gallify.svg";
+import { ReactComponent as Antra } from "../assets/antra/antra.svg";
+import { ReactComponent as Lengineer } from "../assets/Lengineer/Lengineer.svg";
+import { ReactComponent as Wisconsin } from "../assets/wisconsin/Wisconsin.svg";
 export const experienceData = [
   {
     title: "Java Developer",

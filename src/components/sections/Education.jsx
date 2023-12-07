@@ -6,12 +6,11 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "../../styles/styles.css";
-import { ReactComponent as Rutgers } from "../../assets/Rutgers.svg";
-import { ReactComponent as Washington } from "../../assets/Washington.svg";
-import { ReactComponent as Wisconsin } from "../../assets/Wisconsin.svg";
+import { ReactComponent as Rutgers } from "../../assets/rutgers/Rutgers.svg";
+import { ReactComponent as Washington } from "../../assets/washington/Washington.svg";
+import { ReactComponent as Wisconsin } from "../../assets/wisconsin/Wisconsin.svg";
 import TransferReason from "../TransferReason";
 const Education = () => {
-
   return (
     <Box
       height="100vh"

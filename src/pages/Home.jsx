@@ -9,7 +9,7 @@ import Education from "../components/sections/Education";
 import { Box } from "@chakra-ui/react";
 import Skills from "../components/sections/Skills";
 
-import NavigationBar from "../components/NavigationBar";
+import NavigationBar from "../components/sections/NavigationBar";
 import Resume from "../components/sections/Resume";
 
 const Home = () => {

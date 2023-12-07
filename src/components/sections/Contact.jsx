@@ -14,7 +14,7 @@ import {
   Container,
   CircularProgress,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "../../styles/styles.css";
 import axios from "axios";
 import { useEffect, useReducer } from "react";
@@ -73,104 +73,77 @@ const Contact = () => {
     initialProgressState
   );
 
-  // const validateForm = useCallback(() => {
-  //   let hasErrors = false;
-  //   const newError = { ...error };
+  const validForm = useCallback(() => {
+    let hasErrors = false;
+    if (!formFieldState.email) {
+      setError((prevError) => ({ ...prevError, emailNeededError: true }));
+      hasErrors = true;
+    } else {
+      setError((prevError) => ({ ...prevError, emailNeededError: false }));
+    }
 
-  //   if (!formFieldState.email) {
-  //     newError.emailNeededError = true;
-  //     hasErrors = true;
-  //   } else {
-  //     newError.emailNeededError = false;
-  //   }
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (formFieldState.email !== "" && !emailRegex.test(formFieldState.email)) {
+      setError((prevError) => ({ ...prevError, emailInvalidError: true }));
+      hasErrors = true;
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        emailInvalidError: false,
+      }));
+    }
 
-  //   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  //   if (formFieldState.email && !emailRegex.test(formFieldState.email)) {
-  //     newError.emailInvalidError = true;
-  //     hasErrors = true;
-  //   } else {
-  //     newError.emailInvalidError = false;
-  //   }
+    if (!formFieldState.firstname) {
+      setError((prevError) => ({ ...prevError, firstnameError: true }));
+      hasErrors = true;
+    } else {
+      setError((prevError) => ({ ...prevError, firstnameError: false }));
+    }
 
-  //   if (!formFieldState.firstname) {
-  //     newError.firstnameError = true;
-  //     hasErrors = true;
-  //   } else {
-  //     newError.firstnameError = false;
-  //   }
+    if (!formFieldState.reason) {
+      setError((prevError) => ({ ...prevError, reasonError: true }));
+      hasErrors = true;
+    } else {
+      setError((prevError) => ({ ...prevError, reasonError: false }));
+    }
+    return hasErrors;
+  }, [formFieldState]);
 
-  //   if (!formFieldState.reason) {
-  //     newError.reasonError = true;
-  //     hasErrors = true;
-  //   } else {
-  //     newError.reasonError = false;
-  //   }
-
-  //   setError(newError);
-
-  //   return hasErrors;
-  // }, [formFieldState, error]);
+  function yieldToMain() {
+    return new Promise((resolve) => {
+      setTimeout(resolve, 0);
+    });
+  }
 
   useEffect(() => {
     if (progressState.submitting) {
-      let hasErrors = false;
-
-      if (!formFieldState.email) {
-        setError((prevError) => ({ ...prevError, emailNeededError: true }));
-        hasErrors = true;
-      } else {
-        setError((prevError) => ({ ...prevError, emailNeededError: false }));
-      }
-
-      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (
-        formFieldState.email !== "" &&
-        !emailRegex.test(formFieldState.email)
-      ) {
-        setError((prevError) => ({ ...prevError, emailInvalidError: true }));
-        hasErrors = true;
-      } else {
-        setError((prevError) => ({
-          ...prevError,
-          emailInvalidError: false,
-        }));
-      }
-
-      if (!formFieldState.firstname) {
-        setError((prevError) => ({ ...prevError, firstnameError: true }));
-        hasErrors = true;
-      } else {
-        setError((prevError) => ({ ...prevError, firstnameError: false }));
-      }
-
-      if (!formFieldState.reason) {
-        setError((prevError) => ({ ...prevError, reasonError: true }));
-        hasErrors = true;
-      } else {
-        setError((prevError) => ({ ...prevError, reasonError: false }));
-      }
-   
-      if (!hasErrors) {
+      if (!validForm()) {
         dispatchProgressAction({ type: "SHOW_PROGRESS" });
-        axios
-          .post("https://shrutis-io-backend.onrender.com/send-email", {
-            ...formFieldState,
-          })
-          .then((response) => {
+        async function sendEmail() {
+          try {
+            const response = await axios.post(
+              "https://shrutis-io-backend.onrender.com/send-email",
+              {
+                ...formFieldState,
+              }
+            );
             //Reset form
             dispatch({ type: "RESET_FIELDS" });
-            dispatchProgressAction({ type: "PROMISE_RESOLVED" });
-            console.log(response);
-          })
-          .catch((error) => {
+            if (response.status === 200) {
+              dispatchProgressAction({ type: "PROMISE_RESOLVED" });
+            }
+            await yieldToMain();
+          } catch (error) {
             console.error("Error sending email: ", error);
             dispatchProgressAction({ type: "PROMISE_REJECTED" });
-          });
+          }
+        }
+        sendEmail();
       } else {
-        dispatchProgressAction({type: "ERRORS"})
+        dispatchProgressAction({ type: "ERRORS" });
       }
     }
-  }, [progressState.submitting, formFieldState]);
+  }, [progressState.submitting, formFieldState, validForm]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -325,13 +298,13 @@ const Contact = () => {
                 .
               </Text>
             )}
-            {progressState.showProgress && (
+            {progressState.showProgress && 
               <CircularProgress
                 alignSelf="center"
                 isIndeterminate
                 color="green.300"
               />
-            )}
+            }
           </FormControl>
         </Box>
       </SimpleGrid>

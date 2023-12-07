@@ -1,15 +1,15 @@
 /** @format */
-import brain from "../assets/brain2.png";
-import fitU from "../assets/fitU-2.jpeg";
-import antra from "../assets/antra.jpg";
-import gallify from "../assets/gallify.png";
-import artPlayer from "../assets/gallifyFigmaScreenshots/art-player.png";
-import liked from "../assets/gallifyFigmaScreenshots/liked.png";
-import login from "../assets/gallifyFigmaScreenshots/login.png";
-import profilePage from "../assets/gallifyFigmaScreenshots/profile-page.png";
-import reelPage from "../assets/gallifyFigmaScreenshots/reel-page.png";
-import bmhImpl from "../assets/badger-break/implementation-flow.png";
-import hippa from "../assets/badger-break/HIPPAA.png";
+import brain from "../assets/badgerBreak/brain2.png";
+import fitU from "../assets/fitu/fitU-2.jpeg";
+//import antra from "../assets/antra/antra.jpg";
+import gallify from "../assets/gallify/gallify.png";
+import artPlayer from "../assets/gallify/gallifyFigmaScreenshots/art-player.png";
+import liked from "../assets/gallify/gallifyFigmaScreenshots/liked.png";
+import login from "../assets/gallify/gallifyFigmaScreenshots/login.png";
+import profilePage from "../assets/gallify/gallifyFigmaScreenshots/profile-page.png";
+import reelPage from "../assets/gallify/gallifyFigmaScreenshots/reel-page.png";
+import bmhImpl from "../assets/badgerBreak/implementation-flow.png";
+import hippa from "../assets/badgerBreak/HIPPAA.png";
 import leanCanvas from "../assets/fitu/lean-canvas.png";
 import sb1 from "../assets/fitu/storyboard-1.png";
 import sb2 from "../assets/fitu/storyboard-2.png";
@@ -21,11 +21,7 @@ import {
   cibExpo,
   cibNodeJs,
   cibSwift,
-  cibJava,
-  cibSpring,
   cibTypescript,
-  cibMysql,
-  cibAmazonAws,
   cibXcode,
 } from "@coreui/icons";
 
@@ -219,7 +215,6 @@ export const projectData = [
         "hence statistical model / correlation screen" +
         "presents hard coded data for demo purposes. Dashboard 'sleep' and 'steps' data also hard coded.",
       "No middleware created, might require one for API integrations.",
-      
     ],
   },
   // {
