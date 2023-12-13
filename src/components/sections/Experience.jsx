@@ -47,6 +47,7 @@ const Experience = () => {
             iconStyle={{
               background: "#fff",
               color: "#fff",
+              height: "min-content",
             }}
             icon={experience.icon}
             style={{ maxWidth: "90vw" }}

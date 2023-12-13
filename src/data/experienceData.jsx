@@ -1,8 +1,8 @@
 /** @format */
-import { ReactComponent as Gallify } from "../assets/gallify/gallify.svg";
-import { ReactComponent as Antra } from "../assets/antra/antra.svg";
-import { ReactComponent as Lengineer } from "../assets/Lengineer/Lengineer.svg";
-import { ReactComponent as Wisconsin } from "../assets/wisconsin/Wisconsin.svg";
+import Gallify from "../assets/gallify/gallify.webp";
+import Antra from "../assets/antra/antra-logo.webp";
+import Lengineer from "../assets/Lengineer/Lengineer.webp";
+import Wisconsin from "../assets/wisconsin/Wisconsin.webp";
 export const experienceData = [
   {
     title: "Java Developer",
@@ -18,7 +18,13 @@ export const experienceData = [
       "Leveraged Docker containerization for source code updates and successfully deployed changes to Kubernetes.",
       "Integrated with a robust CI/CD pipeline built with Jenkins, streamlining the deployment process and ensuring rapid updates and testing.",
     ],
-    icon: <Antra />,
+    icon: (
+      <img
+        src={Antra}
+        alt="Antra Icon"
+        style={{ width: "100%", borderRadius: "50%" }}
+      />
+    ),
     textColor: "#5DA8BA",
   },
   {
@@ -37,7 +43,13 @@ export const experienceData = [
       "Attended weekly standup meetings for progress discussion and sprint planning.",
       "Provided weekly project updates to team lead, brainstormed new ideas for important features, created and updated tickets using Projects on GitHub and detailed potential bug fixes.",
     ],
-    icon: <Gallify />,
+    icon: (
+      <img
+        src={Gallify}
+        alt="Gallify Icon"
+        style={{ width: "100%", borderRadius: "50%" }}
+      />
+    ),
     textColor: "#B95C84",
   },
   {
@@ -54,7 +66,13 @@ export const experienceData = [
       "Used Trello to keep track of new developments in code and create task-specific tickets.",
       "Collaborated with team members for debugging and testing purposes.",
     ],
-    icon: <Lengineer />,
+    icon: (
+      <img
+        src={Lengineer}
+        alt="Lengineer Icon"
+        style={{ width: "100%", borderRadius: "50%" }}
+      />
+    ),
     textColor: "#6588BD",
   },
   {
@@ -71,7 +89,13 @@ export const experienceData = [
       "Developed frontend and backend logic for multiple screens in React Native and TypeScript.",
       "Seamlessly integrated Redux storage with Firestore for data management.",
     ],
-    icon: <Wisconsin />,
+    icon: (
+      <img
+        src={Wisconsin}
+        alt="Wisconsin Icon"
+        style={{ width: "100%", borderRadius: "50%", margin: "0px auto" }}
+      />
+    ),
     textColor: "#8C5348",
   },
   {
@@ -90,7 +114,13 @@ export const experienceData = [
       "Employed the React Native Async-storage library for the secure storage of users' private health data on their devices.",
       "Employed an Agile (Extreme) Waterfall Process to design, build, and rigorously test the application.",
     ],
-    icon: <Wisconsin />,
+    icon: (
+      <img
+        src={Wisconsin}
+        alt="Wisconsin Icon"
+        style={{ width: "100%", borderRadius: "50%" }}
+      />
+    ),
     textColor: "#4B3136",
   },
 ];

@@ -1,8 +1,8 @@
 /** @format */
-
+import React, { Suspense } from "react";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-import ProjectPage from "./pages/ProjectPage";
+// import ProjectPage from "./pages/ProjectPage";
 import Projects from "./components/sections/Projects";
 import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
@@ -13,21 +13,26 @@ import Skills from "./components/sections/Skills";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const ProjectPage = React.lazy(() => import("./pages/ProjectPage"));
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />}>
-        <Route path="home" element={<Home />} />
-        <Route path="about" element={<About />}/>
-        <Route path="experience" element={<Experience />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="education" element={<Education />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="skills" element={<Skills />} />
-      </Route>
-      <Route path="projects/:projectId" element={<ProjectPage />} />
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      {" "}
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="experience" element={<Experience />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="education" element={<Education />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="skills" element={<Skills />} />
+        </Route>
+        <Route path="projects/:projectId" element={<ProjectPage />} />
+      </Routes>
+    </Suspense>
   );
 }
 

@@ -3,7 +3,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../../assets/logo-no-background.png";
+import logo from "../../assets/logo-no-background.webp";
 import "../../styles/styles.css";
 import { Text } from "@chakra-ui/react";
 

@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import pic from "../../assets/pic2-edited.jpg";
+import pic from "../../assets/pic2 - edited.webp";
 import "../../styles/styles.css";
 import Fade from "react-awesome-reveal";
 
@@ -57,10 +57,10 @@ const About = () => {
             width={["90%", "90%"]} // Adjust width for different screen sizes
           >
             Hey! My name is Shruti. I am pursuing a career in tech as a Software
-            Developer/Engineer. I graduated with a Bachelor of Science in Computer
-            Science from UW-Madison last year. This portfolio hopefully gives
-            you an insight into my skills and abilities and my unique journey to
-            obtaining this milestone!
+            Developer/Engineer. I graduated with a Bachelor of Science in
+            Computer Science from UW-Madison last year. This portfolio hopefully
+            gives you an insight into my skills and abilities and my unique
+            journey to obtaining this milestone!
             {/* I am also working on a blog
             {/* called{" "}
             <Link href="/" color="blue.500">
