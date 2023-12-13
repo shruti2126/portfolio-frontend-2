@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import pic from "../../assets/pic2 - edited.webp";
+import pic from "../../assets/pic4.webp";
 import "../../styles/styles.css";
 import Fade from "react-awesome-reveal";
 
