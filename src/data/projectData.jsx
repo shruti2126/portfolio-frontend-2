@@ -1,7 +1,6 @@
 /** @format */
 import brain from "../assets/badgerBreak/brain2.png";
 import fitU from "../assets/fitu/fitU-2.jpeg";
-//import antra from "../assets/antra/antra.jpg";
 import gallify from "../assets/gallify/gallify.webp";
 import artPlayer from "../assets/gallify/gallifyFigmaScreenshots/art-player.png";
 import liked from "../assets/gallify/gallifyFigmaScreenshots/liked.png";
@@ -217,84 +216,8 @@ export const projectData = [
       "No middleware created, might require one for API integrations.",
     ],
   },
-  // {
-  //   id: 3,
-  //   title: "Antra Internal-LMS System",
-  //   techStack: "Spring Boot, MySQL, AWS S3, Spring Security",
-  //   techStackIcons: [cibSpring, cibMysql, cibJava, cibAmazonAws],
-  //   iconsColor: ["#6AAD3D", "#255278", "#F0931C", "#F79400"],
-  //   description: "Java Core and Advanced training website for consultants",
-  //   thumbnail: antra,
-  //   teamSize: 2,
-  //   purpose: "Java Developer",
-  //   Role: "Java Backend Developer",
-  //   githubLink: "N/A",
-  //   demoUrl: (
-  //     <iframe
-  //       className="responsive-iframe"
-  //       src="https://www.youtube.com/embed/FTmMN4_Jl04?si=NTdZl-kn1EZT8vnK"
-  //       title="YouTube video player"
-  //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  //       allowFullScreen
-  //     ></iframe>
-  //   ),
-  //   insights: [
-  //     {
-  //       category: "Team",
-  //       data: "Shruti Sharma, Dawei Zhuang (Supervisor/Senior Java Developer)",
-  //     },
-  //     {
-  //       category: "Learning",
-  //       data: [
-  //         "Played a pivotal role in the development of the Internal Antra-LMS system.",
-  //         "Specifically, took charge of building and optimizing the Course Page and User Profile sections of the site, resulting in a seamless user experience.",
-  //         "Employed microservices architectural design and technologies to enhance system efficiency.",
-  //         "Demonstrated the ability to fetch and seamlessly integrate data from backend servers, enhancing data accessibility and real-time functionality.",
-  //         "Implemented a rigorous unit testing regimen using Junit to ensure code quality and functionality.",
-  //         "Leveraged Docker containerization for source code updates and successfully deployed changes to Kubernetes.",
-  //         "Integrated with a robust CI/CD pipeline built with Jenkins, streamlining the deployment process and ensuring rapid updates and testing.",
-  //       ],
-  //     },
-  //     {
-  //       category: "Planning",
-  //       data: [
-  //         "Collaborated with the team to plan and execute development projects.",
-  //         "Utilized project management tools for tracking progress and creating and updating tickets.",
-  //       ],
-  //     },
-  //     {
-  //       category: "Developing",
-  //       data: [
-  //         "Implemented features, including Course Page and User Profile sections, using microservices architecture.",
-  //         "Ensured efficient data integration and real-time functionality.",
-  //       ],
-  //     },
-  //     {
-  //       category: "Testing",
-  //       data: [
-  //         "Conducted unit testing using Junit to maintain code quality and functionality.",
-  //         "Deployed and tested changes through a CI/CD pipeline built with Jenkins.",
-  //       ],
-  //     },
-  //     {
-  //       category: "Leadership",
-  //       data: "Played a crucial role in designing and optimizing key sections of the Antra-LMS system.",
-  //     },
-  //     {
-  //       category: "Challenges",
-  //       data: [
-  //         "The challenge of working with microservices architecture, including ensuring proper communication, data consistency, and scalability.",
-  //         "Adapting to Spring technologies for efficient development, particularly the Spring MVC and Spring Boot frameworks.",
-  //         "Learning and integrating Docker and Kubernetes for containerization and deployment of the application.",
-  //         "Ensuring the reliability of the CI/CD pipeline built with Jenkins for rapid and reliable updates.",
-  //       ],
-  //     },
-  //   ],
-  //   otherMedia: [],
-  //   CurrentIssues: [],
-  // },
   {
-    id: 4,
+    id: 3,
     title: "Gallify App",
     techStack: "Swift, Firebase Auth, Cloud Firestore, Xcode",
     techStackIcons: [cibSwift, cibFirebase, cibXcode],

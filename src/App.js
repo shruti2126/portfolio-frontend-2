@@ -17,7 +17,7 @@ const ProjectPage = React.lazy(() => import("./pages/ProjectPage"));
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div style={{margin: "0px auto", fontWeight: "bold"}}>Loading...</div>}>
       {" "}
       <Routes>
         <Route path="/" element={<Home />}>
