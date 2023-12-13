@@ -6,9 +6,9 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "../../styles/styles.css";
-import { ReactComponent as Rutgers } from "../../assets/rutgers/Rutgers.svg";
-import { ReactComponent as Washington } from "../../assets/washington/Washington.svg";
-import { ReactComponent as Wisconsin } from "../../assets/wisconsin/Wisconsin.svg";
+import Rutgers from "../../assets/rutgers/Rutgers.webp";
+import Washington from "../../assets/washington/Washington.webp";
+import Wisconsin from "../../assets/wisconsin/Wisconsin.webp";
 import TransferReason from "../TransferReason";
 const Education = () => {
   return (
@@ -29,8 +29,20 @@ const Education = () => {
           contentStyle={{ background: "#9741cc", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid #9741cc" }}
           date="Sep 2017 – Jun 2019"
-          iconStyle={{ background: "#fff", color: "#fff" }}
-          icon={<Washington />}
+          iconStyle={{
+            background: "#fff",
+            color: "#fff",
+            height: "min-content",
+          }}
+          className="vertical-timeline-element--experience"
+          icon={
+            <img
+              src={Washington}
+              alt="Washington Icon"
+              style={{ width: "100%", margin: "0px auto", padding: "5px" }}
+            />
+          }
+          style={{ maxWidth: "90vw" }}
         >
           <h3 className="vertical-timeline-element-title">
             University of Washington
@@ -71,11 +83,22 @@ const Education = () => {
 
         {/* University of Rutgers */}
         <VerticalTimelineElement
+          className="vertical-timeline-element--experience"
           contentStyle={{ background: "#ba9e20", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid #ba9e20" }}
           date="Aug 2019 - Dec 2019"
-          iconStyle={{ background: "#fff", color: "#000" }}
-          icon={<Rutgers />}
+          iconStyle={{
+            background: "#fff",
+            color: "#fff",
+            height: "min-content",
+          }}
+          icon={
+            <img
+              src={Rutgers}
+              alt="Rutgers Icon"
+              style={{ width: "90%", margin: "0px auto", padding: "5px" }}
+            />
+          }
         >
           <h3 className="vertical-timeline-element-title">
             University of Rutgers
@@ -110,12 +133,27 @@ const Education = () => {
         />
         {/* University of Wisconsin-Madison */}
         <VerticalTimelineElement
-          className="vertical-timeline-element--education"
+          className="vertical-timeline-element--experience"
           contentStyle={{ background: "#8c2323", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid #8c2323" }}
           date="Jan 2020 - May 2022"
-          iconStyle={{ background: "#fff", color: "#fff" }}
-          icon={<Wisconsin />}
+          iconStyle={{
+            background: "#fff",
+            color: "#fff",
+            height: "min-content",
+          }}
+          icon={
+            <img
+              src={Wisconsin}
+              alt="Wisconsin Icon"
+              style={{
+                width: "100%",
+                margin: "0px auto",
+                padding: "5px",
+                borderRadius: "50%",
+              }}
+            />
+          }
         >
           <h3 className="vertical-timeline-element-title">
             University of Wisconsin

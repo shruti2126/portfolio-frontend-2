@@ -93,7 +93,7 @@ export const experienceData = [
       <img
         src={Wisconsin}
         alt="Wisconsin Icon"
-        style={{ width: "100%", borderRadius: "50%", margin: "0px auto" }}
+        style={{ width: "100%", borderRadius: "50%" }}
       />
     ),
     textColor: "#8C5348",
