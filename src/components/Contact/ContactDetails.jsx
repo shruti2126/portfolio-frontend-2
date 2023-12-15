@@ -1,7 +1,7 @@
 /** @format */
 
 import { Container, Box, Text } from "@chakra-ui/react";
-
+import "../../styles/styles.css";
 const ContactDetails = () => {
   return (
     <Container
@@ -11,7 +11,7 @@ const ContactDetails = () => {
       p={3}
       height="fit-content"
     >
-      <Box overflowWrap="wrap" textAlign="center">
+      <Box id="contact-details" overflowWrap="wrap" textAlign="center">
         {" "}
         <Text as="h3">Contact Details</Text>
         <Text fontSize={["sm", "md", "lg"]}>Shruti Sharma</Text>
@@ -23,6 +23,5 @@ const ContactDetails = () => {
     </Container>
   );
 };
-
 
 export default ContactDetails;

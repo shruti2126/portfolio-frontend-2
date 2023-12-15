@@ -25,7 +25,7 @@ const Blog = () => {
       width="100vw"
       position="relative"
     >
-      <Title heading="Blog"/>
+      <Title heading="Blog" />
 
       <AbsoluteCenter axis="both">
         {" "}
@@ -38,14 +38,15 @@ const Blog = () => {
           </>
         ) : (
           <>
-            <Heading as="h2" textAlign="center">
+            <Heading as="h2" textAlign="center" color="white">
               Coming Soon!
             </Heading>
-            <Text p={3} fontSize="xl" textAlign="center">
+            <Text p={3} fontSize="xl" textAlign="center" color="white">
               <Button
                 onClick={() => {
                   setShowSignup(true);
                 }}
+                bgColor="whatsapp.100"
               >
                 Sign up
               </Button>{" "}

@@ -3,6 +3,7 @@
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "../../styles/styles.css";
+import universityColorMap from "./colorMap";
 
 const EducationTimelineElement = ({
   logo,
@@ -13,6 +14,7 @@ const EducationTimelineElement = ({
   list,
   date,
 }) => {
+  const universityColor = universityColorMap[university] || "#ddd"; // Default color if not found
   const renderListItem = (item) => {
     // Check if the item is an object and has the isLink property
     if (typeof item === "object" && item.isLink) {
@@ -32,8 +34,8 @@ const EducationTimelineElement = ({
 
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: "#9741cc", color: "#fff" }}
-      contentArrowStyle={{ borderRight: "7px solid #9741cc" }}
+      contentStyle={{ background: universityColor, color: "#fff" }}
+      contentArrowStyle={{ borderRight: `7px solid ${universityColor}` }}
       date={date}
       className="vertical-timeline-element--experience"
       iconStyle={{

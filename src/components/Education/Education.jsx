@@ -17,6 +17,7 @@ const Education = () => {
       border="1px solid white"
       id="education"
       // bgGradient={["linear(to-t, pink.100, purple.200, blue.200)"]}
+      
     >
       <Title heading="Education History" />
       <VerticalTimeline>

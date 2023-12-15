@@ -4,11 +4,11 @@ import {
   Box,
   Image,
   Text,
+  Heading,
   Link,
   Icon,
   HStack,
   VStack,
-
   Button,
   Popover,
   PopoverTrigger,
@@ -23,12 +23,19 @@ import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
 import pic from "../assets/pic4.webp";
 import "../styles/styles.css";
 import Fade from "react-awesome-reveal";
-import Title from "./Title";
 
 const About = () => {
   return (
     <Box id="about" minH="100vh" minW="100vw" borderWidth="1px">
-      <Title heading="About Myself" />
+      <Heading
+        mt="1em"
+        className="heading"
+        as="h3"
+        size="lg"
+        textAlign={"center"}
+      >
+        About Me
+      </Heading>
       <VStack mb="2em" px={[3, 4, 5]} spacing={["4", "6"]} align="center">
         {" "}
         {/* Adjust spacing between elements */}
@@ -44,7 +51,7 @@ const About = () => {
         </Box>
         <VStack>
           <Text
-            color="blackAlpha.900"
+            color="white"
             fontSize={["md", "lg", "xl"]} // Adjust font size for different screen sizes
             textAlign="center"
             fontFamily="sans-serif"

@@ -2,7 +2,6 @@
 
 import {
   Box,
-
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -29,6 +28,7 @@ const Experience = () => {
       minW="100vw"
       borderWidth="1px"
       // bgGradient={["linear(to-b, pink.200, purple.100, blue.100)"]}
+     
       id="experience"
     >
       <Title heading="Software Development Experience"/>

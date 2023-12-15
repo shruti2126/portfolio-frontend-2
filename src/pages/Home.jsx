@@ -1,5 +1,7 @@
 /** @format */
 
+// /** @format */
+
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact/Contact";
@@ -14,7 +16,7 @@ import Resume from "../components/Resume";
 
 const Home = () => {
   return (
-    <Box id="home" minW="100vw" minH="100vh" bgColor="darkcyan">
+    <Box id="home" minW="100vw" minH="100vh" bgColor="black">
       <NavigationBar />
       <About />
       <Skills />
@@ -27,4 +29,5 @@ const Home = () => {
     </Box>
   );
 };
+
 export default Home;

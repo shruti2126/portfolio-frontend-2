@@ -9,6 +9,7 @@ const TransferReason = ({ reason }) => {
     <VerticalTimelineElement
       iconStyle={{ background: "#fff", color: "#000" }}
       icon={<i className="fas fa-info-circle"></i>}
+      style={{ maxWidth: "90vw" }}
     >
       <h3 className="vertical-timeline-element-title">Reason for Transfer </h3>
       <Box
