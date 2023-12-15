@@ -10,8 +10,9 @@ import {
   Flex,
 } from "@chakra-ui/react";
 
-import SignupForm from "../SignupForm";
-import "../../styles/styles.css";
+import SignupForm from "./SignupForm";
+import "../../styles/styles.css"
+import Title from "../Title";
 
 const Blog = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -19,14 +20,12 @@ const Blog = () => {
     <Box
       id="blog"
       borderWidth="1px"
-      bgGradient={["linear(to-b, pink.100, blue.100, purple.100)"]}
+      // bgGradient={["linear(to-b, pink.100, blue.100, purple.100)"]}
       height="100vh"
       width="100vw"
       position="relative"
     >
-      <Heading className="heading" as="h3" size="lg" textAlign={"center"}>
-        Blog
-      </Heading>
+      <Title heading="Blog"/>
 
       <AbsoluteCenter axis="both">
         {" "}

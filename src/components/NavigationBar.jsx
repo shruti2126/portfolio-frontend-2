@@ -3,8 +3,8 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../../assets/logo-no-background.webp";
-import "../../styles/styles.css";
+import logo from "../assets/logo-no-background.webp";
+import "../styles/styles.css";
 import { Text } from "@chakra-ui/react";
 
 const NavigationBar = () => {
@@ -19,16 +19,17 @@ const NavigationBar = () => {
     >
       <Container>
         <Navbar.Brand>
-          <Nav.Link href="/">
+          <Nav.Link href="#home">
             <img
               src={logo}
               alt="personal logo"
-              style={{ width: "2em", height: "auto", marginRight: "5px" }}
+              style={{ width: "2em", height: "auto", marginRight: "0.2em" }}
               className="d-inline-block align-left"
             />
             <Text
               as="span"
-              fontSize={["sm", "md", "lg", "xl"]}
+              fontSize={["sm", "md", "lg"]}
+              mr='1em'
               className="name"
             >
               Shruti | Software Developer
@@ -45,8 +46,8 @@ const NavigationBar = () => {
             <Nav.Link href="#skills">Skills</Nav.Link>
             <Nav.Link href="#resume">Resume</Nav.Link>
             <Nav.Link href="#experience">Experience</Nav.Link>
-            <Nav.Link href="#projects">Projects & Demos</Nav.Link>
-            <Nav.Link href="#education">Education History</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href="#education">Education</Nav.Link>
             <Nav.Link href="#blog">Blog</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
           </Nav>

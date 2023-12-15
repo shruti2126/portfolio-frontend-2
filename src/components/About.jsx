@@ -8,7 +8,7 @@ import {
   Icon,
   HStack,
   VStack,
-  Heading,
+
   Button,
   Popover,
   PopoverTrigger,
@@ -20,20 +20,15 @@ import {
 } from "@chakra-ui/react";
 
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import pic from "../../assets/pic4.webp";
-import "../../styles/styles.css";
+import pic from "../assets/pic4.webp";
+import "../styles/styles.css";
 import Fade from "react-awesome-reveal";
+import Title from "./Title";
 
 const About = () => {
   return (
-    <Box
-      bgGradient={["linear(to-b, pink.200, blue.100, purple.200)"]}
-      id="about"
-      minH="100vh"
-      minW="100vw"
-      borderWidth="1px"
-    >
-      <Heading className="heading">About</Heading>
+    <Box id="about" minH="100vh" minW="100vw" borderWidth="1px">
+      <Title heading="About Myself" />
       <VStack mb="2em" px={[3, 4, 5]} spacing={["4", "6"]} align="center">
         {" "}
         {/* Adjust spacing between elements */}

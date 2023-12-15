@@ -13,10 +13,11 @@ import {
   Center,
   CardBody,
 } from "@chakra-ui/react";
-import { projectData } from "../../data/projectData";
+import { projectData } from "../data/projectData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import "../../styles/styles.css";
+import "../styles/styles.css";
 import { useNavigate } from "react-router-dom";
+import Title from "./Title";
 // import getMedia from "../aws-s3/getMedia";
 
 const Projects = () => {
@@ -41,14 +42,14 @@ const Projects = () => {
 
   return (
     <Box
-      bgGradient={["linear(to-b, blue.100, purple.200, blue.200)"]}
+      // bgGradient={["linear(to-b, blue.100, purple.200, blue.200)"]}
       id="projects"
       position="relative"
       border="1px solid white"
       minH="100vh"
       minW="100vw"
     >
-      <Heading className="heading">Projects & Demos</Heading>
+      <Title heading="Projects & Demos" />
       <Center mx={10} mb={10}>
         {projectData
           .slice(activeIndex * chunkSize, activeIndex * chunkSize + chunkSize)

@@ -2,14 +2,13 @@
 import React, { Suspense } from "react";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-// import ProjectPage from "./pages/ProjectPage";
-import Projects from "./components/sections/Projects";
-import About from "./components/sections/About";
-import Experience from "./components/sections/Experience";
-import Blog from "./components/sections/Blog";
-import Contact from "./components/sections/Contact";
-import Education from "./components/sections/Education";
-import Skills from "./components/sections/Skills";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Blog from "./components/Blog/Blog";
+import Contact from "./components/Contact/Contact";
+import Education from "./components/Education/Education";
+import Skills from "./components/Skills";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -17,7 +16,11 @@ const ProjectPage = React.lazy(() => import("./pages/ProjectPage"));
 
 function App() {
   return (
-    <Suspense fallback={<div style={{margin: "0px auto", fontWeight: "bold"}}>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div style={{ margin: "0px auto", fontWeight: "bold" }}>Loading...</div>
+      }
+    >
       {" "}
       <Routes>
         <Route path="/" element={<Home />}>

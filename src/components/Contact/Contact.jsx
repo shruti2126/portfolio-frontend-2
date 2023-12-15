@@ -4,64 +4,30 @@ import {
   FormLabel,
   FormErrorMessage,
   Input,
-  Heading,
   Select,
   Text,
   Textarea,
   Box,
   Button,
   SimpleGrid,
-  Container,
   CircularProgress,
 } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
 import "../../styles/styles.css";
 import axios from "axios";
 import { useEffect, useReducer } from "react";
-
-const initialFieldState = {
-  firstname: "",
-  lastname: "",
-  email: "",
-  reason: "",
-  message: "",
-};
-
-const formReducer = (formFieldState, action) => {
-  switch (action.type) {
-    case "SET_FIELD":
-      return { ...formFieldState, [action.field]: action.value };
-    case "RESET_FIELDS":
-      return initialFieldState;
-    default:
-      return formFieldState;
-  }
-};
-
-const initialProgressState = {
-  submitting: false,
-  showProgress: false,
-  submissionStatus: -1,
-};
-const progressReducer = (progressState, action) => {
-  switch (action.type) {
-    case "SUBMIT":
-      return { ...initialProgressState, submitting: true };
-    case "ERRORS":
-      return { ...initialProgressState };
-    case "SHOW_PROGRESS":
-      return { ...initialProgressState, submitting: true, showProgress: true };
-    case "PROMISE_RESOLVED":
-      return { ...initialProgressState, submissionStatus: 1 };
-    case "PROMISE_REJECTED":
-      return { ...initialProgressState, submissionStatus: 0 };
-    default:
-      return progressState;
-  }
-};
+import progressReducer from "../../reducers/progressReducer";
+import contactFormReducer from "../../reducers/contactFormReducer";
+import { initialProgressState } from "../../state/initialProgressState";
+import { initialContactFormFieldState } from "../../state/initialContactFormFieldState";
+import ContactDetails from "./ContactDetails";
+import Title from "../Title";
 
 const Contact = () => {
-  const [formFieldState, dispatch] = useReducer(formReducer, initialFieldState);
+  const [formFieldState, dispatch] = useReducer(
+    contactFormReducer,
+    initialContactFormFieldState
+  );
   const [error, setError] = useState({
     emailInvalidError: false,
     emailNeededError: false,
@@ -114,15 +80,15 @@ const Contact = () => {
       setTimeout(resolve, 0);
     });
   }
-
   useEffect(() => {
     if (progressState.submitting) {
       if (!validForm()) {
         dispatchProgressAction({ type: "SHOW_PROGRESS" });
+        dispatchProgressAction({ type: "PROMISE_RESOLVED" });
         async function sendEmail() {
           try {
             const response = await axios.post(
-              "https://shrutis-io-backend.onrender.com/send-email",
+              process.env.REACT_APP_SEND_EMAIL_LOCAL,
               {
                 ...formFieldState,
               }
@@ -130,7 +96,6 @@ const Contact = () => {
             //Reset form
             dispatch({ type: "RESET_FIELDS" });
             if (response.status === 200) {
-              dispatchProgressAction({ type: "PROMISE_RESOLVED" });
             }
             await yieldToMain();
           } catch (error) {
@@ -173,32 +138,22 @@ const Contact = () => {
       id="contact"
       minH="100vh"
       minW="100vw"
-      bgGradient={["linear(to-b, purple.100, blue.100)"]}
+      // bgGradient={["linear(to-b, purple.100, blue.100)"]}
     >
-      <Heading className="heading">Connect with me!</Heading>
-
+      <Title heading="Connect With Me" />
       <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
         {/** Contact Details */}
-        <Container borderRadius="2%" bgColor="orange.100" height="fit-content">
-          <Box p={5} overflowWrap="wrap" textAlign="center">
-            {" "}
-            <Text as="h3">Contact Details</Text>
-            <Text as="h4" fontSize={["sm", "md", "lg"]}>
-              <span style={{ fontWeight: "bold" }}>Name</span>: Shruti Sharma
-            </Text>
-            <Text as="h4" fontSize={["sm", "md", "lg"]}>
-              <span style={{ fontWeight: "bold" }}>Email</span>:
-              ss.sharma1826@gmail.com, sharma224@wisc.edu
-            </Text>
-            <Text as="h4" fontSize={["sm", "md", "lg"]}>
-              <span style={{ fontWeight: "bold" }}>Mobile</span>: +1 (206) 889
-              7848
-            </Text>
-          </Box>
-        </Container>
+        <ContactDetails />
 
         {/** Contact Form */}
-        <Box backgroundColor="white" borderRadius="md" p={15} mb={5}>
+        <Box
+          border="1px"
+          borderColor="black"
+          backgroundColor="white"
+          borderRadius="md"
+          p={15}
+          mb={5}
+        >
           <FormControl display="flex" flexDirection="column" p={4} gap={2}>
             <FormControl isRequired isInvalid={error.firstnameError}>
               {" "}
@@ -283,7 +238,7 @@ const Contact = () => {
             </Button>
             {progressState.submissionStatus === 1 && (
               <Text textAlign="center" color="green" fontSize={"xl"}>
-                Email sent successfully! I will be in touch with you soon.
+                Email sent! I will be in touch with you soon!
               </Text>
             )}
             {progressState.submissionStatus === 0 && (
@@ -298,13 +253,13 @@ const Contact = () => {
                 .
               </Text>
             )}
-            {progressState.showProgress && 
+            {progressState.showProgress && (
               <CircularProgress
                 alignSelf="center"
                 isIndeterminate
                 color="green.300"
               />
-            }
+            )}
           </FormControl>
         </Box>
       </SimpleGrid>

@@ -2,7 +2,7 @@
 
 import {
   Box,
-  Heading,
+
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -17,22 +17,21 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import "../../styles/scrollbar.css";
-import "../../styles/styles.css";
-import { experienceData } from "../../data/experienceData.jsx";
+import "../styles/scrollbar.css";
+import "../styles/styles.css";
+import { experienceData } from "../data/experienceData.jsx";
+import Title from "./Title.jsx";
 
 const Experience = () => {
   return (
     <Box
       minH="100vh"
       minW="100vw"
-      shadow="md"
       borderWidth="1px"
-      bgGradient={["linear(to-b, pink.200, purple.100, blue.100)"]}
+      // bgGradient={["linear(to-b, pink.200, purple.100, blue.100)"]}
       id="experience"
     >
-      <Heading className="heading">Software Development Experience</Heading>
-
+      <Title heading="Software Development Experience"/>
       <VerticalTimeline>
         {experienceData.map((experience, index) => (
           <VerticalTimelineElement

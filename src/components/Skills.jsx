@@ -1,10 +1,10 @@
 /** @format */
 
 import { Box, Card, Container } from "@chakra-ui/react";
-import Title from "../Title";
-import SkillLevel from "../SkillLevel";
-import { SkillsMap } from "../../data/SkillsMap";
-import "../../styles/styles.css";
+import Title from "./Title";
+import SkillLevel from "./SkillLevel";
+import { SkillsMap } from "../data/SkillsMap";
+import "../styles/styles.css";
 
 const Skills = () => {
   return (
@@ -12,7 +12,7 @@ const Skills = () => {
       id="skills"
       minH="100vh"
       minW="100vw"
-      bgGradient={["linear(to-b, purple.200, blue.200, purple.200)"]}
+      // bgGradient={["linear(to-b, purple.200, blue.200, purple.200)"]}
       borderWidth="1px"
     >
       <Container pb={3}>

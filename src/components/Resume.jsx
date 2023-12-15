@@ -7,10 +7,11 @@ import {
   Text,
   AbsoluteCenter,
   Center,
-  Heading,
+ 
 } from "@chakra-ui/react";
 import { useState } from "react";
-import "../../styles/styles.css";
+import "../styles/styles.css";
+import Title from "./Title";
 const Resume = () => {
   const [showPdf, setShowPdf] = useState(false);
   function toggle() {
@@ -21,11 +22,11 @@ const Resume = () => {
       id="resume"
       minH="100vh"
       minW="100vw"
-      bgGradient={["linear(to-b, purple.200, blue.100, pink.200)"]}
+      // bgGradient={["linear(to-b, purple.200, blue.100, pink.200)"]}
       borderWidth="1px"
       position="relative"
     >
-      <Heading className="heading">Resume</Heading>
+      <Title heading="Resume" />
       {showPdf ? (
         <Center>
           <CloseButton maxInlineSize="10" onClick={() => toggle()} />

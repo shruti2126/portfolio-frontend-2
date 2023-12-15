@@ -230,7 +230,15 @@ export const projectData = [
     purpose: "Startup / Volunteer Experience",
     Role: "Serverless Software Engineer",
     githubLink: "https://github.com/Gallify/gallify.app",
-    demoUrl: <iframe title="gallify"></iframe>,
+    demoUrl: (
+      <iframe
+        className="responsive-iframe"
+        src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+    ),
     insights: [
       {
         category: "Team",
@@ -279,19 +287,19 @@ export const projectData = [
       },
     ],
     otherMedia: [
-      {
-        title: "Gallify Pitch Presentation created by CEO",
-        type: "video",
-        data: [
-          <iframe
-            className="responsive-iframe"
-            src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>,
-        ],
-      },
+      // {
+      //   title: "Gallify Pitch Presentation created by CEO",
+      //   type: "video",
+      //   data: [
+      //     <iframe
+      //       className="responsive-iframe"
+      //       src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
+      //       title="YouTube video player"
+      //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      //       allowFullScreen
+      //     ></iframe>,
+      //   ],
+      // },
       {
         title: "Screenshots of Screens designed in Figma",
         type: "image",
