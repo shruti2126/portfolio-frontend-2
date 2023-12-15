@@ -88,7 +88,7 @@ const Contact = () => {
         async function sendEmail() {
           try {
             const response = await axios.post(
-              process.env.REACT_APP_SEND_EMAIL_LOCAL,
+              process.env.REACT_APP_SEND_EMAIL_RENDER,
               {
                 ...formFieldState,
               }
