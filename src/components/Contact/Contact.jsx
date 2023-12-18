@@ -257,7 +257,7 @@ const Contact = () => {
               <Text textAlign="center" color="red" fontSize="xl">
                 Oops! There was an error sending the email. Please try again or
                 send me a direct message on{" "}
-                <a href="mailto:ss.sharma182@gmail.com">
+                <a href="mailto:shrutis0698@gmail.com">
                   <span style={{ color: "blue", textDecoration: "underline" }}>
                     <i>ss.sharma1826@gmail.com</i>
                   </span>
