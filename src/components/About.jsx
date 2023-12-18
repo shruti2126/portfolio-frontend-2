@@ -41,8 +41,8 @@ const About = () => {
         {/* Adjust spacing between elements */}
         <Box>
           <Image
-            borderRadius="full"
             src={pic}
+            borderRadius="full"
             alt="Shruti"
             boxSize={["xs", "sm", "md"]} // Adjust image size
             objectFit="cover"
@@ -85,7 +85,7 @@ const About = () => {
                 <Icon
                   as={FaLinkedin}
                   boxSize={["6", "8", "10"]}
-                  color="blue.600"
+                  color="blue.400"
                 />{" "}
                 {/* Adjust icon size */}
               </Link>
@@ -94,7 +94,7 @@ const About = () => {
                 <Icon
                   as={FaInstagram}
                   boxSize={["6", "8", "10"]}
-                  color="pink.600"
+                  color="pink.300"
                 />{" "}
                 {/* Adjust icon size */}
               </Link>
@@ -105,12 +105,12 @@ const About = () => {
                     <Icon
                       as={FaWhatsapp}
                       boxSize={["6", "8", "10"]}
-                      color="green.600"
+                      color="green.300"
                     />{" "}
                     {/* Adjust icon size */}
                   </Link>
                 </PopoverTrigger>
-                <PopoverContent bg="whatsapp.500" color="white">
+                <PopoverContent bg="whatsapp.700" color="white">
                   <PopoverHeader fontWeight="semibold">Phone</PopoverHeader>
                   <PopoverArrow bg="pink.500" />
                   <PopoverCloseButton bg="purple.500" />
@@ -122,7 +122,7 @@ const About = () => {
                 <Icon
                   as={FaGithub}
                   boxSize={["6", "8", "10"]}
-                  color="gray.600"
+                  color="gray.300"
                 />{" "}
                 {/* Adjust icon size */}
               </Link>
@@ -143,7 +143,7 @@ const About = () => {
                 <Icon
                   as={FaGithub}
                   boxSize={["4", "6", "8"]}
-                  color="gray.600"
+                  color="gray.900"
                 />{" "}
                 <Text
                   ml={2}

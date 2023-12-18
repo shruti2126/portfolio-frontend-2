@@ -23,24 +23,17 @@ import Title from "./Title.jsx";
 
 const Experience = () => {
   return (
-    <Box
-      minH="100vh"
-      minW="100vw"
-      borderWidth="1px"
-      // bgGradient={["linear(to-b, pink.200, purple.100, blue.100)"]}
-     
-      id="experience"
-    >
-      <Title heading="Software Development Experience"/>
+    <Box minH="100vh" minW="100vw" borderWidth="1px" id="experience">
+      <Title heading="Software Development Experience" />
       <VerticalTimeline>
         {experienceData.map((experience, index) => (
           <VerticalTimelineElement
             key={index}
             contentStyle={{
-              // background: "#F4F5F5",
-              color: "#000",
+              background: experience.textColor,
+              color: "#fff",
             }}
-            contentArrowStyle={{ color: "#F4F5F5" }}
+            contentArrowStyle={{ color: experience.textColor }}
             className="vertical-timeline-element--experience"
             date={experience.date}
             iconStyle={{
@@ -54,18 +47,10 @@ const Experience = () => {
             <HStack justifyContent="space-between">
               <VStack align="left">
                 {" "}
-                <Text
-                  color={experience.textColor}
-                  fontSize={["md", "lg", "xl"]}
-                  as="h3"
-                >
+                <Text color="white" fontSize={["md", "lg", "xl"]} as="h3">
                   {experience.title}
                 </Text>
-                <Text
-                  color={experience.textColor}
-                  fontSize={["sm", "md", "lg"]}
-                  as="h3"
-                >
+                <Text color="white" fontSize={["sm", "md", "lg"]} as="h3">
                   {experience.organization}
                 </Text>
                 {/* add link to related project */}

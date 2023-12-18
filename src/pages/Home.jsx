@@ -16,7 +16,12 @@ import Resume from "../components/Resume";
 
 const Home = () => {
   return (
-    <Box id="home" minW="100vw" minH="100vh" bgColor="black">
+    <Box
+      id="home"
+      minW="100vw"
+      minH="100vh"
+      bgGradient="linear(to-l, black, purple.700, pink.800, purple.700, black)"
+    >
       <NavigationBar />
       <About />
       <Skills />

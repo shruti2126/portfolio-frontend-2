@@ -29,8 +29,9 @@ const NavigationBar = () => {
             <Text
               as="span"
               fontSize={["sm", "md", "lg"]}
-              mr='1em'
-              className="name"
+              mr="1em"
+              className="brand"
+              
             >
               Shruti | Software Developer
             </Text>

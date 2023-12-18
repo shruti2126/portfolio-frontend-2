@@ -22,7 +22,7 @@ const EducationTimelineElement = ({
         <li key={item.text}>
           <a
             style={{ colorScheme: "dark", textDecoration: "underline" }}
-            href={item.href} // Ensure this matches the object property for the URL
+            href={item.href} 
           >
             {item.text}
           </a>
@@ -49,8 +49,8 @@ const EducationTimelineElement = ({
       icon={
         <div
           style={{
-            width: "100%", // Use 100% of the icon container
-            height: "100%", // Use 100% of the icon container
+            width: "100%",
+            height: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -60,8 +60,8 @@ const EducationTimelineElement = ({
             src={logo}
             alt={alt}
             style={{
-              maxWidth: "70%", // Adjust the size of the image as necessary
-              maxHeight: "70%", // Adjust the size of the image as necessary
+              maxWidth: "70%",
+              maxHeight: "70%",
             }}
           />
         </div>
@@ -70,7 +70,6 @@ const EducationTimelineElement = ({
     >
       <h3 className="vertical-timeline-element-title">{university}</h3>
       <h4 className="vertical-timeline-element-subtitle">{major}</h4>{" "}
-      {/* Added subtitle for consistency */}
       <p>{location}</p>
       <ul>{list.map((item, index) => renderListItem(item, index))} </ul>
     </VerticalTimelineElement>

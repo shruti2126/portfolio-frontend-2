@@ -50,9 +50,9 @@
   z-index: 1000; /* Adjust z-index as needed */
 }
 
-.name {
+.brand {
   font-weight: 600;
-  color: rgb(240, 213, 242);
+  color: whitesmoke
   /* margin: 0px 5px 2px 0px; */
 }
 
@@ -91,7 +91,7 @@
 }
 
 #contact-details {
-  color: wheat;
+  color: whitesmoke
 }
 #contact-details > p {
   color: white

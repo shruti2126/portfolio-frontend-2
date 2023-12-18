@@ -75,35 +75,46 @@ const Contact = () => {
     return hasErrors;
   }, [formFieldState]);
 
-  function yieldToMain() {
-    return new Promise((resolve) => {
-      setTimeout(resolve, 0);
-    });
-  }
   useEffect(() => {
     if (progressState.submitting) {
       if (!validForm()) {
         dispatchProgressAction({ type: "SHOW_PROGRESS" });
-        dispatchProgressAction({ type: "PROMISE_RESOLVED" });
         async function sendEmail() {
           try {
-            const response = await axios.post(
-              process.env.REACT_APP_SEND_EMAIL_RENDER,
-              {
-                ...formFieldState,
-              }
-            );
-            //Reset form
-            dispatch({ type: "RESET_FIELDS" });
-            if (response.status === 200) {
-            }
-            await yieldToMain();
+            console.log(process.env.REACT_APP_SEND_EMAIL_RENDER);
+            await axios
+              .get(process.env.REACT_APP_TEST_RENDER)
+              .then(async (res) => {
+                console.log(res.status);
+                if (res.status === 200) {
+                  await axios
+                    .post(process.env.REACT_APP_SEND_EMAIL_RENDER, {
+                      ...formFieldState,
+                    })
+                    .then((res) => {
+                      dispatch({ type: "RESET_FIELDS" });
+                      res.status === 200
+                        ? dispatchProgressAction({ type: "PROMISE_RESOLVED" })
+                        : dispatchProgressAction({ type: "PROMISE_REJECTED" });
+                    })
+                    .catch((err) => {
+                      dispatchProgressAction({ type: "PROMISE_REJECTED" });
+                    });
+                } else throw new Error("Server still asleep!");
+              });
           } catch (error) {
             console.error("Error sending email: ", error);
             dispatchProgressAction({ type: "PROMISE_REJECTED" });
           }
         }
-        sendEmail();
+
+        setTimeout(
+          async () =>
+            await sendEmail()
+              .then((res) => console.log("response from send-email", res))
+              .catch((err) => console.log(err)),
+          5000
+        );
       } else {
         dispatchProgressAction({ type: "ERRORS" });
       }
@@ -233,6 +244,7 @@ const Contact = () => {
               colorScheme="teal"
               variant="outline"
               onClick={handleSubmit}
+              disabled={progressState.submitting ? true : false}
             >
               Submit
             </Button>
