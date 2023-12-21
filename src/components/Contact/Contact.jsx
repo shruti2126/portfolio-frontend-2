@@ -82,33 +82,6 @@ const Contact = () => {
     });
   };
 
-  // useEffect(() => {
-  //   if (progressState.submitting) {
-  //     if (validForm()) {
-  //       dispatchProgressAction({ type: "SHOW_PROGRESS" });
-  //       async function sendEmail() {
-  //         try {
-  //           await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
-  //           dispatch({ type: "RESET_FIELDS" });
-  //           dispatchProgressAction({ type: "PROMISE_RESOLVED" });
-  //         } catch (error) {
-  //           console.error("Error sending email after retries: ", error);
-  //           dispatchProgressAction({ type: "PROMISE_REJECTED" });
-  //         }
-  //       }
-  //       setTimeout(
-  //         async () =>
-  //           await sendEmail()
-  //             .then((res) => console.log("response from send-email", res))
-  //             .catch((err) => console.log(err)),
-  //         5000
-  //       );
-  //     } else {
-  //       dispatchProgressAction({ type: "ERRORS" });
-  //     }
-  //   }
-  // }, [progressState.submitting, formFieldState, validForm]);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "email") {
@@ -137,7 +110,8 @@ const Contact = () => {
         const response = await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
         dispatch({ type: "RESET_FIELDS" });
         console.log(response.status);
-        if(response.status === 200) dispatchProgressAction({ type: "PROMISE_RESOLVED" });
+        if (response.status === 200)
+          dispatchProgressAction({ type: "PROMISE_RESOLVED" });
       } catch (error) {
         console.error("Error sending email after retries: ", error);
         dispatchProgressAction({ type: "PROMISE_REJECTED" });
