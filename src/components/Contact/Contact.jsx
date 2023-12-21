@@ -15,13 +15,14 @@ import {
 import { useCallback, useState } from "react";
 import "../../styles/styles.css";
 import axios from "axios";
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import progressReducer from "../../reducers/progressReducer";
 import contactFormReducer from "../../reducers/contactFormReducer";
 import { initialProgressState } from "../../state/initialProgressState";
 import { initialContactFormFieldState } from "../../state/initialContactFormFieldState";
 import ContactDetails from "./ContactDetails";
 import Title from "../Title";
+import { retry } from "../../utils/retry";
 
 const Contact = () => {
   const [formFieldState, dispatch] = useReducer(
@@ -39,7 +40,7 @@ const Contact = () => {
     initialProgressState
   );
 
-  const validForm = useCallback(() => {
+  const invalidForm = useCallback(() => {
     let hasErrors = false;
     if (!formFieldState.email) {
       setError((prevError) => ({ ...prevError, emailNeededError: true }));
@@ -75,51 +76,38 @@ const Contact = () => {
     return hasErrors;
   }, [formFieldState]);
 
-  useEffect(() => {
-    if (progressState.submitting) {
-      if (!validForm()) {
-        dispatchProgressAction({ type: "SHOW_PROGRESS" });
-        async function sendEmail() {
-          try {
-            console.log(process.env.REACT_APP_SEND_EMAIL_RENDER);
-            await axios
-              .get(process.env.REACT_APP_TEST_RENDER)
-              .then(async (res) => {
-                console.log(res.status);
-                if (res.status === 200) {
-                  await axios
-                    .post(process.env.REACT_APP_SEND_EMAIL_RENDER, {
-                      ...formFieldState,
-                    })
-                    .then((res) => {
-                      dispatch({ type: "RESET_FIELDS" });
-                      res.status === 200
-                        ? dispatchProgressAction({ type: "PROMISE_RESOLVED" })
-                        : dispatchProgressAction({ type: "PROMISE_REJECTED" });
-                    })
-                    .catch((err) => {
-                      dispatchProgressAction({ type: "PROMISE_REJECTED" });
-                    });
-                } else throw new Error("Server still asleep!");
-              });
-          } catch (error) {
-            console.error("Error sending email: ", error);
-            dispatchProgressAction({ type: "PROMISE_REJECTED" });
-          }
-        }
+  const sendEmailRequest = async () => {
+    return axios.post(process.env.REACT_APP_SEND_EMAIL_RENDER, {
+      ...formFieldState,
+    });
+  };
 
-        setTimeout(
-          async () =>
-            await sendEmail()
-              .then((res) => console.log("response from send-email", res))
-              .catch((err) => console.log(err)),
-          5000
-        );
-      } else {
-        dispatchProgressAction({ type: "ERRORS" });
-      }
-    }
-  }, [progressState.submitting, formFieldState, validForm]);
+  // useEffect(() => {
+  //   if (progressState.submitting) {
+  //     if (validForm()) {
+  //       dispatchProgressAction({ type: "SHOW_PROGRESS" });
+  //       async function sendEmail() {
+  //         try {
+  //           await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
+  //           dispatch({ type: "RESET_FIELDS" });
+  //           dispatchProgressAction({ type: "PROMISE_RESOLVED" });
+  //         } catch (error) {
+  //           console.error("Error sending email after retries: ", error);
+  //           dispatchProgressAction({ type: "PROMISE_REJECTED" });
+  //         }
+  //       }
+  //       setTimeout(
+  //         async () =>
+  //           await sendEmail()
+  //             .then((res) => console.log("response from send-email", res))
+  //             .catch((err) => console.log(err)),
+  //         5000
+  //       );
+  //     } else {
+  //       dispatchProgressAction({ type: "ERRORS" });
+  //     }
+  //   }
+  // }, [progressState.submitting, formFieldState, validForm]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -140,8 +128,23 @@ const Contact = () => {
     dispatch({ type: "SET_FIELD", field: name, value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     dispatchProgressAction({ type: "SUBMIT" });
+    e.preventDefault();
+    if (!invalidForm()) {
+      dispatchProgressAction({ type: "SHOW_PROGRESS" });
+      try {
+        const response = await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
+        dispatch({ type: "RESET_FIELDS" });
+        console.log(response.status);
+        if(response.status === 200) dispatchProgressAction({ type: "PROMISE_RESOLVED" });
+      } catch (error) {
+        console.error("Error sending email after retries: ", error);
+        dispatchProgressAction({ type: "PROMISE_REJECTED" });
+      }
+    } else {
+      dispatchProgressAction({ type: "ERRORS" });
+    }
   };
 
   return (
@@ -244,7 +247,7 @@ const Contact = () => {
               colorScheme="teal"
               variant="outline"
               onClick={handleSubmit}
-              disabled={progressState.submitting ? true : false}
+              disabled={progressState.showProgress ? true : false}
             >
               Submit
             </Button>
