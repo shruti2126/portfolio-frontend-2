@@ -10,10 +10,7 @@ const Skills = () => {
   return (
     <Box
       id="skills"
-      minH="100vh"
-      minW="100vw"
-      // bgGradient={["linear(to-b, purple.200, blue.200, purple.200)"]}
-      borderWidth="1px"
+      className="component"
     >
       <Container pb={3}>
         {" "}

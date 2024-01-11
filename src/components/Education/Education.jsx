@@ -11,14 +11,7 @@ import Title from "../Title";
 
 const Education = () => {
   return (
-    <Box
-      minH="100vh"
-      minW="100vw"
-      border="1px solid white"
-      id="education"
-      // bgGradient={["linear(to-t, pink.100, purple.200, blue.200)"]}
-      
-    >
+    <Box id="education" className="component">
       <Title heading="Education History" />
       <VerticalTimeline>
         {educationEntries.map((entry, index) => {

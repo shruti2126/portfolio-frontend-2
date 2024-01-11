@@ -30,9 +30,12 @@
   border-radius: 50%;
 }
 
-.component-container {
-  border: "solid 1px white";
-  overflow-y: auto;
+.component {
+  min-height: 100vh;
+  min-width: 100vw;
+  border-bottom: 1px solid whitesmoke;
+  margin: 0 auto;
+  padding: 3%;
 }
 
 .skill-bar {
@@ -42,17 +45,9 @@
   border-radius: 10%;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Adjust z-index as needed */
-}
-
 .brand {
   font-weight: 600;
-  color: whitesmoke
+  color: whitesmoke;
   /* margin: 0px 5px 2px 0px; */
 }
 
@@ -91,8 +86,11 @@
 }
 
 #contact-details {
-  color: whitesmoke
+  color: whitesmoke;
 }
 #contact-details > p {
-  color: white
+  color: white;
+}
+div * .signup-container {
+  color: white;
 }

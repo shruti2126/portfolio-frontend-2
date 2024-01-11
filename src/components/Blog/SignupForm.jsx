@@ -19,12 +19,11 @@ const SignupForm = () => {
   const [isValidEmail, setIsValidEmail] = useState(true);
   const toast = useToast();
 
- const validateEmail = (email) => {
-   const regex =
-     /^[A-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
-   return regex.test(email);
- };
-
+  const validateEmail = (email) => {
+    const regex =
+      /^[A-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
+    return regex.test(email);
+  };
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
@@ -44,13 +43,14 @@ const SignupForm = () => {
       });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
-      await axios.post("https://shrutis-io-backend.onrender.com/addUser", {
-        email,
-      });
+      await axios.post(
+        process.env.REACT_APP_BLOG_SIGNUP_RENDER,
+        {
+          email,
+        }
+      );
       toast({
         title: "Sign Up Successful!",
         description: "Thank you!",
@@ -60,16 +60,8 @@ const SignupForm = () => {
       });
       setEmail("");
     } catch (error) {
-      let errorMessage =
-        error.response.data.error;
-      if (error.response && error.response.data.error) {
-        // Check if the error is due to a duplicate email
-        if (error.response.data.error.includes("Email already exists")) {
-          errorMessage =
-            "This email is already registered. Please use a different email.";
-        } 
-      }
-
+      console.log("Error = ", error);
+      let errorMessage = error.response.data.error;
       toast({
         title: "Sign Up Failed",
         description: errorMessage,
@@ -82,13 +74,12 @@ const SignupForm = () => {
     }
   };
 
-
   return (
-    <VStack>
+    <VStack className="signup-container">
       <Heading as="h2" size="lg" mb={4}>
         Sign Up
       </Heading>
-      <FormControl id="email" isRequired>
+      <FormControl isRequired>
         <FormLabel>Email</FormLabel>
         <Input
           type="email"
@@ -96,7 +87,7 @@ const SignupForm = () => {
           onChange={handleInputChange}
           style={{ border: "1px solid black" }}
         />
-        <FormHelperText>
+        <FormHelperText color="white">
           Enter the email you'd like to receive the notification on.
         </FormHelperText>
       </FormControl>

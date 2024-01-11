@@ -1,5 +1,5 @@
 /** @format */
-
+import React from "react";
 import {
   Box,
   Image,
@@ -26,7 +26,7 @@ import Fade from "react-awesome-reveal";
 
 const About = () => {
   return (
-    <Box id="about" minH="100vh" minW="100vw" borderWidth="1px">
+    <Box id="about" className="component">
       <Heading
         mt="1em"
         className="heading"

@@ -5,7 +5,8 @@ import Lengineer from "../assets/Lengineer/Lengineer.webp";
 import Wisconsin from "../assets/wisconsin/Wisconsin.webp";
 export const experienceData = [
   {
-    title: "Java Developer",
+    id: 1,
+    title: "Java Developer Intern",
     type: "Professional",
     organization: "Antra, Inc",
     date: "Oct 2022 - June 2023",
@@ -28,6 +29,7 @@ export const experienceData = [
     textColor: "#5DA8BA",
   },
   {
+    id: 2,
     title: "Serverless Software Engineer",
     type: "Volunteer",
     organization: "Gallify LLC",
@@ -53,6 +55,7 @@ export const experienceData = [
     textColor: "#B95C84",
   },
   {
+    id: 3,
     title: "Web Developer Intern",
     type: "Co-op",
     organization: "LeNgineer",
@@ -76,6 +79,7 @@ export const experienceData = [
     textColor: "#6588BD",
   },
   {
+    id: 4,
     title: "Full Stack Developer/Scrum Master",
     type: "Capstone",
     organization: "UW-Madison",
@@ -99,6 +103,7 @@ export const experienceData = [
     textColor: "#8C5348",
   },
   {
+    id: 5,
     title: "Full Stack Developer / Project Owner",
     type: "Course Project",
     organization: "Software Engineering @ UW-Madison",

@@ -4,23 +4,21 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import Projects from "./components/Projects";
 import About from "./components/About";
-import Experience from "./components/Experience";
+import Experience from "./components/Experience/Experience";
 import Blog from "./components/Blog/Blog";
-import Contact from "./components/Contact/Contact";
+//import Contact from "./components/Contact/Contact";
 import Education from "./components/Education/Education";
 import Skills from "./components/Skills";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LazyLoadingFallback from "./components/LazyLoadingFallback";
 
 const ProjectPage = React.lazy(() => import("./pages/ProjectPage"));
+const Contact = React.lazy(() => import("./components/Contact/Contact"));
 
 function App() {
   return (
-    <Suspense
-      fallback={
-        <div style={{ margin: "0px auto", fontWeight: "bold" }}>Loading...</div>
-      }
-    >
+    <Suspense fallback={<LazyLoadingFallback />}>
       {" "}
       <Routes>
         <Route path="/" element={<Home />}>

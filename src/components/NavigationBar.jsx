@@ -51,6 +51,7 @@ const NavigationBar = () => {
             <Nav.Link href="#education">Education</Nav.Link>
             <Nav.Link href="#blog">Blog</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link href="#testimonials">Testimonials</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

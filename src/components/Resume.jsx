@@ -20,10 +20,7 @@ const Resume = () => {
   return (
     <Box
       id="resume"
-      minH="100vh"
-      minW="100vw"
-      // bgGradient={["linear(to-b, purple.200, blue.100, pink.200)"]}
-      borderWidth="1px"
+      className="component"
       position="relative"
     >
       <Title heading="Resume" />

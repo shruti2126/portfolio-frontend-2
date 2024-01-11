@@ -10,7 +10,6 @@ import {
   Box,
   Button,
   SimpleGrid,
-  CircularProgress,
 } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
 import "../../styles/styles.css";
@@ -76,12 +75,6 @@ const Contact = () => {
     return hasErrors;
   }, [formFieldState]);
 
-  const sendEmailRequest = async () => {
-    return axios.post(process.env.REACT_APP_SEND_EMAIL_RENDER, {
-      ...formFieldState,
-    });
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "email") {
@@ -101,6 +94,12 @@ const Contact = () => {
     dispatch({ type: "SET_FIELD", field: name, value });
   };
 
+  const sendEmailRequest = async () => {
+    return axios.post(process.env.REACT_APP_SEND_EMAIL_LOCAL, {
+      ...formFieldState,
+    });
+  };
+
   const handleSubmit = async (e) => {
     dispatchProgressAction({ type: "SUBMIT" });
     e.preventDefault();
@@ -109,7 +108,6 @@ const Contact = () => {
       try {
         const response = await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
         dispatch({ type: "RESET_FIELDS" });
-        console.log(response.status);
         if (response.status === 200)
           dispatchProgressAction({ type: "PROMISE_RESOLVED" });
       } catch (error) {
@@ -122,12 +120,7 @@ const Contact = () => {
   };
 
   return (
-    <Box
-      id="contact"
-      minH="100vh"
-      minW="100vw"
-      // bgGradient={["linear(to-b, purple.100, blue.100)"]}
-    >
+    <Box id="contact" className="component">
       <Title heading="Connect With Me" />
       <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
         {/** Contact Details */}
@@ -221,7 +214,10 @@ const Contact = () => {
               colorScheme="teal"
               variant="outline"
               onClick={handleSubmit}
-              disabled={progressState.showProgress ? true : false}
+              isLoading={progressState.showProgress}
+              loadingText={
+                progressState.showProgress ? "Submitting..." : "Submit"
+              }
             >
               Submit
             </Button>
@@ -242,13 +238,13 @@ const Contact = () => {
                 .
               </Text>
             )}
-            {progressState.showProgress && (
+            {/* {progressState.showProgress && (
               <CircularProgress
                 alignSelf="center"
                 isIndeterminate
                 color="green.300"
               />
-            )}
+            )} */}
           </FormControl>
         </Box>
       </SimpleGrid>

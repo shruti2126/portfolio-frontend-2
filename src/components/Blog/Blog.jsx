@@ -1,5 +1,5 @@
 /** @format */
-import { useState } from "react";
+import React, { Suspense, useState } from "react";
 import {
   Box,
   Heading,
@@ -9,18 +9,18 @@ import {
   CloseButton,
   Flex,
 } from "@chakra-ui/react";
-
-import SignupForm from "./SignupForm";
-import "../../styles/styles.css"
+import "../../styles/styles.css";
 import Title from "../Title";
+import LazyLoadingFallback from "../LazyLoadingFallback";
+
+const SignupForm = React.lazy(() => import("./SignupForm"));
 
 const Blog = () => {
   const [showSignup, setShowSignup] = useState(false);
   return (
     <Box
       id="blog"
-      borderWidth="1px"
-      // bgGradient={["linear(to-b, pink.100, blue.100, purple.100)"]}
+      borderBottomWidth="1px"
       height="100vh"
       width="100vw"
       position="relative"
@@ -30,12 +30,12 @@ const Blog = () => {
       <AbsoluteCenter axis="both">
         {" "}
         {showSignup ? (
-          <>
+          <Suspense fallback={<LazyLoadingFallback />}>
             <Flex flexDir={"row-reverse"}>
-              <CloseButton onClick={() => setShowSignup(false)} />
+              <CloseButton color="white" onClick={() => setShowSignup(false)} />
             </Flex>
             <SignupForm />
-          </>
+          </Suspense>
         ) : (
           <>
             <Heading as="h2" textAlign="center" color="white">

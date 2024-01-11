@@ -31,7 +31,8 @@
     "react-slick": "^0.29.0",
     "react-vertical-timeline-component": "^3.6.0",
     "source-map-explorer": "^2.5.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
@@ -60,7 +61,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "webpack": "^5.89.0",
-    "webpack-bundle-analyzer": "^4.10.1"
+    "webpack": "^5.89.0"
   }
 }
