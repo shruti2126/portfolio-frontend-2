@@ -31,7 +31,6 @@ const NavigationBar = () => {
               fontSize={["sm", "md", "lg"]}
               mr="1em"
               className="brand"
-              
             >
               Shruti | Software Developer
             </Text>
@@ -50,8 +49,8 @@ const NavigationBar = () => {
             <Nav.Link href="#projects">Projects</Nav.Link>
             <Nav.Link href="#education">Education</Nav.Link>
             <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
             <Nav.Link href="#testimonials">Testimonials</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

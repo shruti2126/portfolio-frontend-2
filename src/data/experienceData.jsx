@@ -26,7 +26,7 @@ export const experienceData = [
         style={{ width: "100%", borderRadius: "50%" }}
       />
     ),
-    textColor: "#5DA8BA",
+    textColor: "blue",
   },
   {
     id: 2,

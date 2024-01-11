@@ -17,8 +17,8 @@ const ExperienceTimelineElement = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: experience.textColor,
-        color: "#fff",
+        background: "#fff",
+        color: "black",
       }}
       contentArrowStyle={{ color: experience.textColor }}
       className="vertical-timeline-element--experience"
@@ -34,15 +34,23 @@ const ExperienceTimelineElement = ({ experience }) => {
       <HStack justifyContent="space-between">
         <VStack align="left">
           {" "}
-          <Text color="white" fontSize={["md", "lg", "xl"]} as="h3">
+          <Text
+            color={experience.textColor}
+            fontSize={["md", "lg", "xl"]}
+            as="h3"
+          >
             {experience.title}
           </Text>
-          <Text color="white" fontSize={["sm", "md", "lg"]} as="h3">
+          <Text
+            color={experience.textColor}
+            fontSize={["sm", "md", "lg"]}
+            as="h3"
+          >
             {experience.organization}
           </Text>
           {/* add link to related project */}
         </VStack>
-        <Text color="darkblue" fontSize={["sm", "md", "lg", "xl"]} as="h3">
+        <Text color="purple" fontSize={["sm", "md", "lg", "xl"]} as="h3">
           {experience.type}
         </Text>
       </HStack>
@@ -55,7 +63,7 @@ const ExperienceTimelineElement = ({ experience }) => {
       >
         <AccordionItem>
           <h3>
-            <AccordionButton _expanded={{ bg: "teal.500" }}>
+            <AccordionButton _expanded={{ bg: "bisque" }}>
               Description
               <AccordionIcon />
             </AccordionButton>
@@ -64,7 +72,9 @@ const ExperienceTimelineElement = ({ experience }) => {
             {experience.description.length > 0 && (
               <ul>
                 {experience.description.map((point, pointIndex) => (
-                  <li key={pointIndex}>{point}</li>
+                  <li key={pointIndex} style={{ color: "black" }}>
+                    {point}
+                  </li>
                 ))}
               </ul>
             )}

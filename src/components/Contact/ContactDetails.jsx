@@ -17,7 +17,7 @@ const ContactDetails = () => {
         <Text fontSize={["sm", "md", "lg"]}>
           shrutis0698@gmail.com <br /> ss.sharma1826@gmail.com
         </Text>
-        <Text fontSize={["sm", "md", "lg"]}>+91 828207988</Text>
+        <Text fontSize={["sm", "md", "lg"]}>+91828207988</Text>
       </Box>
     </Container>
   );
