@@ -21,9 +21,9 @@ const Blog = () => {
     <Box
       id="blog"
       borderBottomWidth="1px"
-      height="100vh"
-      width="100vw"
       position="relative"
+      minH="100vh"
+      minW="100vw"
     >
       <Title heading="Blog" />
 

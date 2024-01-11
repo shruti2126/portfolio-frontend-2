@@ -9,7 +9,7 @@ import ExperienceTimelineElement from "./ExperienceTimelineElement.jsx";
 
 const Experience = () => {
   return (
-    <Box className="component" id="experience">
+    <Box className="component" id="experience" minH="100vh" minW="100vw">
       <Title heading="Software Development Experience" />
       <VerticalTimeline>
         {experienceData.map((experience, index) => (

@@ -11,7 +11,7 @@ import Title from "../Title";
 
 const Education = () => {
   return (
-    <Box id="education" className="component">
+    <Box id="education" className="component" minH="100vh" minW="100vw">
       <Title heading="Education History" />
       <VerticalTimeline>
         {educationEntries.map((entry, index) => {

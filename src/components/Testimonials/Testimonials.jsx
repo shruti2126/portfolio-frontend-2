@@ -40,7 +40,7 @@ const data = [
 
 const Testimonials = () => {
   return (
-    <div id="testimonials" className="component">
+    <div id="testimonials" className="component" minH="100vh" minW="100vw">
       <Title heading={"Testimonials"} />
       <Row xs={1} md={3} className="g-4">
         {" "}

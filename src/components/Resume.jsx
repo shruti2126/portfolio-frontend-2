@@ -7,7 +7,6 @@ import {
   Text,
   AbsoluteCenter,
   Center,
- 
 } from "@chakra-ui/react";
 import { useState } from "react";
 import "../styles/styles.css";
@@ -22,11 +21,17 @@ const Resume = () => {
       id="resume"
       className="component"
       position="relative"
+      minH="100vh"
+      minW="100vw"
     >
       <Title heading="Resume" />
       {showPdf ? (
         <Center>
-          <CloseButton maxInlineSize="10" onClick={() => toggle()} />
+          <CloseButton
+            color="white"
+            maxInlineSize="10"
+            onClick={() => toggle()}
+          />
         </Center>
       ) : (
         <AbsoluteCenter axis="both">

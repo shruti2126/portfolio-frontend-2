@@ -1,7 +1,5 @@
 /** @format */
 
-// /** @format */
-
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact/Contact";
@@ -19,7 +17,9 @@ const Home = () => {
   return (
     <Box
       id="home"
-      bgGradient="linear(to-l, black, purple.700, pink.800, purple.700, black)"
+      minW="100vw"
+      minH="100vh"
+      bgGradient="linear(to-l, black, purple.800, yellow.800, purple.800,black)"
     >
       <NavigationBar />
       <About />

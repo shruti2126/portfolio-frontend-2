@@ -120,7 +120,7 @@ const Contact = () => {
   };
 
   return (
-    <Box id="contact" className="component">
+    <Box id="contact" className="component" minH="100vh" minW="100vw">
       <Title heading="Connect With Me" />
       <SimpleGrid minChildWidth="40vw" columns={2} spacing={10} mx={10}>
         {/** Contact Details */}

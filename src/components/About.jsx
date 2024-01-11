@@ -26,7 +26,7 @@ import Fade from "react-awesome-reveal";
 
 const About = () => {
   return (
-    <Box id="about" className="component">
+    <Box id="about" className="component" minH="100vh" minW="100vw" >
       <Heading
         mt="1em"
         className="heading"

@@ -46,6 +46,8 @@ const Projects = () => {
       id="projects"
       position="relative"
       className="component"
+      minH="100vh"
+      minW="100vw"
     >
       <Title heading="Projects & Demos" />
       <Center mx={10} mb={10}>
