@@ -1,43 +1,29 @@
 /** @format */
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Image,
   Text,
-  Heading,
   Link,
   Icon,
   HStack,
   VStack,
   Button,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverBody,
 } from "@chakra-ui/react";
-
+import Popover from "./Popover";
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
 import pic from "../assets/pic4.webp";
 import "../styles/styles.css";
 import Fade from "react-awesome-reveal";
+import Title from "./Title";
 
+// Component function for the About section
 const About = () => {
+  const [popoverVisible, setPopoverVisible] = useState(false);
   return (
-    <Box id="about" className="component" minH="100vh" minW="100vw" >
-      <Heading
-        mt="1em"
-        className="heading"
-        as="h3"
-        size="lg"
-        textAlign={"center"}
-      >
-        About Me
-      </Heading>
-      <VStack mb="2em" px={[3, 4, 5]} spacing={["4", "6"]} align="center">
-        {" "}
+    <Box id="about" className="component">
+      <Title heading="About Me" />
+      <VStack spacing={["4", "6"]}>
         {/* Adjust spacing between elements */}
         <Box>
           <Image
@@ -47,8 +33,10 @@ const About = () => {
             boxSize={["xs", "sm", "md"]} // Adjust image size
             objectFit="cover"
             shadow="md"
-          />
+          />{" "}
+          {/* Image component displaying a personal photo */}
         </Box>
+        {/* VStack for vertical stacking of elements with responsive padding and spacing */}
         <VStack>
           <Text
             color="white"
@@ -63,15 +51,6 @@ const About = () => {
             Computer Science from UW-Madison last year. This portfolio hopefully
             gives you an insight into my skills and abilities and my unique
             journey to obtaining this milestone!
-            {/* I am also working on a blog
-            {/* called{" "}
-            <Link href="/" color="blue.500">
-              Connecting the Dots
-            </Link>{" "}
-            ,
-            where I plan to talk extensively about how I am finally able to
-            answer some of the burning questions I often asked myself trying to
-            figure out my place in the world. */}
           </Text>
           <HStack spacing={["4", "8"]}>
             {" "}
@@ -99,32 +78,31 @@ const About = () => {
                 {/* Adjust icon size */}
               </Link>
               {/* WhatsApp */}
-              <Popover placement="top-start">
-                <PopoverTrigger>
-                  <Link>
-                    <Icon
-                      as={FaWhatsapp}
-                      boxSize={["6", "8", "10"]}
-                      color="green.300"
-                    />{" "}
-                    {/* Adjust icon size */}
-                  </Link>
-                </PopoverTrigger>
-                <PopoverContent bg="whatsapp.700" color="white">
-                  <PopoverHeader fontWeight="semibold">Phone</PopoverHeader>
-                  <PopoverArrow bg="pink.500" />
-                  <PopoverCloseButton bg="purple.500" />
-                  <PopoverBody>+12068897848</PopoverBody>
-                </PopoverContent>
-              </Popover>
-
+              <div className="popover-container">
+                {" "}
+                <Link onClick={() => setPopoverVisible(true)}>
+                  {" "}
+                  <Icon
+                    as={FaWhatsapp}
+                    boxSize={["6", "8", "10"]}
+                    color="green.300"
+                  />
+                </Link>
+                {popoverVisible && (
+                  <Popover
+                    title="Phone"
+                    content="+91828720988"
+                    open={setPopoverVisible}
+                  />
+                )}
+              </div>
+              {/* Github */}
               <Link href="https://github.com/shruti2126" isExternal>
                 <Icon
                   as={FaGithub}
                   boxSize={["6", "8", "10"]}
                   color="gray.300"
                 />{" "}
-                {/* Adjust icon size */}
               </Link>
             </Fade>
           </HStack>
@@ -151,7 +129,7 @@ const About = () => {
                   fontSize={["sm", "md", "lg"]}
                   color="chakra-subtle-text._light"
                 >
-                  Portfolio Source
+                  Website Source
                 </Text>
               </Button>
             </Link>

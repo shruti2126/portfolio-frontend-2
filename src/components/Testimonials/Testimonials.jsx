@@ -40,12 +40,12 @@ const data = [
 
 const Testimonials = () => {
   return (
-    <div id="testimonials" className="component" minH="100vh" minW="100vw">
+    <div id="testimonials" className="component">
       <Title heading={"Testimonials"} />
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={1} md={3} className="g-4" style={{ padding: "2em" }}>
         {" "}
-        {data.map((item, i) => (
-          <Col key={i} sm={4}>
+        {data.map((item) => (
+          <Col key={item.id} sm={4}>
             {" "}
             <TestimonialCard {...item} />
           </Col>

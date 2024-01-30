@@ -3,6 +3,46 @@
  *
  * @format
  */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.popover-container {
+  position: relative; /* Set the reference for absolute positioning */
+  display: inline-block; /* Make the container fit its content */
+  width: 30%;
+}
+
+#popover {
+  position: absolute; /* Position the popover absolutely within its container */
+  bottom: 100%; /* Position it at the bottom of the icon */
+  left: 50%; /* Start at the horizontal center of the icon */
+  transform: translateX(-50%); /* Adjust horizontally to center the popover */
+  background-color: white; /* Background color for the popover */
+  border: 1px solid #ccc; /* Optional: Border for the popover */
+  border-radius: 5px; /* Optional: Rounded corners for the popover */
+  padding: 1em; /* Padding inside the popover */
+  z-index: 10; /* Ensure the popover is above other content */
+}
+
+/* Optional: Add an arrow or similar visual cue */
+#popover::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ccc transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+#close-button {
+  text-align: end;
+}
 .image-container {
   height: 100%;
   display: flex;
@@ -13,7 +53,7 @@
 .description {
   overflow: hidden; /* Hide any content that overflows the container */
   text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
-  white-space: wrap; /* Prevent text from wrapping to the next line */
+  white-space: normal; /* Prevent text from wrapping to the next line */
   max-height: 30em;
 }
 
@@ -32,10 +72,9 @@
 
 .component {
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100%;
+  padding-bottom: 1em;
   border-bottom: 1px solid whitesmoke;
-  margin: 0 auto;
-  padding: 3%;
 }
 
 .skill-bar {
@@ -44,20 +83,63 @@
   width: 80%;
   border-radius: 10%;
 }
+.logo {
+  width: 2em;
+  height: auto;
+  margin-right: 0.2em;
+}
+.navbar-container {
+  background-color: rgba(0, 0, 0, 0.872);
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  padding: 0.5em 1em; /* Adjust padding as needed */
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Ensure navbar is above other content */
+}
 
-.brand {
+.brand,
+.navlinks-container {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  margin: 0.5em 0; /* Adjust margins as needed */
+}
+
+#name {
   font-weight: 600;
   color: whitesmoke;
-  /* margin: 0px 5px 2px 0px; */
+  margin-right: 1em;
 }
 
-.name:hover {
-  /* background-color:rgb(49, 155, 179); */
-  transform: scale(1.1);
+#nav-links ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Center text for each link */
+}
+#nav-links > a,
+li {
+  color: white;
+  margin: 0 0.5em; /* Adjust spacing between links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-#nav-links > a {
-  margin: 0px 3px 0px 2px;
+#nav-links > a:hover,
+li:hover {
+  color: rgb(16, 137, 117); /* Change color on hover */
+}
+.center-hamlinks {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: absolute; /* Position it over the navbar */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.744); /* Semi-transparent background */
 }
 #nav-links > a:hover {
   transform: translateY(-5%);

@@ -41,14 +41,7 @@ const Projects = () => {
   };
 
   return (
-    <Box
-      // bgGradient={["linear(to-b, blue.100, purple.200, blue.200)"]}
-      id="projects"
-      position="relative"
-      className="component"
-      minH="100vh"
-      minW="100vw"
-    >
+    <Box id="projects" position="relative" className="component">
       <Title heading="Projects & Demos" />
       <Center mx={10} mb={10}>
         {projectData

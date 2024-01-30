@@ -6,7 +6,6 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import Experience from "./components/Experience/Experience";
 import Blog from "./components/Blog/Blog";
-//import Contact from "./components/Contact/Contact";
 import Education from "./components/Education/Education";
 import Skills from "./components/Skills";
 import "@coreui/coreui/dist/css/coreui.min.css";

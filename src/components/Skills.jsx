@@ -8,7 +8,7 @@ import "../styles/styles.css";
 
 const Skills = () => {
   return (
-    <Box id="skills" className="component" minH="100vh" minW="100vw">
+    <Box id="skills" className="component" >
       <Container pb={3}>
         {" "}
         <Title heading="Skills" />

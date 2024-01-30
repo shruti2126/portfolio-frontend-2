@@ -17,13 +17,7 @@ const Resume = () => {
     setShowPdf((prevBool) => !prevBool);
   }
   return (
-    <Box
-      id="resume"
-      className="component"
-      position="relative"
-      minH="100vh"
-      minW="100vw"
-    >
+    <Box id="resume" className="component" position="relative">
       <Title heading="Resume" />
       {showPdf ? (
         <Center>
