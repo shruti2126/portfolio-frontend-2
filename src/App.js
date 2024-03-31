@@ -13,6 +13,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LazyLoadingFallback from "./components/LazyLoadingFallback";
 
 const ProjectPage = React.lazy(() => import("./pages/ProjectPage"));
+/* The line `const Contact = React.lazy(() => import("./components/Contact/Contact"));` is using the
+`React.lazy()` function to dynamically import the `Contact` component from the
+"./components/Contact/Contact" file. */
 const Contact = React.lazy(() => import("./components/Contact/Contact"));
 
 function App() {

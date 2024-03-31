@@ -6,9 +6,18 @@ const links = [
   "experience",
   "education",
   "resume",
+  "projects",
+  // "blog",
   "testimonials",
   "contact",
 ];
+/**
+ * Renders the Links component based on the collapsed state and open function.
+ *
+ * @param {boolean} collapsed - Boolean variable indicating state of menu
+ * @param {function} open - Function to toggle menu
+ * @return {JSX.Element} The rendered Links component
+ */
 export const Links = ({ collapsed, open = () => {} }) => {
   return (
     <div className="navlinks-container">

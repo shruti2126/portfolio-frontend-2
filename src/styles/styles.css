@@ -4,35 +4,35 @@
  * @format
  */
 
-/* * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} */
+}
 
 .popover-container {
   position: relative; /* Set the reference for absolute positioning */
   display: inline-block; /* Make the container fit its content */
-  width: 30%;
+  z-index: 100;
 }
 
 #popover {
   position: absolute; /* Position the popover absolutely within its container */
-  bottom: 100%; /* Position it at the bottom of the icon */
+  top: 100%; /* Position it at the bottom of the icon */
   left: 50%; /* Start at the horizontal center of the icon */
   transform: translateX(-50%); /* Adjust horizontally to center the popover */
   background-color: white; /* Background color for the popover */
   border: 1px solid #ccc; /* Optional: Border for the popover */
-  border-radius: 5px; /* Optional: Rounded corners for the popover */
+  border-radius: 2em; /* Optional: Rounded corners for the popover */
   padding: 1em; /* Padding inside the popover */
-  z-index: 10; /* Ensure the popover is above other content */
+  z-index: 1000; /* Ensure the popover is above other content */
 }
 
 /* Optional: Add an arrow or similar visual cue */
 #popover::before {
   content: "";
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   border-width: 5px;
   border-style: solid;

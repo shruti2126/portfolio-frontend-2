@@ -28,7 +28,13 @@ const ExperienceTimelineElement = ({ experience }) => {
         color: "#fff",
         height: "min-content",
       }}
-      icon={experience.icon}
+      icon={
+        <img
+          src={experience.icon}
+          alt={`${experience.icon} + Icon`}
+          style={{ width: "100%", borderRadius: "50%" }}
+        />
+      }
       style={{ maxWidth: "90vw" }}
     >
       <HStack justifyContent="space-between">

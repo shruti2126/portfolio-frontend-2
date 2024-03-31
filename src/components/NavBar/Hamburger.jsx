@@ -6,6 +6,11 @@ import { Links } from "./Links";
 import { Squash as Hamburger } from "hamburger-react";
 import "../../styles/styles.css";
 
+/**
+ * Renders a hamburger menu component with collapsible links.
+ *
+ * @return {JSX.Element} The rendered hamburger menu component
+ */
 const Ham = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);

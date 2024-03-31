@@ -21,8 +21,6 @@ const ProjectPage = () => {
   const { projectId } = useParams();
   const project = projectData[projectId - 1];
 
-  // USE MEMOIZATION FOR DEMO VIDS and other media
-
   return (
     <Box minH="100vh" minW="100vw" bg="white" id="project-page">
       <Heading as="h2" size="xl" mb="4" textAlign="center" pt={5}>

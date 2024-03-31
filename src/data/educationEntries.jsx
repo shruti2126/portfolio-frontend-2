@@ -3,6 +3,20 @@ import Rutgers from "../assets/rutgers/Rutgers.webp";
 import Washington from "../assets/washington/Washington.webp";
 import Wisconsin from "../assets/wisconsin/Wisconsin.webp";
 
+export const educationDataImages = [
+  {
+    id: 1,
+    src: Rutgers,
+  },
+  {
+    id: 2,
+    src: Washington,
+  },
+  {
+    id: 3,
+    src: Wisconsin,
+  },
+];
 export const educationEntries = [
   {
     type: "education",
@@ -83,3 +97,4 @@ export const educationEntries = [
     },
   },
 ];
+

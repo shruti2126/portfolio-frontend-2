@@ -7,6 +7,11 @@ import Brand from "./Brand";
 import { Links } from "./Links";
 import Ham from "./Hamburger";
 
+/**
+ * A functional component for the navigation bar.
+ *
+ * @return {JSX.Element} The JSX for the navigation bar.
+ */
 const NavBar = () => {
   const mediumScreenBreakpoint = 768; // pixels
   const [isMobileView, setIsMobileView] = useState(
