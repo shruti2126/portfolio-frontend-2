@@ -21,7 +21,7 @@ import { initialProgressState } from "../../state/initialProgressState";
 import { initialContactFormFieldState } from "../../state/initialContactFormFieldState";
 import ContactDetails from "./ContactDetails";
 import Title from "../Title";
-import { retry } from "../../utils/retry";
+//import { retry } from "../../utils/retry";
 
 const Contact = () => {
   const [formFieldState, dispatch] = useReducer(
@@ -95,21 +95,24 @@ const Contact = () => {
   };
 
   const sendEmailRequest = async () => {
-    return axios.post(process.env.REACT_APP_SEND_EMAIL_LOCAL, {
-      ...formFieldState,
+    return await axios.post("http://localhost:8080/sendEmail", {
+      formData: formFieldState,
     });
   };
 
   const handleSubmit = async (e) => {
     dispatchProgressAction({ type: "SUBMIT" });
-    e.preventDefault();
+    //e.preventDefault();
     if (!invalidForm()) {
       dispatchProgressAction({ type: "SHOW_PROGRESS" });
       try {
-        const response = await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
+        // const response = await retry(sendEmailRequest, 3, 2000); // 3 retries with a 2-second delay
+        const response = await sendEmailRequest();
         dispatch({ type: "RESET_FIELDS" });
-        if (response.status === 200)
+        if (response.status === 200) {
+          console.log("Email sent successfully");
           dispatchProgressAction({ type: "PROMISE_RESOLVED" });
+        }
       } catch (error) {
         console.error("Error sending email after retries: ", error);
         dispatchProgressAction({ type: "PROMISE_REJECTED" });

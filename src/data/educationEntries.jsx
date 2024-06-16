@@ -38,48 +38,48 @@ export const educationEntries = [
       ],
     },
   },
-  {
-    type: "transferReason",
-    data: {
-      reason: (
-        <p>
-          My journey at the University of Washington taught me resilience and
-          adaptability. Despite my efforts, I faced challenges in securing a
-          major that resonated with my passions. Embracing this as a learning
-          experience, I chose to transfer where I could pursue my deep interest
-          in Computer Science, reaffirming my commitment to my chosen field and
-          my future career.
-        </p>
-      ),
-    },
-  },
-  {
-    type: "education",
-    data: {
-      logo: Rutgers,
-      alt: "Rutgers Icon",
-      university: "University of Rutgers",
-      major: "Computer Science Major & Mathematics Minor",
-      location: "Camden, New Jersey",
-      date: "Aug 2019 - Dec 2019",
-      list: ["4.0/4.0 GPA", "Dean’s list – Fall 2019"],
-    },
-  },
-  {
-    type: "transferReason",
-    data: {
-      reason: (
-        <p>
-          Transferring to Rutgers was a pivotal moment that came with its share
-          of uncertainty, yet it was a decision made with optimism and a
-          strategic view towards the future. It offered a valuable lesson in
-          seizing opportunities even when they appear daunting. This step wasn't
-          just about pursuing a prestigious degree; it was about finding the
-          right place to cultivate my academic and professional aspirations.
-        </p>
-      ),
-    },
-  },
+  // {
+  //   type: "transferReason",
+  //   data: {
+  //     reason: (
+  //       <p>
+  //         My journey at the University of Washington taught me resilience and
+  //         adaptability. Despite my efforts, I faced challenges in securing a
+  //         major that resonated with my passions. Embracing this as a learning
+  //         experience, I chose to transfer where I could pursue my deep interest
+  //         in Computer Science, reaffirming my commitment to my chosen field and
+  //         my future career.
+  //       </p>
+  //     ),
+  //   },
+  // },
+  // {
+  //   type: "education",
+  //   data: {
+  //     logo: Rutgers,
+  //     alt: "Rutgers Icon",
+  //     university: "University of Rutgers",
+  //     major: "Computer Science Major & Mathematics Minor",
+  //     location: "Camden, New Jersey",
+  //     date: "Aug 2019 - Dec 2019",
+  //     list: ["4.0/4.0 GPA", "Dean’s list – Fall 2019"],
+  //   },
+  // },
+  // {
+  //   type: "transferReason",
+  //   data: {
+  //     reason: (
+  //       <p>
+  //         Transferring to Rutgers was a pivotal moment that came with its share
+  //         of uncertainty, yet it was a decision made with optimism and a
+  //         strategic view towards the future. It offered a valuable lesson in
+  //         seizing opportunities even when they appear daunting. This step wasn't
+  //         just about pursuing a prestigious degree; it was about finding the
+  //         right place to cultivate my academic and professional aspirations.
+  //       </p>
+  //     ),
+  //   },
+  // },
   {
     type: "education",
     data: {

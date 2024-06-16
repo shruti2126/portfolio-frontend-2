@@ -20,6 +20,7 @@ import Title from "./Title";
 // Component function for the About section
 const About = () => {
   const [popoverVisible, setPopoverVisible] = useState(false);
+  console.log("snskdfgsfjb")
   return (
     <Box id="about" className="component">
       <Title heading="About Me" />
