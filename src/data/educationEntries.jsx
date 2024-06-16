@@ -88,7 +88,7 @@ export const educationEntries = [
       university: "University of Wisconsin",
       major: "B.S in Computer Science",
       location: "Madison, WI",
-      date: "Jan 2020 - May 2022",
+      date: "Aug 2019 - May 2022",
       list: [
         "3.6/4.0 GPA",
         "Dean's List - Spring, 2020",

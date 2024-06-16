@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import Popover from "./Popover";
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import pic from "../assets/pic4.webp";
+import pic from "../assets/profile.jpg";
 import "../styles/styles.css";
 import Fade from "react-awesome-reveal";
 import Title from "./Title";
@@ -20,7 +20,7 @@ import Title from "./Title";
 // Component function for the About section
 const About = () => {
   const [popoverVisible, setPopoverVisible] = useState(false);
-  console.log("snskdfgsfjb")
+  console.log("snskdfgsfjb");
   return (
     <Box id="about" className="component">
       <Title heading="About Me" />
@@ -31,27 +31,29 @@ const About = () => {
             src={pic}
             borderRadius="full"
             alt="Shruti"
-            boxSize={["xs", "sm", "md"]} // Adjust image size
+            boxSize={"xs"}
+            objectPosition="center"
             objectFit="cover"
             shadow="md"
           />{" "}
-          {/* Image component displaying a personal photo */}
         </Box>
         {/* VStack for vertical stacking of elements with responsive padding and spacing */}
         <VStack>
           <Text
             color="white"
-            fontSize={["md", "lg", "xl"]} // Adjust font size for different screen sizes
+            fontSize={["sm", "md", "lg"]} // Adjust font size for different screen sizes
             textAlign="center"
             fontFamily="sans-serif"
             flex="1"
             width={["90%", "90%"]} // Adjust width for different screen sizes
           >
-            Hi! My name is Shruti. I am a Software Developer with experience in Web and Mobile Development. 
-            I hold a Bachelor of Science in
-            Computer Science degree from University of Wisconsin-Madison. This portfolio hopefully
-            gives you an insight into my skills and abilities as a software developer and what value I can bring to
-            a team.
+            Hi! My name is Shruti. I am a Software Developer with professional experience in
+            Full Stack Web Development using MERN stack. I have significant academic/part-time/internship experience in
+            other technologies like Java, SpringBoot Swift and ReactNative. I hold a Bachelor of
+            Science in Computer Science degree from the University of
+            Wisconsin-Madison. Through this portfolio, I hope to give you an insight
+            into my skills and abilities as a software developer and what value
+            I bring to a team.
           </Text>
           <HStack spacing={["4", "8"]}>
             {" "}
