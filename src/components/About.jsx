@@ -47,11 +47,11 @@ const About = () => {
             flex="1"
             width={["90%", "90%"]} // Adjust width for different screen sizes
           >
-            Hey! My name is Shruti. I am pursuing a career in tech as a Software
-            Developer/Engineer. I graduated with a Bachelor of Science in
-            Computer Science from UW-Madison last year. This portfolio hopefully
-            gives you an insight into my skills and abilities and my unique
-            journey to obtaining this milestone!
+            Hi! My name is Shruti. I am a Software Developer with experience in Web and Mobile Development. 
+            I hold a Bachelor of Science in
+            Computer Science degree from University of Wisconsin-Madison. This portfolio hopefully
+            gives you an insight into my skills and abilities as a software developer and what value I can bring to
+            a team.
           </Text>
           <HStack spacing={["4", "8"]}>
             {" "}
