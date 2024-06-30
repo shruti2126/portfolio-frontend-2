@@ -25,7 +25,7 @@ export const experienceDataImages = [
 export const experienceData = [
   {
     id: 1,
-    title: "Java Developer Intern",
+    title: "Java Software Developer",
     type: "Professional",
     organization: "Antra, Inc",
     date: "Oct 2022 - June 2023",
