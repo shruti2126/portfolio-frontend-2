@@ -41,7 +41,7 @@ const ProjectPage = () => {
                   : { color: "black" }),
               }}
             >
-              <b>GitHub Repository</b>
+              <b>Explore Github/Website</b>
             </span>
           </a>
           <Text fontSize="lg" fontWeight="bold">
@@ -96,17 +96,18 @@ const ProjectPage = () => {
                   fontWeight="semibold"
                   fontSize={["md", "lg", "lg"]}
                   mt={4}
+                  color={"gray.600"}
                 >
                   {insight.category}
                 </Text>
               </Box>
               <Box mt={3}>
                 {Array.isArray(insight.data) ? (
-                  <ul style={{ listStyle: "none" }}>
+                  <ul style={{ listStyle: "none"}}>
                     {insight.data.map((str, strIndex) => (
                       <li key={strIndex}>
                         <Box px={4}>
-                          <Text fontSize={["sm", "sm", "md"]}>{str}</Text>
+                          <Text fontSize={["sm", "sm", "md"]} color={"black"}>{str}</Text>
                         </Box>
                       </li>
                     ))}

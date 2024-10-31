@@ -95,9 +95,12 @@ const Contact = () => {
   };
 
   const sendEmailRequest = async () => {
-    return await axios.post("http://localhost:8080/sendEmail", {
-      formData: formFieldState,
-    });
+    return await axios.post(
+      "https://portfolio-backend-three-rho.vercel.app/sendEmail",
+      {
+        formData: formFieldState,
+      }
+    );
   };
 
   const handleSubmit = async (e) => {

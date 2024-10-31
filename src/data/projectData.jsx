@@ -51,7 +51,9 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: "Shruti Sharma (Software Developer/Project Owner), Ryan Gillespie (Full Stack Developer/Scrum Master), Alex Goldsmith (QA Engineer)",
+        data: [
+          "Shruti Sharma (Software Developer/Project Owner), Ryan Gillespie (Full Stack Developer/Scrum Master), Alex Goldsmith (QA Engineer)",
+        ],
       },
       {
         category: "Learning",
@@ -145,7 +147,9 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: "Akshay Bodla (Lead Developer), Shruti Sharma (Software Developer/Scrum Master), Oliver You(Software Developer), Kavya Sebastian(Software Developer), Mengze Li(Frontend Developer)",
+        data: [
+          "Akshay Bodla (Lead Developer), Shruti Sharma (Software Developer/Scrum Master), Oliver You(Software Developer), Kavya Sebastian(Software Developer), Mengze Li(Frontend Developer)",
+        ],
       },
       {
         category: "Learning",
@@ -229,7 +233,7 @@ export const projectData = [
     teamSize: 9,
     purpose: "Startup / Volunteer Experience",
     Role: "Serverless Software Engineer",
-    githubLink: "https://github.com/Gallify/gallify.app",
+    githubLink: "https://www.gallify.com/",
     demoUrl: (
       <iframe
         className="responsive-iframe"
@@ -242,7 +246,9 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: "Tejvir Mann, Shruti Sharma, Sourish Kundu, Anshul, Aryaman, Luke, Jay",
+        data: [
+          "Tejvir Mann, Shruti Sharma, Sourish Kundu, Anshul, Aryaman, Luke, Jay",
+        ],
       },
       {
         category: "Learning",
