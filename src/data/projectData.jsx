@@ -231,7 +231,7 @@ export const projectData = [
       "Using the Gallify app, users can discover these art works and purchase different versions of it including 3D models, Animations and Smart Art.",
     thumbnail: gallify,
     teamSize: 9,
-    purpose: "Startup / Volunteer Experience",
+    purpose: "Startup SWE Experience",
     Role: "Serverless Software Engineer",
     githubLink: "https://www.gallify.com/",
     demoUrl: (
