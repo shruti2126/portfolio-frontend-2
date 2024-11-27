@@ -1,6 +1,5 @@
 /** @format */
 import React from "react";
-import TestimonialCard2 from "./TestimonialCard2";
 import TestimonialCard from "./TestimonialCard";
 // import axios from "axios";
 import { Col, Row } from "react-bootstrap";
