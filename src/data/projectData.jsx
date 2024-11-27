@@ -328,7 +328,7 @@ export const projectData = [
     title: "Central Repository App",
     techStack: "MongoDB, NodeJS/ExpressJS, ReactJS, Redux Toolkit",
     techStackIcons: [cibReact, cibMongodb, cibNodeJs, cibRedux],
-    iconsColor: ["#E84E36", "#FFCA28", "#17A6E7"],
+    iconsColor: ["#118D4D", "#01D2F6", "#74AC5F", "#0B0F13"],
     description:
       "Gallify is a SaaS company that allows users to turn their real art into virtual art, and sell it in a social marketplace." +
       "Using the Gallify app, users can discover these art works and purchase different versions of it including 3D models, Animations and Smart Art.",
