@@ -22,6 +22,7 @@ import {
   cibSwift,
   cibTypescript,
   cibXcode,
+  cibRedux,
 } from "@coreui/icons";
 
 export const projectData = [
@@ -225,6 +226,108 @@ export const projectData = [
     title: "Gallify App",
     techStack: "Swift, Firebase Auth, Cloud Firestore, Xcode",
     techStackIcons: [cibSwift, cibFirebase, cibXcode],
+    iconsColor: ["#E84E36", "#FFCA28", "#17A6E7"],
+    description:
+      "Gallify is a SaaS company that allows users to turn their real art into virtual art, and sell it in a social marketplace." +
+      "Using the Gallify app, users can discover these art works and purchase different versions of it including 3D models, Animations and Smart Art.",
+    thumbnail: gallify,
+    teamSize: 9,
+    purpose: "Startup SWE Experience",
+    Role: "Serverless Software Engineer",
+    githubLink: "https://www.gallify.com/",
+    demoUrl: (
+      <iframe
+        className="responsive-iframe"
+        src="https://www.youtube.com/embed/GCLF0xAwo50?si=R53BMJ395tTP9hUk"
+        title="Gallify Demo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    ),
+    insights: [
+      {
+        category: "Team",
+        data: [
+          "Tejvir Mann, Shruti Sharma, Sourish Kundu, Anshul, Aryaman, Luke, Jay",
+        ],
+      },
+      {
+        category: "Learning",
+        data: [
+          "Gained expertise in Swift, Firebase Authentication, and Cloud Firestore.",
+          "Contributed to building an innovative AR imaging app.",
+        ],
+      },
+      {
+        category: "Planning",
+        data: [
+          "Collaborated with the team to plan and execute Scrum sprints.",
+          "Used GitHub Projects to track progress and create and update tickets.",
+        ],
+      },
+      {
+        category: "Developing",
+        data: [
+          "Implemented user authentication system and data models.",
+          "Created CRUD methods for various components using asynchronous database queries.",
+          "Developed REST endpoints for HTTPS requests to the Gallify Marketplace website.",
+        ],
+      },
+      {
+        category: "Testing",
+        data: [
+          "Stress-tested new features before merging with existing code.",
+          "Followed the Scrum SDLC process for feature development and beta launches.",
+        ],
+      },
+      {
+        category: "Leadership",
+        data: "Led the development and design of Gallify's system architecture.",
+      },
+      {
+        category: "Challenges",
+        data: [
+          "Faced difficulties in team collaboration and communication as I was new to software development." +
+            " Had to learn how to effectively work in a team, including understanding agile methodologies and project management tools.",
+          "Struggled understanding and implementing asynchronous programming, especially as the app's complexity grew. I encountered issues with data synchronization and handling asynchronous tasks within the Firebase environment.",
+        ],
+      },
+    ],
+    otherMedia: [
+      {
+        title: "Screenshots of Screens designed in Figma",
+        type: "image",
+        data: [
+          <img src={login} alt="login page" />,
+          <img src={profilePage} alt="profile page" />,
+          <img src={artPlayer} alt="art player" />,
+          <img src={liked} alt="liked page" />,
+          <img src={reelPage} alt="Reel page" />,
+        ],
+      },
+      {
+        title: "Gallify Pitch Presentation",
+        type: "video",
+        data: [
+          <iframe
+            className="responsive-iframe"
+            src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>,
+        ],
+      },
+    ],
+    CurrentIssues: [],
+  },
+  {
+    id: 4,
+    title: "Central Repository App",
+    techStack: "MongoDB, NodeJS/ExpressJS, ReactJS, Redux Toolkit",
+    techStackIcons: [cibReact, cibMongodb, cibNodeJs, cibRedux],
     iconsColor: ["#E84E36", "#FFCA28", "#17A6E7"],
     description:
       "Gallify is a SaaS company that allows users to turn their real art into virtual art, and sell it in a social marketplace." +
