@@ -1,6 +1,4 @@
-import { Badge, Box, Card, HStack, Image } from "@chakra-ui/react";
-import { Button } from "@/components/ui/button";
-
+import { Badge, Box, Card, HStack, Image, Button } from "@chakra-ui/react";
 const TestimonialCard2 = () => (
   <Card.Root flexDirection="row" overflow="hidden" maxW="xl">
     <Image
