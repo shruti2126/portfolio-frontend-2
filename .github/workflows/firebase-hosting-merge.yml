@@ -6,7 +6,7 @@ name: Deploy to Firebase Hosting on push
 on:
   push:
     branches:
-      - master  # Specify the branch you want to trigger deployment from
+      - master # Specify the branch you want to trigger deployment from
 
 jobs:
   build_and_deploy:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16  # Replace with your required Node.js version
+          node-version: 18.20.2 # Replace with your required Node.js version
 
       # Step 3: Install dependencies
       - name: Install Dependencies
