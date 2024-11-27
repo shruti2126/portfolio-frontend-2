@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.1",
+    "dotenv": "^16.4.5",
     "formik": "^2.4.5",
     "framer-motion": "^10.18.0",
     "hamburger-react": "^2.5.0",
@@ -64,5 +65,12 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "webpack": "^5.89.0"
+  },
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
   }
+
 }

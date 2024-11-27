@@ -21,7 +21,6 @@ import { initialProgressState } from "../../state/initialProgressState";
 import { initialContactFormFieldState } from "../../state/initialContactFormFieldState";
 import ContactDetails from "./ContactDetails";
 import Title from "../Title";
-//import { retry } from "../../utils/retry";
 
 const Contact = () => {
   const [formFieldState, dispatch] = useReducer(

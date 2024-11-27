@@ -3,6 +3,7 @@
 import RyanImage from "../assets/testimonials/Ryan.jpeg";
 import TejvirImage from "../assets/testimonials/Tejvir.jpeg";
 import ShreyasImage from "../assets/testimonials/Shreyas.jpeg";
+import SarahGhasedi from "../assets/testimonials/Sarah J Ghasedi UW.jpg";
 
 const TestimonialsData = [
   {
@@ -32,6 +33,20 @@ const TestimonialsData = [
     profession: "Program Manager @ Medtronic",
     relationship: "Mentor for Capstone project @ UW-Madison",
     text: "Shruti is technically competent and always shows enthisiasm for learning new technologies and finding solutions. She and I collaborated on a University Capstone project while I mentored her and her team at Medtronic. She looks for doing tasks in the best and optimized ways, thinks long term and has good vision of overall objectives.",
+  },
+  {
+    id: 4,
+    img: SarahGhasedi,
+    name: "Sarah J. Ghasedi",
+    profession:
+      "Dr. of Philosophy, English, Literature and Culture, Visiting Scholar at University of Edinburgh",
+    relationship: "Lecturer at UW-Seattle",
+    text:
+      "Students in my English 282 class were asked to propose and conduct quarter-long autoethnographic research projects that involved both library (literature review and analysis) and field research (interviews, surveys, and observation). " +
+      "Shruti excelled at every step of this process, which required a great deal of independent work, planning, collaboration, and creativity. She was self-motivated and intellectually engaged, and she did an outstanding job of communicating with me and meeting deadlines." +
+      " Moreover, she consistently displayed advanced-level writing skills, both on in-class and take-home assignments." +
+      "In fact, her final portfolio project on the experiences of undergraduate female computer science students at the University of Washington was so strong that I now use it as a student sample in other English courses." +
+      "Moreover, Shruti’s showcase video from English 282, entitled “Gender Equality in Computer Science at the University,” was one of only three student submissions to be selected for a competitive prize and publication in our multidisciplinary online journal, Process.",
   },
 ];
 export default TestimonialsData;

@@ -237,10 +237,12 @@ export const projectData = [
     demoUrl: (
       <iframe
         className="responsive-iframe"
-        src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
-        title="YouTube video player"
+        src="https://www.youtube.com/embed/GCLF0xAwo50?si=R53BMJ395tTP9hUk"
+        title="Gallify Demo"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
       ></iframe>
     ),
     insights: [
@@ -293,19 +295,6 @@ export const projectData = [
       },
     ],
     otherMedia: [
-      // {
-      //   title: "Gallify Pitch Presentation created by CEO",
-      //   type: "video",
-      //   data: [
-      //     <iframe
-      //       className="responsive-iframe"
-      //       src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
-      //       title="YouTube video player"
-      //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      //       allowFullScreen
-      //     ></iframe>,
-      //   ],
-      // },
       {
         title: "Screenshots of Screens designed in Figma",
         type: "image",
@@ -315,6 +304,19 @@ export const projectData = [
           <img src={artPlayer} alt="art player" />,
           <img src={liked} alt="liked page" />,
           <img src={reelPage} alt="Reel page" />,
+        ],
+      },
+      {
+        title: "Gallify Pitch Presentation",
+        type: "video",
+        data: [
+          <iframe
+            className="responsive-iframe"
+            src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>,
         ],
       },
     ],

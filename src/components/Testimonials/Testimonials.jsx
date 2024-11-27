@@ -1,6 +1,6 @@
 /** @format */
 import React from "react";
-import TestimonialCard from "./TestimonialCard";
+import TestimonialCard2 from "./TestimonialCard2";
 // import axios from "axios";
 import { Col, Row } from "react-bootstrap";
 import Title from "../Title";
@@ -45,7 +45,8 @@ const Testimonials = () => {
         {TestimonialsData.map((item) => (
           <Col key={item.id} sm={4}>
             {" "}
-            <TestimonialCard {...item} />
+            {/* <TestimonialCard {...item} /> */}
+            {<TestimonialCard2 />}
           </Col>
         ))}
       </Row>
