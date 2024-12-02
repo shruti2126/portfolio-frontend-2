@@ -2,6 +2,7 @@
 import brain from "../assets/badgerBreak/brain2.png";
 import fitU from "../assets/fitu/fitU-2.jpeg";
 import gallify from "../assets/gallify/gallify.webp";
+import central-repo from "../assets/gallify/Central-repo.jpg";
 import artPlayer from "../assets/gallify/gallifyFigmaScreenshots/art-player.png";
 import liked from "../assets/gallify/gallifyFigmaScreenshots/liked.png";
 import login from "../assets/gallify/gallifyFigmaScreenshots/login.png";
