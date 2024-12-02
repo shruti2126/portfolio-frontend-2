@@ -2,7 +2,7 @@
 import brain from "../assets/badgerBreak/brain2.png";
 import fitU from "../assets/fitu/fitU-2.jpeg";
 import gallify from "../assets/gallify/gallify.webp";
-import central-repo from "../assets/gallify/Central-repo.jpg";
+import Central-repo from "../assets/Central-repo.jpg";
 import artPlayer from "../assets/gallify/gallifyFigmaScreenshots/art-player.png";
 import liked from "../assets/gallify/gallifyFigmaScreenshots/liked.png";
 import login from "../assets/gallify/gallifyFigmaScreenshots/login.png";
@@ -333,7 +333,7 @@ export const projectData = [
     description:
       "The Central Repository application is a document management system that allows users to store and manage their documents." +
       "It provides a user-friendly interface for creating, updating, and deleting documents, as well as searching for specific documents.",
-    thumbnail: gallify,
+    thumbnail: Central-repo,
     teamSize: 9,
     purpose: "Full Time Job Experience",
     Role: "Junior Software Developer",
