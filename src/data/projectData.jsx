@@ -330,17 +330,17 @@ export const projectData = [
     techStackIcons: [cibReact, cibMongodb, cibNodeJs, cibRedux],
     iconsColor: ["#118D4D", "#01D2F6", "#74AC5F", "#0B0F13"],
     description:
-      "Gallify is a SaaS company that allows users to turn their real art into virtual art, and sell it in a social marketplace." +
-      "Using the Gallify app, users can discover these art works and purchase different versions of it including 3D models, Animations and Smart Art.",
+      "The Central Repository application is a document management system that allows users to store and manage their documents." +
+      "It provides a user-friendly interface for creating, updating, and deleting documents, as well as searching for specific documents.",
     thumbnail: gallify,
     teamSize: 9,
-    purpose: "Startup SWE Experience",
-    Role: "Serverless Software Engineer",
-    githubLink: "https://www.gallify.com/",
+    purpose: "Full Time Job Experience",
+    Role: "Junior Software Developer",
+    githubLink: "https://drive.nielit.in",
     demoUrl: (
       <iframe
         className="responsive-iframe"
-        src="https://www.youtube.com/embed/GCLF0xAwo50?si=R53BMJ395tTP9hUk"
+        src="https://www.youtube.com/embed/EFAuZFPLV38?si=3-PIV_5g1EOLZ6k2"
         title="Gallify Demo"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
