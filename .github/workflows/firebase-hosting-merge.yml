@@ -21,6 +21,9 @@ jobs:
           node-version: '20.18.1' # Use Node.js version compatible with Firebase CLI
           cache: 'npm'
 
+      - name: Clear npm cache
+        run: npm cache clean --force
+
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
