@@ -2,11 +2,11 @@
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 
-const TestimonialCard = ({ img, name, profession, relationship, text }) => {
+const TestimonialCard = ({id, img, name, profession, relationship, text}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <Card style={{display: "flex", flexDirection:"row"}}>
-      <Card.Img variant="" src={img} style={{height:"30%"}} />
+    <Card key={id} style={{ display: "flex", flexDirection: "column" }}>
+      <Card.Img variant="" src={img} style={{ height: "30%" }} />
       <Card.Body>
         <Card.Title
           style={{

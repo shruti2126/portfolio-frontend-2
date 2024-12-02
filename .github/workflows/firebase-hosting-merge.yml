@@ -17,9 +17,6 @@ jobs:
       # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
-        with:
-          node-version: '20.18.1' # Use Node.js version compatible with Firebase CLI
-          cache: 'npm'
 
       - name: Clear npm cache
         run: npm cache clean --force

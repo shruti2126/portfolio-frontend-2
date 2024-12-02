@@ -44,8 +44,9 @@ const Testimonials = () => {
         {" "}
         {TestimonialsData.map((item) => (
           <Col key={item.id} sm={4}>
-            {" "}
-            <TestimonialCard {...item} />
+            <TestimonialCard
+             {...item}
+            />
             {/* {<TestimonialCard2 />} */}
           </Col>
         ))}
