@@ -2,7 +2,7 @@
 import brain from "../assets/badgerBreak/brain2.png";
 import fitU from "../assets/fitu/fitU-2.jpeg";
 import gallify from "../assets/gallify/gallify.webp";
-import Central-repo from "../assets/Central-repo.jpg";
+import centralRepo from "../assets/central-repo.jpg";
 import artPlayer from "../assets/gallify/gallifyFigmaScreenshots/art-player.png";
 import liked from "../assets/gallify/gallifyFigmaScreenshots/liked.png";
 import login from "../assets/gallify/gallifyFigmaScreenshots/login.png";
@@ -333,8 +333,8 @@ export const projectData = [
     description:
       "The Central Repository application is a document management system that allows users to store and manage their documents." +
       "It provides a user-friendly interface for creating, updating, and deleting documents, as well as searching for specific documents.",
-    thumbnail: Central-repo,
-    teamSize: 9,
+    thumbnail: centralRepo,
+    teamSize: 2,
     purpose: "Full Time Job Experience",
     Role: "Junior Software Developer",
     githubLink: "https://drive.nielit.in",
@@ -342,7 +342,7 @@ export const projectData = [
       <iframe
         className="responsive-iframe"
         src="https://www.youtube.com/embed/EFAuZFPLV38?si=3-PIV_5g1EOLZ6k2"
-        title="Gallify Demo"
+        title="CRP Demo"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
@@ -352,77 +352,55 @@ export const projectData = [
     insights: [
       {
         category: "Team",
-        data: [
-          "Tejvir Mann, Shruti Sharma, Sourish Kundu, Anshul, Aryaman, Luke, Jay",
-        ],
+        data: ["Shruti Sharma, Ajay Jha"],
       },
       {
         category: "Learning",
         data: [
-          "Gained expertise in Swift, Firebase Authentication, and Cloud Firestore.",
-          "Contributed to building an innovative AR imaging app.",
+          "Gained expertise in MongoDB, NodeJS, and ReactJS.",
+          "Contributed to building a secure document management system.",
+          "Learned about the importance of security and privacy in the cloud environment through implementing CSP, XSS, and CSRF protection.",
+          "Learned how to use Multer and MongoDB GridFS to upload and download large multimedia files",
         ],
       },
       {
         category: "Planning",
         data: [
-          "Collaborated with the team to plan and execute Scrum sprints.",
-          "Used GitHub Projects to track progress and create and update tickets.",
+          "Designed the database architecture for efficient user and document management.",
+          "Collaborated with the team to plan and execute Agile sprints.",
+          "Regulary took feedback from users to improve the app's features.",
         ],
       },
       {
         category: "Developing",
         data: [
-          "Implemented user authentication system and data models.",
-          "Created CRUD methods for various components using asynchronous database queries.",
-          "Developed REST endpoints for HTTPS requests to the Gallify Marketplace website.",
+          "Implemented user-friendly interface for document uploading, sharing, deletion/restoration, version history, editing, permission policies and searching.",
+          "Developed custom Two-Factor Authentication for secure user login.",
+          "Implement custom roles in mongodb for roles and privilege and user management",
+          "Implemented JWT authentication for secure user login and session management.",
         ],
       },
       {
         category: "Testing",
         data: [
-          "Stress-tested new features before merging with existing code.",
-          "Followed the Scrum SDLC process for feature development and beta launches.",
+          "Used Jest for unit testing.",
+          "Regularly Manual tested, used Artillery to run for load testing.",
         ],
       },
       {
         category: "Leadership",
-        data: "Led the development and design of Gallify's system architecture.",
+        data: ["Led the development and design of Central Repository's system architecture.",]
       },
       {
         category: "Challenges",
         data: [
-          "Faced difficulties in team collaboration and communication as I was new to software development." +
-            " Had to learn how to effectively work in a team, including understanding agile methodologies and project management tools.",
-          "Struggled understanding and implementing asynchronous programming, especially as the app's complexity grew. I encountered issues with data synchronization and handling asynchronous tasks within the Firebase environment.",
+          "Struggled and learned through the process of building a secure document management system using OWASP Top 10 vulnerabilities.",
+          "Faced challenges in understanding and implementing asynchronous programming, especially as the app's complexity grew.",
+          "Picked up new skills for memory and CPU usage optimization using NodeJS thread workers and cluster module.",
         ],
       },
     ],
     otherMedia: [
-      {
-        title: "Screenshots of Screens designed in Figma",
-        type: "image",
-        data: [
-          <img src={login} alt="login page" />,
-          <img src={profilePage} alt="profile page" />,
-          <img src={artPlayer} alt="art player" />,
-          <img src={liked} alt="liked page" />,
-          <img src={reelPage} alt="Reel page" />,
-        ],
-      },
-      {
-        title: "Gallify Pitch Presentation",
-        type: "video",
-        data: [
-          <iframe
-            className="responsive-iframe"
-            src="https://www.youtube.com/embed/W2RvpHjGHhU?si=3KFvweMKIyF1j9nT"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>,
-        ],
-      },
     ],
     CurrentIssues: [],
   },
