@@ -98,6 +98,10 @@ const Contact = () => {
       "https://portfolio-backend-three-rho.vercel.app/sendEmail",
       {
         formData: formFieldState,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
   };
