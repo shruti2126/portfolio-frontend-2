@@ -45,3 +45,6 @@ This is the frontend part of my personal portfolio website. It showcases my skil
 ## Backend repo
 
 - https://github.com/shruti2126/portfolio-backend.git
+
+## Video Demo
+- https://www.youtube.com/watch?v=EFAuZFPLV38
