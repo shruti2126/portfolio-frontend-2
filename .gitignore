@@ -25,3 +25,5 @@ yarn-error.log*
 #.env file
 .env
 
+#google drive json key
+src/google-drive-key.json

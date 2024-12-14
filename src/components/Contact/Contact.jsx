@@ -95,10 +95,11 @@ const Contact = () => {
 
   const sendEmailRequest = async () => {
     return await axios.post(
-      "https://portfolio-backend-three-rho.vercel.app/sendEmail",
+      "http://localhost:8080/sendEmail",
       {
         formData: formFieldState,
-      }, {
+      },
+      {
         headers: {
           "Content-Type": "application/json",
         },
